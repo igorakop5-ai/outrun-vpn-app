@@ -1,4 +1,4 @@
-package com.hiddify.hiddify.utils
+package com.Outrun VPN.Outrun VPN.utils
 
 /*
  * Copyright (C) 2019 Square, Inc.
@@ -16,8 +16,8 @@ package com.hiddify.hiddify.utils
  * limitations under the License.
  */
 
-import com.hiddify.core.api.v2.hcore.CoreClient
-import com.hiddify.hiddify.Settings
+import com.Outrun VPN.core.api.v2.hcore.CoreClient
+import com.Outrun VPN.Outrun VPN.Settings
 import com.squareup.wire.GrpcClient
 import io.grpc.CallOptions
 import io.grpc.ManagedChannelBuilder

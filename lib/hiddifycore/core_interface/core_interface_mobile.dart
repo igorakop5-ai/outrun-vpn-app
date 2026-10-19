@@ -4,20 +4,20 @@ import 'dart:io';
 import 'package:basic_utils/basic_utils.dart';
 import 'package:flutter/services.dart';
 import 'package:grpc/grpc.dart';
-import 'package:hiddify/core/model/directories.dart';
-import 'package:hiddify/core/utils/laststeam.dart';
-import 'package:hiddify/hiddifycore/core_interface/core_interface.dart';
-import 'package:hiddify/hiddifycore/core_interface/mtls_channel_cred.dart';
-import 'package:hiddify/hiddifycore/generated/v2/hcore/hcore_service.pbgrpc.dart';
-import 'package:hiddify/hiddifycore/generated/v2/hello/hello.pb.dart';
-import 'package:hiddify/hiddifycore/generated/v2/hello/hello_service.pbgrpc.dart';
-import 'package:hiddify/singbox/model/core_status.dart';
+import 'package:Outrun VPN/core/model/directories.dart';
+import 'package:Outrun VPN/core/utils/laststeam.dart';
+import 'package:Outrun VPN/Outrun VPNcore/core_interface/core_interface.dart';
+import 'package:Outrun VPN/Outrun VPNcore/core_interface/mtls_channel_cred.dart';
+import 'package:Outrun VPN/Outrun VPNcore/generated/v2/hcore/hcore_service.pbgrpc.dart';
+import 'package:Outrun VPN/Outrun VPNcore/generated/v2/hello/hello.pb.dart';
+import 'package:Outrun VPN/Outrun VPNcore/generated/v2/hello/hello_service.pbgrpc.dart';
+import 'package:Outrun VPN/singbox/model/core_status.dart';
 
-import 'package:hiddify/utils/utils.dart';
+import 'package:Outrun VPN/utils/utils.dart';
 import 'package:rxdart/rxdart.dart';
 
 class CoreInterfaceMobile extends CoreInterface with InfraLogger {
-  static const channelPrefix = "com.hiddify.app";
+  static const channelPrefix = "com.Outrun VPN.app";
   static const methodChannel = MethodChannel("$channelPrefix/method");
   static const statusChannel = EventChannel("$channelPrefix/service.status", JSONMethodCodec());
   static const alertsChannel = EventChannel("$channelPrefix/service.alerts", JSONMethodCodec());
@@ -101,7 +101,7 @@ class CoreInterfaceMobile extends CoreInterface with InfraLogger {
     for (final channel in previousChannels) {
       unawaited(channel?.shutdown());
     }
-    // await start("/sdcard/Android/data/app.hiddify.com/files/configs/cdc633e9-8cfc-4a67-948d-009f779a5c91.json", "hiddify");
+    // await start("/sdcard/Android/data/app.Outrun VPN.com/files/configs/cdc633e9-8cfc-4a67-948d-009f779a5c91.json", "Outrun VPN");
     return "";
   }
 

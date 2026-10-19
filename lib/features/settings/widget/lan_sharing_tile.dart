@@ -2,11 +2,11 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:hiddify/core/localization/translations.dart';
-import 'package:hiddify/core/notification/in_app_notification_controller.dart';
-import 'package:hiddify/core/router/dialog/dialog_notifier.dart';
-import 'package:hiddify/features/settings/data/config_option_repository.dart';
-import 'package:hiddify/hiddifycore/hiddify_core_service_provider.dart';
+import 'package:Outrun VPN/core/localization/translations.dart';
+import 'package:Outrun VPN/core/notification/in_app_notification_controller.dart';
+import 'package:Outrun VPN/core/router/dialog/dialog_notifier.dart';
+import 'package:Outrun VPN/features/settings/data/config_option_repository.dart';
+import 'package:Outrun VPN/Outrun VPNcore/Outrun VPN_core_service_provider.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 /// Characters used for the generated LAN sharing password.
@@ -60,7 +60,7 @@ class LanSharingPreferenceWidget extends HookConsumerWidget {
     }
 
     Future<void> showQrCode() async {
-      final ipResult = await ref.read(hiddifyCoreServiceProvider).getLANIP().run();
+      final ipResult = await ref.read(Outrun VPNCoreServiceProvider).getLANIP().run();
       final ip = ipResult.fold((_) => null, (r) => r.ip);
       if (ip == null) {
         ref.read(inAppNotificationControllerProvider).showErrorToast(t.pages.settings.inbound.lanIPError);
@@ -69,7 +69,7 @@ class LanSharingPreferenceWidget extends HookConsumerWidget {
       final credentials = (
         ip: ip,
         port: ref.read(ConfigOptions.mixedPort),
-        username: 'hiddify',
+        username: 'Outrun VPN',
         password: ref.read(ConfigOptions.lanSharingPassword),
       );
       final link = 'socks://${credentials.username}:${credentials.password}@${credentials.ip}:${credentials.port}';

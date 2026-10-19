@@ -4,19 +4,19 @@ import 'dart:io';
 import 'package:dartx/dartx_io.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/services.dart';
-import 'package:hiddify/core/directories/directories_provider.dart';
-import 'package:hiddify/core/localization/translations.dart';
-import 'package:hiddify/core/model/region.dart';
-import 'package:hiddify/core/notification/in_app_notification_controller.dart';
-import 'package:hiddify/core/router/dialog/dialog_notifier.dart';
-import 'package:hiddify/features/settings/data/config_option_repository.dart';
-import 'package:hiddify/hiddifycore/generated/v2/config/route_rule.pb.dart';
-import 'package:hiddify/utils/utils.dart';
+import 'package:Outrun VPN/core/directories/directories_provider.dart';
+import 'package:Outrun VPN/core/localization/translations.dart';
+import 'package:Outrun VPN/core/model/region.dart';
+import 'package:Outrun VPN/core/notification/in_app_notification_controller.dart';
+import 'package:Outrun VPN/core/router/dialog/dialog_notifier.dart';
+import 'package:Outrun VPN/features/settings/data/config_option_repository.dart';
+import 'package:Outrun VPN/Outrun VPNcore/generated/v2/config/route_rule.pb.dart';
+import 'package:Outrun VPN/utils/utils.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'rules_notifier.g.dart';
 
-const _geoUrl = 'https://raw.githubusercontent.com/hiddify/hiddify-geo/rule-set';
+const _geoUrl = 'https://raw.githubusercontent.com/Outrun VPN/Outrun VPN-geo/rule-set';
 
 /// Rules the app ships with, in the order a new list starts with. They are always in the list: the user can
 /// only switch and move them, and their content comes from here, so an update can change it.
@@ -162,7 +162,7 @@ class RulesNotifier extends _$RulesNotifier with AppLogger {
     try {
       final routeRules = RouteRule(rules: state);
       final base64Data = base64.encode(utf8.encode(jsonEncode(routeRules.writeToJson())));
-      await Clipboard.setData(ClipboardData(text: 'hiddify:///settings/routing-options?routeRule=$base64Data'));
+      await Clipboard.setData(ClipboardData(text: 'Outrun VPN:///settings/routing-options?routeRule=$base64Data'));
       ref.read(inAppNotificationControllerProvider).showSuccessToast(t.common.msg.export.clipboard.success);
       return true;
     } on PlatformException {

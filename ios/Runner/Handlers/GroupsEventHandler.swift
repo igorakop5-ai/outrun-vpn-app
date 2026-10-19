@@ -1,6 +1,6 @@
 import Foundation
 import Combine
-import HiddifyCore
+import Outrun VPNCore
 
 public class GroupsEventHandler: NSObject, FlutterPlugin, FlutterStreamHandler{
     

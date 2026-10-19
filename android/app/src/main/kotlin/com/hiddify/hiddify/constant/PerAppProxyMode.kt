@@ -1,4 +1,4 @@
-package com.hiddify.hiddify.constant
+package com.Outrun VPN.Outrun VPN.constant
 
 object PerAppProxyMode {
     const val OFF = "off"

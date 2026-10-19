@@ -1,12 +1,12 @@
-import 'package:hiddify/core/directories/directories_provider.dart';
-import 'package:hiddify/core/notification/in_app_notification_controller.dart';
-import 'package:hiddify/hiddifycore/hiddify_core_service.dart';
+import 'package:Outrun VPN/core/directories/directories_provider.dart';
+import 'package:Outrun VPN/core/notification/in_app_notification_controller.dart';
+import 'package:Outrun VPN/Outrun VPNcore/Outrun VPN_core_service.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-part 'hiddify_core_service_provider.g.dart';
+part 'Outrun VPN_core_service_provider.g.dart';
 
 @Riverpod(keepAlive: true, dependencies: [AppDirectories, inAppNotificationController])
-HiddifyCoreService hiddifyCoreService(Ref ref) {
-  return HiddifyCoreService(ref);
+Outrun VPNCoreService Outrun VPNCoreService(Ref ref) {
+  return Outrun VPNCoreService(ref);
 }

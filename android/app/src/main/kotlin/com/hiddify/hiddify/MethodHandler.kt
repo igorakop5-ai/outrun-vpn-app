@@ -1,17 +1,17 @@
-package com.hiddify.hiddify
+package com.Outrun VPN.Outrun VPN
 
 import android.util.Log
-import com.hiddify.hiddify.bg.BoxService
-//import com.hiddify.hiddify.bg.BoxService.Companion.workingDir
-import com.hiddify.hiddify.constant.Status
+import com.Outrun VPN.Outrun VPN.bg.BoxService
+//import com.Outrun VPN.Outrun VPN.bg.BoxService.Companion.workingDir
+import com.Outrun VPN.Outrun VPN.constant.Status
 import io.flutter.embedding.engine.plugins.FlutterPlugin
 import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel
 
-import com.hiddify.core.libbox.Libbox
-import com.hiddify.core.mobile.Mobile
-import com.hiddify.core.mobile.SetupOptions
-import com.hiddify.hiddify.bg.Bugs
+import com.Outrun VPN.core.libbox.Libbox
+import com.Outrun VPN.core.mobile.Mobile
+import com.Outrun VPN.core.mobile.SetupOptions
+import com.Outrun VPN.Outrun VPN.bg.Bugs
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
@@ -25,7 +25,7 @@ class MethodHandler(private val scope: CoroutineScope) : FlutterPlugin,
 
     companion object {
         const val TAG = "A/MethodHandler"
-        const val channelName = "com.hiddify.app/method"
+        const val channelName = "com.Outrun VPN.app/method"
 
         enum class Trigger(val method: String) {
             Setup("setup"),

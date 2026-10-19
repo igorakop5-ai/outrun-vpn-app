@@ -6,14 +6,14 @@ import 'package:flutter/services.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
-import 'package:hiddify/core/localization/translations.dart';
-import 'package:hiddify/core/model/constants.dart';
-import 'package:hiddify/core/model/failures.dart';
-import 'package:hiddify/core/notification/in_app_notification_controller.dart';
-import 'package:hiddify/features/profile/details/json_editor.dart';
-import 'package:hiddify/features/profile/details/profile_details_notifier.dart';
-import 'package:hiddify/features/profile/model/profile_entity.dart';
-import 'package:hiddify/utils/utils.dart';
+import 'package:Outrun VPN/core/localization/translations.dart';
+import 'package:Outrun VPN/core/model/constants.dart';
+import 'package:Outrun VPN/core/model/failures.dart';
+import 'package:Outrun VPN/core/notification/in_app_notification_controller.dart';
+import 'package:Outrun VPN/features/profile/details/json_editor.dart';
+import 'package:Outrun VPN/features/profile/details/profile_details_notifier.dart';
+import 'package:Outrun VPN/features/profile/model/profile_entity.dart';
+import 'package:Outrun VPN/utils/utils.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class ProfileDetailsPage extends HookConsumerWidget with PresLogger {

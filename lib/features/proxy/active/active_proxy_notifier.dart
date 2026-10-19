@@ -1,20 +1,20 @@
 import 'dart:async';
 
 import 'package:dio/dio.dart';
-import 'package:hiddify/core/haptic/haptic_service.dart';
-import 'package:hiddify/core/model/constants.dart';
-import 'package:hiddify/core/preferences/general_preferences.dart';
-import 'package:hiddify/core/utils/throttler.dart';
-import 'package:hiddify/features/connection/notifier/connection_notifier.dart';
-import 'package:hiddify/features/proxy/data/proxy_data_providers.dart';
-import 'package:hiddify/features/proxy/data/proxy_repository.dart';
-import 'package:hiddify/features/proxy/model/ip_info_entity.dart' as oldipinfo;
-import 'package:hiddify/features/proxy/model/proxy_failure.dart';
-import 'package:hiddify/hiddifycore/generated/v2/hcore/hcore.pb.dart';
-import 'package:hiddify/hiddifycore/init_signal.dart';
+import 'package:Outrun VPN/core/haptic/haptic_service.dart';
+import 'package:Outrun VPN/core/model/constants.dart';
+import 'package:Outrun VPN/core/preferences/general_preferences.dart';
+import 'package:Outrun VPN/core/utils/throttler.dart';
+import 'package:Outrun VPN/features/connection/notifier/connection_notifier.dart';
+import 'package:Outrun VPN/features/proxy/data/proxy_data_providers.dart';
+import 'package:Outrun VPN/features/proxy/data/proxy_repository.dart';
+import 'package:Outrun VPN/features/proxy/model/ip_info_entity.dart' as oldipinfo;
+import 'package:Outrun VPN/features/proxy/model/proxy_failure.dart';
+import 'package:Outrun VPN/Outrun VPNcore/generated/v2/hcore/hcore.pb.dart';
+import 'package:Outrun VPN/Outrun VPNcore/init_signal.dart';
 
-import 'package:hiddify/utils/riverpod_utils.dart';
-import 'package:hiddify/utils/utils.dart';
+import 'package:Outrun VPN/utils/riverpod_utils.dart';
+import 'package:Outrun VPN/utils/utils.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:rxdart/rxdart.dart';
 
@@ -49,7 +49,7 @@ class IpInfoNotifier extends _$IpInfoNotifier with AppLogger {
     _forceCheck = false;
     final info = await ref.watch(proxyRepositoryProvider).getCurrentIpInfo(cancelToken).getOrElse((err) {
       loggy.warning("error getting proxy ip info", err, StackTrace.current);
-      // throw err; //hiddify: remove exception to be logged
+      // throw err; //Outrun VPN: remove exception to be logged
       throw const UnknownIp();
     }).run();
 

@@ -1,9 +1,9 @@
 import 'package:dio/dio.dart';
-import 'package:hiddify/core/http_client/dio_http_client.dart';
-import 'package:hiddify/core/http_client/http_client_provider.dart';
-import 'package:hiddify/core/model/region.dart';
-import 'package:hiddify/features/app_based_routing/model/per_app_proxy_mode.dart';
-import 'package:hiddify/utils/utils.dart';
+import 'package:Outrun VPN/core/http_client/dio_http_client.dart';
+import 'package:Outrun VPN/core/http_client/http_client_provider.dart';
+import 'package:Outrun VPN/core/model/region.dart';
+import 'package:Outrun VPN/features/app_based_routing/model/per_app_proxy_mode.dart';
+import 'package:Outrun VPN/utils/utils.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 enum AutoSelectionResult { success, failure, notFound }
@@ -15,7 +15,7 @@ abstract interface class AutoSelectionRepository {
 class AutoSelectionRepositoryImpl with AppLogger implements AutoSelectionRepository {
   AutoSelectionRepositoryImpl({required Ref ref}) : _ref = ref;
   final Ref _ref;
-  static const _baseUrl = 'https://raw.githubusercontent.com/hiddify/Android-GFW-Apps/refs/heads/master/';
+  static const _baseUrl = 'https://raw.githubusercontent.com/Outrun VPN/Android-GFW-Apps/refs/heads/master/';
 
   @override
   Future<(Set<String>?, AutoSelectionResult)> getByAppProxyMode({

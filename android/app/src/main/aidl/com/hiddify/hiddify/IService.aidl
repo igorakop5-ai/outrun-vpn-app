@@ -1,6 +1,6 @@
-package com.hiddify.hiddify;
+package com.Outrun VPN.Outrun VPN;
 
-import com.hiddify.hiddify.IServiceCallback;
+import com.Outrun VPN.Outrun VPN.IServiceCallback;
 
 interface IService {
   int getStatus();

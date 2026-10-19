@@ -1,9 +1,9 @@
-package com.hiddify.hiddify
+package com.Outrun VPN.Outrun VPN
 
 import android.util.Log
 import androidx.lifecycle.Observer
-import com.hiddify.hiddify.constant.Alert
-import com.hiddify.hiddify.constant.Status
+import com.Outrun VPN.Outrun VPN.constant.Alert
+import com.Outrun VPN.Outrun VPN.constant.Status
 import io.flutter.embedding.engine.plugins.FlutterPlugin
 import io.flutter.plugin.common.EventChannel
 import io.flutter.plugin.common.JSONMethodCodec
@@ -12,8 +12,8 @@ class EventHandler : FlutterPlugin {
 
     companion object {
         const val TAG = "A/EventHandler"
-        const val SERVICE_STATUS = "com.hiddify.app/service.status"
-        const val SERVICE_ALERTS = "com.hiddify.app/service.alerts"
+        const val SERVICE_STATUS = "com.Outrun VPN.app/service.status"
+        const val SERVICE_ALERTS = "com.Outrun VPN.app/service.alerts"
     }
 
     private var statusChannel: EventChannel? = null

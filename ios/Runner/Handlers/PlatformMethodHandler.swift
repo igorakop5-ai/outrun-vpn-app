@@ -2,12 +2,12 @@
 //  PlatformMethodHandler.swift
 //  Runner
 //
-//  Created by Hiddify on 12/27/23.
+//  Created by Outrun VPN on 12/27/23.
 //
 
 import Flutter
 import Combine
-import HiddifyCore
+import Outrun VPNCore
 
 public class PlatformMethodHandler: NSObject, FlutterPlugin {
         

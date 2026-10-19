@@ -1,11 +1,11 @@
-package com.hiddify.hiddify.ktx
+package com.Outrun VPN.Outrun VPN.ktx
 
 import android.net.IpPrefix
 import android.os.Build
 import androidx.annotation.RequiresApi
-import com.hiddify.core.libbox.RoutePrefix
-import com.hiddify.core.libbox.StringIterator
-import com.hiddify.core.libbox.StringBox
+import com.Outrun VPN.core.libbox.RoutePrefix
+import com.Outrun VPN.core.libbox.StringIterator
+import com.Outrun VPN.core.libbox.StringBox
 import java.net.InetAddress
 
 val StringBox?.unwrap: String

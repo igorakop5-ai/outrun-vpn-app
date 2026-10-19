@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import HiddifyCore
+import Outrun VPNCore
 import Network
 import NetworkExtension
 import UserNotifications
@@ -159,7 +159,7 @@ public class ExtensionPlatformInterface: NSObject, LibboxPlatformInterfaceProtoc
             ipv6Settings.excludedRoutes = ipv6ExcludeRoutes
             settings.ipv6Settings = ipv6Settings
 
-            // Hiddify's IPv6 fix: with an IPv6 TUN address, also offer an IPv6 DNS server (the TUN
+            // Outrun VPN's IPv6 fix: with an IPv6 TUN address, also offer an IPv6 DNS server (the TUN
             // address; DNS to it is hijacked) when the core gave none, for IPv6-only networks
             if dnsEnabled, let tunIPv6 = ipv6Address.first, !dnsServers.contains(where: { $0.contains(":") }) {
                 dnsServers.append(tunIPv6)

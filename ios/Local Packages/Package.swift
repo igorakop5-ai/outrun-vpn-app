@@ -4,23 +4,23 @@
 import PackageDescription
 
 let package = Package(
-     name: "Hiddify Packages",
+     name: "Outrun VPN Packages",
      platforms: [
         // Minimum platform version
          .iOS(.v13)
      ],
      products: [
          .library(
-             name: "HiddifyCore",
-             targets: ["HiddifyCore"]),
+             name: "Outrun VPNCore",
+             targets: ["Outrun VPNCore"]),
      ],
      dependencies: [
          // No dependencies
      ],
      targets: [
         .binaryTarget(
-            name: "HiddifyCore",
-            path: "../Frameworks/HiddifyCore.xcframework"
+            name: "Outrun VPNCore",
+            path: "../Frameworks/Outrun VPNCore.xcframework"
         )
      ]
  )

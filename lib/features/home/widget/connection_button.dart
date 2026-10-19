@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:gap/gap.dart';
-import 'package:hiddify/core/localization/translations.dart';
-import 'package:hiddify/core/model/constants.dart';
-import 'package:hiddify/core/router/bottom_sheets/bottom_sheets_notifier.dart';
-import 'package:hiddify/core/router/dialog/dialog_notifier.dart';
-import 'package:hiddify/core/theme/theme_extensions.dart';
-import 'package:hiddify/core/widget/animated_text.dart';
-import 'package:hiddify/features/connection/model/connection_status.dart';
-import 'package:hiddify/features/connection/notifier/connection_notifier.dart';
-import 'package:hiddify/features/profile/notifier/active_profile_notifier.dart';
-import 'package:hiddify/features/proxy/active/active_proxy_notifier.dart';
-import 'package:hiddify/gen/assets.gen.dart';
+import 'package:Outrun VPN/core/localization/translations.dart';
+import 'package:Outrun VPN/core/model/constants.dart';
+import 'package:Outrun VPN/core/router/bottom_sheets/bottom_sheets_notifier.dart';
+import 'package:Outrun VPN/core/router/dialog/dialog_notifier.dart';
+import 'package:Outrun VPN/core/theme/theme_extensions.dart';
+import 'package:Outrun VPN/core/widget/animated_text.dart';
+import 'package:Outrun VPN/features/connection/model/connection_status.dart';
+import 'package:Outrun VPN/features/connection/notifier/connection_notifier.dart';
+import 'package:Outrun VPN/features/profile/notifier/active_profile_notifier.dart';
+import 'package:Outrun VPN/features/proxy/active/active_proxy_notifier.dart';
+import 'package:Outrun VPN/gen/assets.gen.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 /// What the button shows, one value per look.

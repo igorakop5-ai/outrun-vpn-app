@@ -1,12 +1,12 @@
-package com.hiddify.hiddify
+package com.Outrun VPN.Outrun VPN
 
 import android.content.Context
 import android.util.Base64
-import com.hiddify.hiddify.bg.ProxyService
-import com.hiddify.hiddify.bg.VPNService
-import com.hiddify.hiddify.constant.PerAppProxyMode
-import com.hiddify.hiddify.constant.ServiceMode
-import com.hiddify.hiddify.constant.SettingsKey
+import com.Outrun VPN.Outrun VPN.bg.ProxyService
+import com.Outrun VPN.Outrun VPN.bg.VPNService
+import com.Outrun VPN.Outrun VPN.constant.PerAppProxyMode
+import com.Outrun VPN.Outrun VPN.constant.ServiceMode
+import com.Outrun VPN.Outrun VPN.constant.SettingsKey
 import org.json.JSONObject
 import java.io.ByteArrayInputStream
 import java.io.File

@@ -4,22 +4,22 @@ import 'dart:typed_data';
 
 import 'package:dio/dio.dart';
 import 'package:fpdart/fpdart.dart';
-import 'package:hiddify/core/haptic/haptic_service.dart';
-import 'package:hiddify/core/http_client/http_client_provider.dart';
-import 'package:hiddify/core/localization/translations.dart';
-import 'package:hiddify/core/model/failures.dart';
-import 'package:hiddify/core/notification/in_app_notification_controller.dart';
-import 'package:hiddify/core/router/dialog/dialog_notifier.dart';
-import 'package:hiddify/features/connection/notifier/connection_notifier.dart';
-import 'package:hiddify/features/profile/add/model/free_profiles_model.dart';
-import 'package:hiddify/features/profile/data/profile_data_providers.dart';
-import 'package:hiddify/features/profile/data/profile_repository.dart';
-import 'package:hiddify/features/profile/model/profile_entity.dart';
-import 'package:hiddify/features/profile/model/profile_failure.dart';
-import 'package:hiddify/features/profile/notifier/active_profile_notifier.dart';
-import 'package:hiddify/features/settings/data/config_option_repository.dart';
-import 'package:hiddify/utils/riverpod_utils.dart';
-import 'package:hiddify/utils/utils.dart';
+import 'package:Outrun VPN/core/haptic/haptic_service.dart';
+import 'package:Outrun VPN/core/http_client/http_client_provider.dart';
+import 'package:Outrun VPN/core/localization/translations.dart';
+import 'package:Outrun VPN/core/model/failures.dart';
+import 'package:Outrun VPN/core/notification/in_app_notification_controller.dart';
+import 'package:Outrun VPN/core/router/dialog/dialog_notifier.dart';
+import 'package:Outrun VPN/features/connection/notifier/connection_notifier.dart';
+import 'package:Outrun VPN/features/profile/add/model/free_profiles_model.dart';
+import 'package:Outrun VPN/features/profile/data/profile_data_providers.dart';
+import 'package:Outrun VPN/features/profile/data/profile_repository.dart';
+import 'package:Outrun VPN/features/profile/model/profile_entity.dart';
+import 'package:Outrun VPN/features/profile/model/profile_failure.dart';
+import 'package:Outrun VPN/features/profile/notifier/active_profile_notifier.dart';
+import 'package:Outrun VPN/features/settings/data/config_option_repository.dart';
+import 'package:Outrun VPN/utils/riverpod_utils.dart';
+import 'package:Outrun VPN/utils/utils.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
@@ -224,7 +224,7 @@ class FreeProfilesNotifier extends _$FreeProfilesNotifier {
   Future<List<FreeProfile>> build() async {
     final httpClient = ref.watch(httpClientProvider);
     final res = await httpClient.get(
-      'https://raw.githubusercontent.com/hiddify/hiddify-app/refs/heads/main/test.configs/free_configs',
+      'https://raw.githubusercontent.com/Outrun VPN/Outrun VPN-app/refs/heads/main/test.configs/free_configs',
     );
     if (res.statusCode == 200) {
       return FreeProfilesModel.fromJson(jsonDecode(res.data.toString()) as Map<String, dynamic>).profiles;

@@ -1,4 +1,4 @@
-package com.hiddify.hiddify
+package com.Outrun VPN.Outrun VPN
 
 import android.util.Log
 import io.flutter.embedding.engine.plugins.FlutterPlugin
@@ -9,7 +9,7 @@ class LogHandler : FlutterPlugin {
 
     companion object {
         const val TAG = "A/LogHandler"
-        const val SERVICE_LOGS = "com.hiddify.app/service.logs"
+        const val SERVICE_LOGS = "com.Outrun VPN.app/service.logs"
     }
 
     private lateinit var logsChannel: EventChannel

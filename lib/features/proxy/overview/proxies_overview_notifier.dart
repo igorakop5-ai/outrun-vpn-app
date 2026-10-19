@@ -3,18 +3,18 @@ import 'dart:math';
 
 import 'package:dartx/dartx.dart';
 
-import 'package:hiddify/core/haptic/haptic_service.dart';
-import 'package:hiddify/core/localization/translations.dart';
-import 'package:hiddify/core/notification/in_app_notification_controller.dart';
-import 'package:hiddify/core/preferences/preferences_provider.dart';
-import 'package:hiddify/core/utils/preferences_utils.dart';
-import 'package:hiddify/features/connection/notifier/connection_notifier.dart';
-import 'package:hiddify/features/proxy/data/proxy_data_providers.dart';
-import 'package:hiddify/features/proxy/model/proxy_failure.dart';
-import 'package:hiddify/hiddifycore/generated/v2/hcore/hcore.pb.dart';
+import 'package:Outrun VPN/core/haptic/haptic_service.dart';
+import 'package:Outrun VPN/core/localization/translations.dart';
+import 'package:Outrun VPN/core/notification/in_app_notification_controller.dart';
+import 'package:Outrun VPN/core/preferences/preferences_provider.dart';
+import 'package:Outrun VPN/core/utils/preferences_utils.dart';
+import 'package:Outrun VPN/features/connection/notifier/connection_notifier.dart';
+import 'package:Outrun VPN/features/proxy/data/proxy_data_providers.dart';
+import 'package:Outrun VPN/features/proxy/model/proxy_failure.dart';
+import 'package:Outrun VPN/Outrun VPNcore/generated/v2/hcore/hcore.pb.dart';
 
-import 'package:hiddify/utils/riverpod_utils.dart';
-import 'package:hiddify/utils/utils.dart';
+import 'package:Outrun VPN/utils/riverpod_utils.dart';
+import 'package:Outrun VPN/utils/utils.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'proxies_overview_notifier.g.dart';

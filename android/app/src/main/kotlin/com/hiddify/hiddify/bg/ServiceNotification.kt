@@ -1,4 +1,4 @@
-package com.hiddify.hiddify.bg
+package com.Outrun VPN.Outrun VPN.bg
 
 import android.app.NotificationChannel
 import android.app.NotificationManager
@@ -14,22 +14,22 @@ import androidx.annotation.StringRes
 import androidx.core.app.NotificationCompat
 import androidx.core.app.ServiceCompat
 import androidx.lifecycle.MutableLiveData
-import com.hiddify.core.api.v2.config.Protocol
-import com.hiddify.core.api.v2.hcommon.Empty
-import com.hiddify.core.api.v2.hcore.CoreClient
-import com.hiddify.core.api.v2.hcore.SystemInfo
-import com.hiddify.core.api.v2.hello.HelloClient
-import com.hiddify.core.api.v2.hello.HelloRequest
-import com.hiddify.hiddify.Application
-import com.hiddify.hiddify.MainActivity
-import com.hiddify.hiddify.R
-import com.hiddify.hiddify.Settings
-import com.hiddify.hiddify.constant.Action
-import com.hiddify.hiddify.constant.Status
-//import com.hiddify.hiddify.utils.CommandClient
-import com.hiddify.core.libbox.Libbox
-import com.hiddify.hiddify.Application.Companion.notification
-import com.hiddify.hiddify.utils.GrpcClientProvider
+import com.Outrun VPN.core.api.v2.config.Protocol
+import com.Outrun VPN.core.api.v2.hcommon.Empty
+import com.Outrun VPN.core.api.v2.hcore.CoreClient
+import com.Outrun VPN.core.api.v2.hcore.SystemInfo
+import com.Outrun VPN.core.api.v2.hello.HelloClient
+import com.Outrun VPN.core.api.v2.hello.HelloRequest
+import com.Outrun VPN.Outrun VPN.Application
+import com.Outrun VPN.Outrun VPN.MainActivity
+import com.Outrun VPN.Outrun VPN.R
+import com.Outrun VPN.Outrun VPN.Settings
+import com.Outrun VPN.Outrun VPN.constant.Action
+import com.Outrun VPN.Outrun VPN.constant.Status
+//import com.Outrun VPN.Outrun VPN.utils.CommandClient
+import com.Outrun VPN.core.libbox.Libbox
+import com.Outrun VPN.Outrun VPN.Application.Companion.notification
+import com.Outrun VPN.Outrun VPN.utils.GrpcClientProvider
 import com.squareup.wire.GrpcClient
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -74,7 +74,7 @@ class ServiceNotification(private val status: MutableLiveData<Status>, private v
         NotificationCompat.Builder(service, notificationChannel)
                 .setShowWhen(false)
                 .setOngoing(true)
-                .setContentTitle("Hiddify")
+                .setContentTitle("Outrun VPN")
                 .setOnlyAlertOnce(true)
                 .setSmallIcon(R.drawable.ic_stat_logo)
                 .setCategory(NotificationCompat.CATEGORY_SERVICE)
@@ -109,13 +109,13 @@ class ServiceNotification(private val status: MutableLiveData<Status>, private v
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             Application.notification.createNotificationChannel(
                 NotificationChannel(
-                    notificationChannel, "hiddify service", NotificationManager.IMPORTANCE_LOW
+                    notificationChannel, "Outrun VPN service", NotificationManager.IMPORTANCE_LOW
                 )
             )
         }
         service.startForeground(
             notificationId, notificationBuilder
-                .setContentTitle(profileName.takeIf { it.isNotBlank() } ?: "Hiddify")
+                .setContentTitle(profileName.takeIf { it.isNotBlank() } ?: "Outrun VPN")
                 .setContentText(service.getString(contentTextId)).build()
         )
     }

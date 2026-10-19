@@ -1,15 +1,15 @@
-package com.hiddify.hiddify.utils
+package com.Outrun VPN.Outrun VPN.utils
 
-import com.hiddify.core.libbox.CommandClient
-import com.hiddify.core.libbox.CommandClientHandler
-import com.hiddify.core.libbox.CommandClientOptions
-import com.hiddify.core.libbox.Connections
-import com.hiddify.core.libbox.Libbox
-import com.hiddify.core.libbox.OutboundGroup
-import com.hiddify.core.libbox.OutboundGroupIterator
-import com.hiddify.core.libbox.StatusMessage
-import com.hiddify.core.libbox.StringIterator
-import com.hiddify.hiddify.ktx.toList
+import com.Outrun VPN.core.libbox.CommandClient
+import com.Outrun VPN.core.libbox.CommandClientHandler
+import com.Outrun VPN.core.libbox.CommandClientOptions
+import com.Outrun VPN.core.libbox.Connections
+import com.Outrun VPN.core.libbox.Libbox
+import com.Outrun VPN.core.libbox.OutboundGroup
+import com.Outrun VPN.core.libbox.OutboundGroupIterator
+import com.Outrun VPN.core.libbox.StatusMessage
+import com.Outrun VPN.core.libbox.StringIterator
+import com.Outrun VPN.Outrun VPN.ktx.toList
 import go.Seq
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

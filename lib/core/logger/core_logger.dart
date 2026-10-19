@@ -1,12 +1,12 @@
-import 'package:hiddify/hiddifycore/generated/v2/hcore/hcore.pb.dart' as pb;
-import 'package:hiddify/utils/custom_loggers.dart';
+import 'package:Outrun VPN/Outrun VPNcore/generated/v2/hcore/hcore.pb.dart' as pb;
+import 'package:Outrun VPN/utils/custom_loggers.dart';
 import 'package:logging/logging.dart';
 
 /// Engine logs, split by the `type` field every LogMessage already carries.
 ///
 /// They used to share one name, which meant a failed profile import and a
 /// thousand connection lines landed in the same pile. Splitting costs nothing —
-/// the field is already on the wire, hiddify simply ignored it.
+/// the field is already on the wire, Outrun VPN simply ignored it.
 ///
 ///   core.core     the proxy engine itself: connections, routing, dns
 ///   core.service  the background tunnel: start, stop, permissions

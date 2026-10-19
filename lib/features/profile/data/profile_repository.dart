@@ -2,19 +2,19 @@ import 'package:dio/dio.dart';
 import 'package:drift/drift.dart';
 import 'package:flutter/foundation.dart';
 import 'package:fpdart/fpdart.dart';
-import 'package:hiddify/core/db/db.dart';
+import 'package:Outrun VPN/core/db/db.dart';
 
-import 'package:hiddify/core/utils/exception_handler.dart';
-import 'package:hiddify/features/profile/data/profile_data_mapper.dart';
-import 'package:hiddify/features/profile/data/profile_data_source.dart';
-import 'package:hiddify/features/profile/data/profile_parser.dart';
-import 'package:hiddify/features/profile/data/profile_path_resolver.dart';
-import 'package:hiddify/features/profile/model/profile_entity.dart';
-import 'package:hiddify/features/profile/model/profile_failure.dart';
-import 'package:hiddify/features/profile/model/profile_sort_enum.dart';
-import 'package:hiddify/features/settings/data/config_option_repository.dart';
-import 'package:hiddify/hiddifycore/hiddify_core_service.dart';
-import 'package:hiddify/utils/custom_loggers.dart';
+import 'package:Outrun VPN/core/utils/exception_handler.dart';
+import 'package:Outrun VPN/features/profile/data/profile_data_mapper.dart';
+import 'package:Outrun VPN/features/profile/data/profile_data_source.dart';
+import 'package:Outrun VPN/features/profile/data/profile_parser.dart';
+import 'package:Outrun VPN/features/profile/data/profile_path_resolver.dart';
+import 'package:Outrun VPN/features/profile/model/profile_entity.dart';
+import 'package:Outrun VPN/features/profile/model/profile_failure.dart';
+import 'package:Outrun VPN/features/profile/model/profile_sort_enum.dart';
+import 'package:Outrun VPN/features/settings/data/config_option_repository.dart';
+import 'package:Outrun VPN/Outrun VPNcore/Outrun VPN_core_service.dart';
+import 'package:Outrun VPN/utils/custom_loggers.dart';
 import 'package:uuid/uuid.dart';
 
 abstract interface class ProfileRepository {
@@ -41,7 +41,7 @@ class ProfileRepositoryImpl with ExceptionHandler, InfraLogger implements Profil
   ProfileRepositoryImpl({
     required ProfileDataSource profileDataSource,
     required ProfilePathResolver profilePathResolver,
-    required HiddifyCoreService singbox,
+    required Outrun VPNCoreService singbox,
     required ConfigOptionRepository configOptionRepository,
     required ProfileParser profileParser,
   }) : _profileParser = profileParser,
@@ -52,7 +52,7 @@ class ProfileRepositoryImpl with ExceptionHandler, InfraLogger implements Profil
 
   final ProfileDataSource _profileDataSource;
   final ProfilePathResolver _profilePathResolver;
-  final HiddifyCoreService _singbox;
+  final Outrun VPNCoreService _singbox;
   final ConfigOptionRepository _configOptionRepo;
   final ProfileParser _profileParser;
 

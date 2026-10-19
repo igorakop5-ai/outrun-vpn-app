@@ -1,9 +1,9 @@
-package com.hiddify.hiddify.bg
+package com.Outrun VPN.Outrun VPN.bg
 
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
-import com.hiddify.hiddify.Settings
+import com.Outrun VPN.Outrun VPN.Settings
 
 class AppChangeReceiver : BroadcastReceiver() {
 

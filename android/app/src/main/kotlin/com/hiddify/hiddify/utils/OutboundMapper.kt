@@ -1,8 +1,8 @@
-package com.hiddify.hiddify.utils
+package com.Outrun VPN.Outrun VPN.utils
 
 import com.google.gson.annotations.SerializedName
-import com.hiddify.core.libbox.OutboundGroup
-import com.hiddify.core.libbox.OutboundGroupItem
+import com.Outrun VPN.core.libbox.OutboundGroup
+import com.Outrun VPN.core.libbox.OutboundGroupItem
 
 data class ParsedOutboundGroup(
     @SerializedName("tag") val tag: String,

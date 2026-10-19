@@ -4,31 +4,31 @@ import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:fpdart/fpdart.dart';
 import 'package:grpc/grpc.dart';
-import 'package:hiddify/core/directories/directories_provider.dart';
-import 'package:hiddify/core/logger/core_logger.dart';
-import 'package:hiddify/core/notification/in_app_notification_controller.dart';
-import 'package:hiddify/features/connection/model/connection_failure.dart';
-import 'package:hiddify/features/log/model/log_level.dart' as config_log_level;
-import 'package:hiddify/features/settings/data/config_option_repository.dart';
-import 'package:hiddify/hiddifycore/core_interface/core_interface_wrapper_stub.dart'
-    if (dart.library.io) 'package:hiddify/hiddifycore/core_interface/core_interface_wrapper.dart';
-import 'package:hiddify/hiddifycore/generated/v2/hcommon/common.pb.dart';
-import 'package:hiddify/hiddifycore/generated/v2/hcore/hcore.pb.dart';
-import 'package:hiddify/hiddifycore/generated/v2/hcore/hcore_service.pbgrpc.dart';
-import 'package:hiddify/hiddifycore/init_signal.dart';
-import 'package:hiddify/singbox/model/core_status.dart';
-import 'package:hiddify/singbox/model/singbox_config_option.dart';
-import 'package:hiddify/utils/custom_loggers.dart';
-import 'package:hiddify/utils/platform_utils.dart';
+import 'package:Outrun VPN/core/directories/directories_provider.dart';
+import 'package:Outrun VPN/core/logger/core_logger.dart';
+import 'package:Outrun VPN/core/notification/in_app_notification_controller.dart';
+import 'package:Outrun VPN/features/connection/model/connection_failure.dart';
+import 'package:Outrun VPN/features/log/model/log_level.dart' as config_log_level;
+import 'package:Outrun VPN/features/settings/data/config_option_repository.dart';
+import 'package:Outrun VPN/Outrun VPNcore/core_interface/core_interface_wrapper_stub.dart'
+    if (dart.library.io) 'package:Outrun VPN/Outrun VPNcore/core_interface/core_interface_wrapper.dart';
+import 'package:Outrun VPN/Outrun VPNcore/generated/v2/hcommon/common.pb.dart';
+import 'package:Outrun VPN/Outrun VPNcore/generated/v2/hcore/hcore.pb.dart';
+import 'package:Outrun VPN/Outrun VPNcore/generated/v2/hcore/hcore_service.pbgrpc.dart';
+import 'package:Outrun VPN/Outrun VPNcore/init_signal.dart';
+import 'package:Outrun VPN/singbox/model/core_status.dart';
+import 'package:Outrun VPN/singbox/model/singbox_config_option.dart';
+import 'package:Outrun VPN/utils/custom_loggers.dart';
+import 'package:Outrun VPN/utils/platform_utils.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:logging/logging.dart' as logging;
 import 'package:rxdart/rxdart.dart';
 
-class HiddifyCoreService with InfraLogger {
-  HiddifyCoreService(this.ref);
+class Outrun VPNCoreService with InfraLogger {
+  Outrun VPNCoreService(this.ref);
   final Ref ref;
 
-  // CoreHiddifyCoreService() {}
+  // CoreOutrun VPNCoreService() {}
   final core = getCoreInterface();
 
   CoreStatus currentState = const CoreStatus.stopped();
@@ -46,7 +46,7 @@ class HiddifyCoreService with InfraLogger {
           ref.read(inAppNotificationControllerProvider).showErrorToast(e);
         })
         .map((_) {
-          loggy.info("Hiddify-core setup done");
+          loggy.info("Outrun VPN-core setup done");
           ref.read(coreRestartSignalProvider.notifier).restart();
         })
         .run();
@@ -111,12 +111,12 @@ class HiddifyCoreService with InfraLogger {
       loggy.debug("changing options");
       // latestOptions = options;
       try {
-        final res = await core.fgClient.changeHiddifySettings(
-          ChangeHiddifySettingsRequest(hiddifySettingsJson: jsonEncode(options.toJson())),
+        final res = await core.fgClient.changeOutrun VPNSettings(
+          ChangeOutrun VPNSettingsRequest(Outrun VPNSettingsJson: jsonEncode(options.toJson())),
         );
         if (res.messageType != MessageType.EMPTY) return left("${res.messageType} ${res.message}");
-        await core.bgClient.changeHiddifySettings(
-          ChangeHiddifySettingsRequest(hiddifySettingsJson: jsonEncode(options.toJson())),
+        await core.bgClient.changeOutrun VPNSettings(
+          ChangeOutrun VPNSettingsRequest(Outrun VPNSettingsJson: jsonEncode(options.toJson())),
         );
       } on GrpcError catch (e) {
         if (e.code == StatusCode.unavailable) {
@@ -150,9 +150,9 @@ class HiddifyCoreService with InfraLogger {
         await startListeningStatus("bg", core.bgClient);
       }
       // if (latestOptions != null) {
-      //   await core.bgClient.changeHiddifySettings(
-      //     ChangeHiddifySettingsRequest(
-      //       hiddifySettingsJson: jsonEncode(latestOptions!.toJson()),
+      //   await core.bgClient.changeOutrun VPNSettings(
+      //     ChangeOutrun VPNSettingsRequest(
+      //       Outrun VPNSettingsJson: jsonEncode(latestOptions!.toJson()),
       //     ),
       //   );
       // }

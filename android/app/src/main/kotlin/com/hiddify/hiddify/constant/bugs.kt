@@ -1,8 +1,8 @@
-package com.hiddify.hiddify.constant
+package com.Outrun VPN.Outrun VPN.constant
 
 
 import android.os.Build
-import com.hiddify.hiddify.BuildConfig
+import com.Outrun VPN.Outrun VPN.BuildConfig
 
 
 object Bugs {

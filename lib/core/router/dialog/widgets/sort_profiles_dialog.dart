@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:hiddify/core/localization/translations.dart';
-import 'package:hiddify/core/model/constants.dart';
-import 'package:hiddify/features/profile/model/profile_sort_enum.dart';
-import 'package:hiddify/features/profile/overview/profiles_notifier.dart';
+import 'package:Outrun VPN/core/localization/translations.dart';
+import 'package:Outrun VPN/core/model/constants.dart';
+import 'package:Outrun VPN/features/profile/model/profile_sort_enum.dart';
+import 'package:Outrun VPN/features/profile/overview/profiles_notifier.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class SortProfilesDialog extends HookConsumerWidget {

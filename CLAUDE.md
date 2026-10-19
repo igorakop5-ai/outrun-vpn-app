@@ -1,4 +1,4 @@
-# Hiddify App — Claude project instructions
+# Outrun VPN App — Claude project instructions
 
 ## Controlling the app
 
@@ -31,7 +31,7 @@ Project setup:
 
 ### Working on translations
 
-- **Context first.** Hiddify is a **v2ray / VPN client**. Translate every string in that context.
+- **Context first.** Outrun VPN is a **v2ray / VPN client**. Translate every string in that context.
 - **Read before you write.** The docs linked below: slang for the JSON syntax, the M3 files for the
   wording, the M1 files for what M3 does not cover. **M3 wins wherever the two disagree.**
 - **English first.** Write the `en` string, then translate the other 10 locales from that English

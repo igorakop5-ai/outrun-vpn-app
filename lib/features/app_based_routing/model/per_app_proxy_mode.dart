@@ -1,4 +1,4 @@
-import 'package:hiddify/core/localization/translations.dart';
+import 'package:Outrun VPN/core/localization/translations.dart';
 
 enum AppProxyMode {
   include,

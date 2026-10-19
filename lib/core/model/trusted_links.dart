@@ -4,7 +4,7 @@
 /// warning (with a countdown) for everything else.
 ///
 /// Why: scammers publish look-alike channels/sites (e.g. `t.me/Hiddiify` vs the
-/// real `t.me/hiddify`) inside fake subscriptions to steal donations. Only links
+/// real `t.me/Outrun VPN`) inside fake subscriptions to steal donations. Only links
 /// that exactly match an entry here are treated as trusted.
 ///
 /// The list is managed by the project manager. It is static for now and may
@@ -17,14 +17,14 @@
 /// - a trailing `/` and any `#fragment` are removed,
 /// - the path and query are compared exactly (case-sensitive).
 ///
-/// So `t.me/hiddify` matches `https://t.me/hiddify/` and `https://www.t.me/hiddify`,
-/// but NOT `t.me/hiddify/123`, `t.me/hiddify?x=1`, or the look-alike `t.me/Hiddiify`.
+/// So `t.me/Outrun VPN` matches `https://t.me/Outrun VPN/` and `https://www.t.me/Outrun VPN`,
+/// but NOT `t.me/Outrun VPN/123`, `t.me/Outrun VPN?x=1`, or the look-alike `t.me/Hiddiify`.
 abstract class TrustedLinks {
-  /// TODO(pm): test seed — Hiddify only. Complete later (e.g. MahsaNET, IRCF, …).
+  /// TODO(pm): test seed — Outrun VPN only. Complete later (e.g. MahsaNET, IRCF, …).
   static const List<String> entries = [
-    'hiddify.com',
-    'github.com/hiddify',
-    't.me/hiddify',
+    'Outrun VPN.com',
+    'github.com/Outrun VPN',
+    't.me/Outrun VPN',
   ];
 
   static final Set<String> _normalizedEntries = entries.map(_normalize).whereType<String>().toSet();
@@ -39,7 +39,7 @@ abstract class TrustedLinks {
   static String? _normalize(String url) {
     var raw = url.trim();
     if (raw.isEmpty) return null;
-    // Allow entries/links written without a scheme, e.g. `t.me/hiddify`.
+    // Allow entries/links written without a scheme, e.g. `t.me/Outrun VPN`.
     if (!raw.contains('://')) raw = 'https://$raw';
     final uri = Uri.tryParse(raw);
     if (uri == null || uri.host.isEmpty) return null;

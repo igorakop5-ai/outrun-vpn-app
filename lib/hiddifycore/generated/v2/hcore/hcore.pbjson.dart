@@ -548,22 +548,22 @@ final $typed_data.Uint8List parseResponseDescriptor = $convert.base64Decode(
     'NlQ29kZVIMcmVzcG9uc2VDb2RlEhgKB2NvbnRlbnQYAiABKAlSB2NvbnRlbnQSGAoHbWVzc2Fn'
     'ZRgDIAEoCVIHbWVzc2FnZQ==');
 
-@$core.Deprecated('Use changeHiddifySettingsRequestDescriptor instead')
-const ChangeHiddifySettingsRequest$json = {
-  '1': 'ChangeHiddifySettingsRequest',
+@$core.Deprecated('Use changeOutrun VPNSettingsRequestDescriptor instead')
+const ChangeOutrun VPNSettingsRequest$json = {
+  '1': 'ChangeOutrun VPNSettingsRequest',
   '2': [
     {
-      '1': 'hiddify_settings_json',
+      '1': 'Outrun VPN_settings_json',
       '3': 1,
       '4': 1,
       '5': 9,
-      '10': 'hiddifySettingsJson'
+      '10': 'Outrun VPNSettingsJson'
     },
   ],
 };
 
-/// Descriptor for `ChangeHiddifySettingsRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List changeHiddifySettingsRequestDescriptor =
+/// Descriptor for `ChangeOutrun VPNSettingsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List changeOutrun VPNSettingsRequestDescriptor =
     $convert.base64Decode(
         'ChxDaGFuZ2VIaWRkaWZ5U2V0dGluZ3NSZXF1ZXN0EjIKFWhpZGRpZnlfc2V0dGluZ3NfanNvbh'
         'gBIAEoCVITaGlkZGlmeVNldHRpbmdzSnNvbg==');

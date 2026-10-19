@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:hiddify/core/localization/translations.dart';
-import 'package:hiddify/core/preferences/general_preferences.dart';
-import 'package:hiddify/features/app_based_routing/model/app_package_info.dart';
-import 'package:hiddify/features/app_based_routing/overview/app_list_notifier.dart';
-import 'package:hiddify/features/settings/data/config_option_repository.dart';
+import 'package:Outrun VPN/core/localization/translations.dart';
+import 'package:Outrun VPN/core/preferences/general_preferences.dart';
+import 'package:Outrun VPN/features/app_based_routing/model/app_package_info.dart';
+import 'package:Outrun VPN/features/app_based_routing/overview/app_list_notifier.dart';
+import 'package:Outrun VPN/features/settings/data/config_option_repository.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 /// Shows exactly what Share sends and where, before anything leaves the app.

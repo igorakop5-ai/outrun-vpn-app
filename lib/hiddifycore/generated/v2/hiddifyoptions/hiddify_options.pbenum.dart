@@ -1,6 +1,6 @@
 // This is a generated file - do not edit.
 //
-// Generated from v2/hiddifyoptions/hiddify_options.proto.
+// Generated from v2/Outrun VPNoptions/Outrun VPN_options.proto.
 
 // @dart = 3.3
 

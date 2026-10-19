@@ -1,4 +1,4 @@
-package com.hiddify.hiddify.bg
+package com.Outrun VPN.Outrun VPN.bg
 
 import android.annotation.TargetApi
 import android.net.ConnectivityManager
@@ -8,7 +8,7 @@ import android.net.NetworkRequest
 import android.os.Build
 import android.os.Handler
 import android.os.Looper
-import com.hiddify.hiddify.Application
+import com.Outrun VPN.Outrun VPN.Application
 import kotlinx.coroutines.CompletableDeferred
 import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.Dispatchers

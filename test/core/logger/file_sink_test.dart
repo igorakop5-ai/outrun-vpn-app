@@ -1,14 +1,14 @@
 import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:hiddify/core/logger/sinks/file_sink_io.dart';
+import 'package:Outrun VPN/core/logger/sinks/file_sink_io.dart';
 
 void main() {
   late Directory dir;
   late File file;
 
   setUp(() async {
-    dir = await Directory.systemTemp.createTemp('hiddify_log_sink');
+    dir = await Directory.systemTemp.createTemp('Outrun VPN_log_sink');
     file = File('${dir.path}/app.log');
   });
 

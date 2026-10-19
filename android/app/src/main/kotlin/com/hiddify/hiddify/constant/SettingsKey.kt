@@ -1,4 +1,4 @@
-package com.hiddify.hiddify.constant
+package com.Outrun VPN.Outrun VPN.constant
 
 object SettingsKey {
     private const val KEY_PREFIX = "flutter."

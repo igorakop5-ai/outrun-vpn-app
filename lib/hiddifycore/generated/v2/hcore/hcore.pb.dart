@@ -1688,64 +1688,64 @@ class ParseResponse extends $pb.GeneratedMessage {
   void clearMessage() => $_clearField(3);
 }
 
-class ChangeHiddifySettingsRequest extends $pb.GeneratedMessage {
-  factory ChangeHiddifySettingsRequest({
-    $core.String? hiddifySettingsJson,
+class ChangeOutrun VPNSettingsRequest extends $pb.GeneratedMessage {
+  factory ChangeOutrun VPNSettingsRequest({
+    $core.String? Outrun VPNSettingsJson,
   }) {
     final result = create();
-    if (hiddifySettingsJson != null)
-      result.hiddifySettingsJson = hiddifySettingsJson;
+    if (Outrun VPNSettingsJson != null)
+      result.Outrun VPNSettingsJson = Outrun VPNSettingsJson;
     return result;
   }
 
-  ChangeHiddifySettingsRequest._();
+  ChangeOutrun VPNSettingsRequest._();
 
-  factory ChangeHiddifySettingsRequest.fromBuffer($core.List<$core.int> data,
+  factory ChangeOutrun VPNSettingsRequest.fromBuffer($core.List<$core.int> data,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
       create()..mergeFromBuffer(data, registry);
-  factory ChangeHiddifySettingsRequest.fromJson($core.String json,
+  factory ChangeOutrun VPNSettingsRequest.fromJson($core.String json,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
       create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
-      _omitMessageNames ? '' : 'ChangeHiddifySettingsRequest',
+      _omitMessageNames ? '' : 'ChangeOutrun VPNSettingsRequest',
       package: const $pb.PackageName(_omitMessageNames ? '' : 'hcore'),
       createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'hiddifySettingsJson')
+    ..aOS(1, _omitFieldNames ? '' : 'Outrun VPNSettingsJson')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ChangeHiddifySettingsRequest clone() => deepCopy();
+  ChangeOutrun VPNSettingsRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ChangeHiddifySettingsRequest copyWith(
-          void Function(ChangeHiddifySettingsRequest) updates) =>
+  ChangeOutrun VPNSettingsRequest copyWith(
+          void Function(ChangeOutrun VPNSettingsRequest) updates) =>
       super.copyWith(
-              (message) => updates(message as ChangeHiddifySettingsRequest))
-          as ChangeHiddifySettingsRequest;
+              (message) => updates(message as ChangeOutrun VPNSettingsRequest))
+          as ChangeOutrun VPNSettingsRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static ChangeHiddifySettingsRequest create() =>
-      ChangeHiddifySettingsRequest._();
+  static ChangeOutrun VPNSettingsRequest create() =>
+      ChangeOutrun VPNSettingsRequest._();
   @$core.override
-  ChangeHiddifySettingsRequest createEmptyInstance() => create();
-  static $pb.PbList<ChangeHiddifySettingsRequest> createRepeated() =>
-      $pb.PbList<ChangeHiddifySettingsRequest>();
+  ChangeOutrun VPNSettingsRequest createEmptyInstance() => create();
+  static $pb.PbList<ChangeOutrun VPNSettingsRequest> createRepeated() =>
+      $pb.PbList<ChangeOutrun VPNSettingsRequest>();
   @$core.pragma('dart2js:noInline')
-  static ChangeHiddifySettingsRequest getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<ChangeHiddifySettingsRequest>(create);
-  static ChangeHiddifySettingsRequest? _defaultInstance;
+  static ChangeOutrun VPNSettingsRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ChangeOutrun VPNSettingsRequest>(create);
+  static ChangeOutrun VPNSettingsRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.String get hiddifySettingsJson => $_getSZ(0);
+  $core.String get Outrun VPNSettingsJson => $_getSZ(0);
   @$pb.TagNumber(1)
-  set hiddifySettingsJson($core.String value) => $_setString(0, value);
+  set Outrun VPNSettingsJson($core.String value) => $_setString(0, value);
   @$pb.TagNumber(1)
-  $core.bool hasHiddifySettingsJson() => $_has(0);
+  $core.bool hasOutrun VPNSettingsJson() => $_has(0);
   @$pb.TagNumber(1)
-  void clearHiddifySettingsJson() => $_clearField(1);
+  void clearOutrun VPNSettingsJson() => $_clearField(1);
 }
 
 class GenerateConfigRequest extends $pb.GeneratedMessage {

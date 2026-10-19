@@ -4,16 +4,16 @@ import 'dart:io';
 import 'package:dartx/dartx.dart';
 import 'package:dio/dio.dart';
 import 'package:fpdart/fpdart.dart';
-import 'package:hiddify/core/db/db.dart';
-import 'package:hiddify/core/http_client/dio_http_client.dart';
-import 'package:hiddify/core/model/optional_range.dart';
-import 'package:hiddify/features/profile/data/profile_data_mapper.dart';
-import 'package:hiddify/features/profile/model/profile_entity.dart';
-import 'package:hiddify/features/profile/model/profile_failure.dart';
-import 'package:hiddify/features/settings/data/config_option_repository.dart';
-import 'package:hiddify/singbox/model/singbox_config_enum.dart';
-import 'package:hiddify/singbox/model/singbox_proxy_type.dart';
-import 'package:hiddify/utils/utils.dart';
+import 'package:Outrun VPN/core/db/db.dart';
+import 'package:Outrun VPN/core/http_client/dio_http_client.dart';
+import 'package:Outrun VPN/core/model/optional_range.dart';
+import 'package:Outrun VPN/features/profile/data/profile_data_mapper.dart';
+import 'package:Outrun VPN/features/profile/model/profile_entity.dart';
+import 'package:Outrun VPN/features/profile/model/profile_failure.dart';
+import 'package:Outrun VPN/features/settings/data/config_option_repository.dart';
+import 'package:Outrun VPN/singbox/model/singbox_config_enum.dart';
+import 'package:Outrun VPN/singbox/model/singbox_proxy_type.dart';
+import 'package:Outrun VPN/utils/utils.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:meta/meta.dart';
 
@@ -38,7 +38,7 @@ class ProfileParser with InfraLogger {
   // missing). It MUST stay above the 10 TB "unlimited" threshold the UI uses to decide whether to show
   // "∞" (isInfinitSize() in lib/utils/number_formatters.dart, and profile_tile.dart). The previous
   // value (~857 GiB) was below that gate, so total=0 rendered as a finite cap / "quota exceeded".
-  // See https://github.com/hiddify/hiddify-app/issues/1974 . 1000 TiB.
+  // See https://github.com/Outrun VPN/Outrun VPN-app/issues/1974 . 1000 TiB.
   static const infiniteTrafficThreshold = 1_099_511_627_776_000;
   static const infiniteTimeThreshold = 92_233_720_368;
   static const allowedOverrideConfigs = [
@@ -163,7 +163,7 @@ class ProfileParser with InfraLogger {
           tempFilePath,
           cancelToken: cancelToken,
           userAgent: _ref.read(ConfigOptions.useXrayCoreWhenPossible)
-              ? _httpClient.userAgent.replaceAll("HiddifyNext", "HiddifyNextX")
+              ? _httpClient.userAgent.replaceAll("Outrun VPNNext", "Outrun VPNNextX")
               : null,
         )
         .catchError((err) {
@@ -207,7 +207,7 @@ class ProfileParser with InfraLogger {
             line.trimRight(),
             cancelToken: cancelToken,
             userAgent: _ref.read(ConfigOptions.useXrayCoreWhenPossible)
-                ? _httpClient.userAgent.replaceAll('HiddifyNext', 'HiddifyNextX')
+                ? _httpClient.userAgent.replaceAll('Outrun VPNNext', 'Outrun VPNNextX')
                 : null,
             responseType: ResponseType.plain,
           );

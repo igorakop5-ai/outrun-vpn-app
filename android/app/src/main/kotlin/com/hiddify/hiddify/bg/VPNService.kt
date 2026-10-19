@@ -1,7 +1,7 @@
-package com.hiddify.hiddify.bg
+package com.Outrun VPN.Outrun VPN.bg
 import android.util.Log
 
-import com.hiddify.hiddify.Settings
+import com.Outrun VPN.Outrun VPN.Settings
 import android.content.Intent
 import android.content.pm.PackageManager.NameNotFoundException
 import android.net.ProxyInfo
@@ -9,11 +9,11 @@ import android.net.VpnService
 import android.os.Build
 import android.os.IBinder
 import android.os.ParcelFileDescriptor
-import com.hiddify.core.libbox.Libbox
-import com.hiddify.core.libbox.Notification
-import com.hiddify.hiddify.constant.PerAppProxyMode
-import com.hiddify.hiddify.ktx.toIpPrefix
-import com.hiddify.core.libbox.TunOptions
+import com.Outrun VPN.core.libbox.Libbox
+import com.Outrun VPN.core.libbox.Notification
+import com.Outrun VPN.Outrun VPN.constant.PerAppProxyMode
+import com.Outrun VPN.Outrun VPN.ktx.toIpPrefix
+import com.Outrun VPN.core.libbox.TunOptions
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.withContext
@@ -93,7 +93,7 @@ class VPNService : VpnService(), PlatformInterfaceWrapper {
 //        service.fileDescriptor?.close()
 
         val builder = Builder()
-            .setSession("hiddify")
+            .setSession("Outrun VPN")
             .setMtu(options.mtu)
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {

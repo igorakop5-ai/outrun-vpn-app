@@ -1,4 +1,4 @@
-package com.hiddify.hiddify
+package com.Outrun VPN.Outrun VPN
 
 import android.app.Application
 import android.app.NotificationManager
@@ -8,9 +8,9 @@ import android.content.IntentFilter
 import android.net.ConnectivityManager
 import android.os.PowerManager
 import androidx.core.content.getSystemService
-import com.hiddify.hiddify.bg.AppChangeReceiver
+import com.Outrun VPN.Outrun VPN.bg.AppChangeReceiver
 import go.Seq
-import com.hiddify.hiddify.Application as BoxApplication
+import com.Outrun VPN.Outrun VPN.Application as BoxApplication
 
 class Application : Application() {
 

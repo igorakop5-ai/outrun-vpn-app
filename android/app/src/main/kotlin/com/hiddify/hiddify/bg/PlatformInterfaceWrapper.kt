@@ -1,4 +1,4 @@
-package com.hiddify.hiddify.bg
+package com.Outrun VPN.Outrun VPN.bg
 
 import android.annotation.SuppressLint
 import android.content.pm.PackageManager
@@ -7,34 +7,34 @@ import android.os.Build
 import android.os.Process
 import android.util.Log
 import androidx.annotation.RequiresApi
-import com.hiddify.hiddify.Application
-import com.hiddify.core.libbox.InterfaceUpdateListener
-import com.hiddify.core.libbox.Libbox
-import com.hiddify.core.libbox.NetworkInterfaceIterator
-import com.hiddify.core.libbox.PlatformInterface
-import com.hiddify.core.libbox.StringIterator
-import com.hiddify.core.libbox.TunOptions
-import com.hiddify.core.libbox.WIFIState
+import com.Outrun VPN.Outrun VPN.Application
+import com.Outrun VPN.core.libbox.InterfaceUpdateListener
+import com.Outrun VPN.core.libbox.Libbox
+import com.Outrun VPN.core.libbox.NetworkInterfaceIterator
+import com.Outrun VPN.core.libbox.PlatformInterface
+import com.Outrun VPN.core.libbox.StringIterator
+import com.Outrun VPN.core.libbox.TunOptions
+import com.Outrun VPN.core.libbox.WIFIState
 import java.net.Inet6Address
 import java.net.InetSocketAddress
 import java.net.InterfaceAddress
 import java.net.NetworkInterface
 import java.util.Enumeration
-import com.hiddify.core.libbox.NetworkInterface as LibboxNetworkInterface
+import com.Outrun VPN.core.libbox.NetworkInterface as LibboxNetworkInterface
 
 
 
 import android.system.OsConstants
-import com.hiddify.core.libbox.ConnectionOwner
-import com.hiddify.core.libbox.AutoRedirectHandler
-import com.hiddify.core.libbox.AutoRedirectSession
-import com.hiddify.core.libbox.BridgeOptions
-import com.hiddify.core.libbox.BridgeSession
-import com.hiddify.core.libbox.NeighborUpdateListener
-import com.hiddify.core.libbox.PlatformUser
-import com.hiddify.core.libbox.ShellSession
-import com.hiddify.core.libbox.StringBox
-import com.hiddify.core.libbox.LocalDNSTransport
+import com.Outrun VPN.core.libbox.ConnectionOwner
+import com.Outrun VPN.core.libbox.AutoRedirectHandler
+import com.Outrun VPN.core.libbox.AutoRedirectSession
+import com.Outrun VPN.core.libbox.BridgeOptions
+import com.Outrun VPN.core.libbox.BridgeSession
+import com.Outrun VPN.core.libbox.NeighborUpdateListener
+import com.Outrun VPN.core.libbox.PlatformUser
+import com.Outrun VPN.core.libbox.ShellSession
+import com.Outrun VPN.core.libbox.StringBox
+import com.Outrun VPN.core.libbox.LocalDNSTransport
 import java.security.KeyStore
 import kotlin.io.encoding.Base64
 import kotlin.io.encoding.ExperimentalEncodingApi
@@ -184,7 +184,7 @@ interface PlatformInterfaceWrapper : PlatformInterface {
     }
 
     // Neighbor monitor, platform shell, bridge and auto-redirect need root helpers
-    // (RootClient in sing-box-for-android) which Hiddify does not ship; keep them disabled.
+    // (RootClient in sing-box-for-android) which Outrun VPN does not ship; keep them disabled.
     override fun startNeighborMonitor(listener: NeighborUpdateListener?) {
     }
 

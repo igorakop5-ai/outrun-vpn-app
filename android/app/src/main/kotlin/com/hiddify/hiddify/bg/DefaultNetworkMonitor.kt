@@ -1,10 +1,10 @@
-package com.hiddify.hiddify.bg
+package com.Outrun VPN.Outrun VPN.bg
 
 import android.net.Network
 import android.os.Build
-import com.hiddify.hiddify.Application
-import com.hiddify.core.libbox.InterfaceUpdateListener
-import com.hiddify.hiddify.constant.Bugs
+import com.Outrun VPN.Outrun VPN.Application
+import com.Outrun VPN.core.libbox.InterfaceUpdateListener
+import com.Outrun VPN.Outrun VPN.constant.Bugs
 
 
 import kotlinx.coroutines.Dispatchers

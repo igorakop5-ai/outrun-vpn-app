@@ -1,4 +1,4 @@
-package com.hiddify.hiddify.constant
+package com.Outrun VPN.Outrun VPN.constant
 
 object ServiceMode {
     const val NORMAL = "proxy"

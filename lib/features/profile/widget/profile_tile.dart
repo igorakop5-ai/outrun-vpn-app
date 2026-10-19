@@ -4,21 +4,21 @@ import 'package:flutter/services.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
-import 'package:hiddify/core/localization/translations.dart';
-import 'package:hiddify/core/model/constants.dart';
-import 'package:hiddify/core/model/failures.dart';
-import 'package:hiddify/core/model/trusted_links.dart';
-import 'package:hiddify/core/notification/in_app_notification_controller.dart';
-import 'package:hiddify/core/router/bottom_sheets/bottom_sheets_notifier.dart';
-import 'package:hiddify/core/router/dialog/dialog_notifier.dart';
-import 'package:hiddify/core/router/go_router/helper/active_breakpoint_notifier.dart';
-import 'package:hiddify/core/widget/adaptive_icon.dart';
-import 'package:hiddify/core/widget/adaptive_menu.dart';
-import 'package:hiddify/features/profile/model/profile_entity.dart';
-import 'package:hiddify/features/profile/notifier/profile_notifier.dart';
-import 'package:hiddify/features/profile/overview/profiles_notifier.dart';
-import 'package:hiddify/gen/fonts.gen.dart';
-import 'package:hiddify/utils/utils.dart';
+import 'package:Outrun VPN/core/localization/translations.dart';
+import 'package:Outrun VPN/core/model/constants.dart';
+import 'package:Outrun VPN/core/model/failures.dart';
+import 'package:Outrun VPN/core/model/trusted_links.dart';
+import 'package:Outrun VPN/core/notification/in_app_notification_controller.dart';
+import 'package:Outrun VPN/core/router/bottom_sheets/bottom_sheets_notifier.dart';
+import 'package:Outrun VPN/core/router/dialog/dialog_notifier.dart';
+import 'package:Outrun VPN/core/router/go_router/helper/active_breakpoint_notifier.dart';
+import 'package:Outrun VPN/core/widget/adaptive_icon.dart';
+import 'package:Outrun VPN/core/widget/adaptive_menu.dart';
+import 'package:Outrun VPN/features/profile/model/profile_entity.dart';
+import 'package:Outrun VPN/features/profile/notifier/profile_notifier.dart';
+import 'package:Outrun VPN/features/profile/overview/profiles_notifier.dart';
+import 'package:Outrun VPN/gen/fonts.gen.dart';
+import 'package:Outrun VPN/utils/utils.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:simple_icons/simple_icons.dart';
 
@@ -441,7 +441,7 @@ class ProfileLinkButtons extends HookConsumerWidget {
 
   /// Top-line label:
   /// - Telegram (`t.me` / `telegram.me`): the path after the host, which covers
-  ///   every form — `hiddify`, `c/2681822178/1`, `joinchat/xxx`, `+xxx`.
+  ///   every form — `Outrun VPN`, `c/2681822178/1`, `joinchat/xxx`, `+xxx`.
   /// - GitHub: the provider (repo owner) — e.g. `barry-far`.
   /// - anything else: the domain.
   static String _value(String url) {

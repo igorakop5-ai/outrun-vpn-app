@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'dart:io';
 
-import 'package:hiddify/core/app_info/app_info_provider.dart';
-import 'package:hiddify/utils/utils.dart';
+import 'package:Outrun VPN/core/app_info/app_info_provider.dart';
+import 'package:Outrun VPN/utils/utils.dart';
 import 'package:launch_at_startup/launch_at_startup.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
@@ -19,7 +19,7 @@ class AutoStartNotifier extends _$AutoStartNotifier with InfraLogger {
     launchAtStartup.setup(
       appName: appInfo.name,
       appPath: Platform.resolvedExecutable,
-      packageName: "Hiddify.HiddifyNext",
+      packageName: "Outrun VPN.Outrun VPNNext",
     );
     final isEnabled = await launchAtStartup.isEnabled();
     loggy.info("auto start is [${isEnabled ? "Enabled" : "Disabled"}]");

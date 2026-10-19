@@ -1,4 +1,4 @@
-package com.hiddify.hiddify;
+package com.Outrun VPN.Outrun VPN;
 
 interface IServiceCallback {
   void onServiceStatusChanged(int status);

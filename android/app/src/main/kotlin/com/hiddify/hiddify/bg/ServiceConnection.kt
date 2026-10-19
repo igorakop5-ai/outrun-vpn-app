@@ -1,11 +1,11 @@
-package com.hiddify.hiddify.bg
+package com.Outrun VPN.Outrun VPN.bg
 
-import com.hiddify.hiddify.IService
-import com.hiddify.hiddify.IServiceCallback
-import com.hiddify.hiddify.Settings
-import com.hiddify.hiddify.constant.Action
-import com.hiddify.hiddify.constant.Alert
-import com.hiddify.hiddify.constant.Status
+import com.Outrun VPN.Outrun VPN.IService
+import com.Outrun VPN.Outrun VPN.IServiceCallback
+import com.Outrun VPN.Outrun VPN.Settings
+import com.Outrun VPN.Outrun VPN.constant.Action
+import com.Outrun VPN.Outrun VPN.constant.Alert
+import com.Outrun VPN.Outrun VPN.constant.Status
 import android.content.ComponentName
 import android.content.Context
 import android.content.Intent

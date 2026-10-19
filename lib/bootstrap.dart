@@ -4,32 +4,32 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_displaymode/flutter_displaymode.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
-import 'package:hiddify/core/analytics/analytics_controller.dart';
-import 'package:hiddify/core/app_info/app_info_provider.dart';
-import 'package:hiddify/core/directories/directories_provider.dart';
-import 'package:hiddify/core/localization/translations.dart';
-import 'package:hiddify/core/logger/logger.dart';
-import 'package:hiddify/core/logger/logger_setup.dart';
-import 'package:hiddify/core/model/environment.dart';
-import 'package:hiddify/core/preferences/general_preferences.dart';
-import 'package:hiddify/core/preferences/preferences_migration.dart';
-import 'package:hiddify/core/preferences/preferences_provider.dart';
-import 'package:hiddify/features/app/widget/app.dart';
-import 'package:hiddify/features/auto_start/notifier/auto_start_notifier.dart';
-import 'package:hiddify/features/chain/model/chain_enum.dart';
-import 'package:hiddify/features/chain/notifier/chain_profile_notifier.dart';
+import 'package:Outrun VPN/core/analytics/analytics_controller.dart';
+import 'package:Outrun VPN/core/app_info/app_info_provider.dart';
+import 'package:Outrun VPN/core/directories/directories_provider.dart';
+import 'package:Outrun VPN/core/localization/translations.dart';
+import 'package:Outrun VPN/core/logger/logger.dart';
+import 'package:Outrun VPN/core/logger/logger_setup.dart';
+import 'package:Outrun VPN/core/model/environment.dart';
+import 'package:Outrun VPN/core/preferences/general_preferences.dart';
+import 'package:Outrun VPN/core/preferences/preferences_migration.dart';
+import 'package:Outrun VPN/core/preferences/preferences_provider.dart';
+import 'package:Outrun VPN/features/app/widget/app.dart';
+import 'package:Outrun VPN/features/auto_start/notifier/auto_start_notifier.dart';
+import 'package:Outrun VPN/features/chain/model/chain_enum.dart';
+import 'package:Outrun VPN/features/chain/notifier/chain_profile_notifier.dart';
 
-import 'package:hiddify/features/connection/notifier/connection_notifier.dart';
-import 'package:hiddify/features/log/data/log_data_providers.dart';
-import 'package:hiddify/features/profile/data/profile_data_providers.dart';
-import 'package:hiddify/features/profile/notifier/active_profile_notifier.dart';
-import 'package:hiddify/features/proxy/active/active_proxy_notifier.dart';
-import 'package:hiddify/features/settings/data/config_option_repository.dart';
-import 'package:hiddify/features/system_tray/notifier/system_tray_notifier.dart';
-import 'package:hiddify/features/window/notifier/window_notifier.dart';
-import 'package:hiddify/hiddifycore/hiddify_core_service_provider.dart';
-import 'package:hiddify/riverpod_observer.dart';
-import 'package:hiddify/utils/utils.dart';
+import 'package:Outrun VPN/features/connection/notifier/connection_notifier.dart';
+import 'package:Outrun VPN/features/log/data/log_data_providers.dart';
+import 'package:Outrun VPN/features/profile/data/profile_data_providers.dart';
+import 'package:Outrun VPN/features/profile/notifier/active_profile_notifier.dart';
+import 'package:Outrun VPN/features/proxy/active/active_proxy_notifier.dart';
+import 'package:Outrun VPN/features/settings/data/config_option_repository.dart';
+import 'package:Outrun VPN/features/system_tray/notifier/system_tray_notifier.dart';
+import 'package:Outrun VPN/features/window/notifier/window_notifier.dart';
+import 'package:Outrun VPN/Outrun VPNcore/Outrun VPN_core_service_provider.dart';
+import 'package:Outrun VPN/riverpod_observer.dart';
+import 'package:Outrun VPN/utils/utils.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:sentry_flutter/sentry_flutter.dart';
 
@@ -115,7 +115,7 @@ Future<void> lazyBootstrap(WidgetsBinding widgetsBinding, Environment env) async
     "chain profile unblocker",
     () => container.read(chainProfileNotifierProvider(ChainType.unblocker).future),
   );
-  await _safeInit("hiddify-core", () => container.read(hiddifyCoreServiceProvider).init());
+  await _safeInit("Outrun VPN-core", () => container.read(Outrun VPNCoreServiceProvider).init());
 
   // Eagerly listen to activeProxyNotifierProvider to force synchronous evaluation in microtasks,
   // avoiding lazy build-phase flushes and sibling dependency collisions on the Home page.

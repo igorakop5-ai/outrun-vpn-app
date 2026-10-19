@@ -97,11 +97,11 @@ class CoreClient extends $grpc.Client {
     return $createUnaryCall(_$parse, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.CoreInfoResponse> changeHiddifySettings(
-    $0.ChangeHiddifySettingsRequest request, {
+  $grpc.ResponseFuture<$0.CoreInfoResponse> changeOutrun VPNSettings(
+    $0.ChangeOutrun VPNSettingsRequest request, {
     $grpc.CallOptions? options,
   }) {
-    return $createUnaryCall(_$changeHiddifySettings, request, options: options);
+    return $createUnaryCall(_$changeOutrun VPNSettings, request, options: options);
   }
 
   /// rpc GenerateConfig (GenerateConfigRequest) returns (GenerateConfigResponse);
@@ -241,10 +241,10 @@ class CoreClient extends $grpc.Client {
       '/hcore.Core/Parse',
       ($0.ParseRequest value) => value.writeToBuffer(),
       $0.ParseResponse.fromBuffer);
-  static final _$changeHiddifySettings =
-      $grpc.ClientMethod<$0.ChangeHiddifySettingsRequest, $0.CoreInfoResponse>(
-          '/hcore.Core/ChangeHiddifySettings',
-          ($0.ChangeHiddifySettingsRequest value) => value.writeToBuffer(),
+  static final _$changeOutrun VPNSettings =
+      $grpc.ClientMethod<$0.ChangeOutrun VPNSettingsRequest, $0.CoreInfoResponse>(
+          '/hcore.Core/ChangeOutrun VPNSettings',
+          ($0.ChangeOutrun VPNSettingsRequest value) => value.writeToBuffer(),
           $0.CoreInfoResponse.fromBuffer);
   static final _$startService =
       $grpc.ClientMethod<$0.StartRequest, $0.CoreInfoResponse>(
@@ -368,14 +368,14 @@ abstract class CoreServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.ParseRequest.fromBuffer(value),
         ($0.ParseResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.ChangeHiddifySettingsRequest,
+    $addMethod($grpc.ServiceMethod<$0.ChangeOutrun VPNSettingsRequest,
             $0.CoreInfoResponse>(
-        'ChangeHiddifySettings',
-        changeHiddifySettings_Pre,
+        'ChangeOutrun VPNSettings',
+        changeOutrun VPNSettings_Pre,
         false,
         false,
         ($core.List<$core.int> value) =>
-            $0.ChangeHiddifySettingsRequest.fromBuffer(value),
+            $0.ChangeOutrun VPNSettingsRequest.fromBuffer(value),
         ($0.CoreInfoResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.StartRequest, $0.CoreInfoResponse>(
         'StartService',
@@ -539,14 +539,14 @@ abstract class CoreServiceBase extends $grpc.Service {
   $async.Future<$0.ParseResponse> parse(
       $grpc.ServiceCall call, $0.ParseRequest request);
 
-  $async.Future<$0.CoreInfoResponse> changeHiddifySettings_Pre(
+  $async.Future<$0.CoreInfoResponse> changeOutrun VPNSettings_Pre(
       $grpc.ServiceCall $call,
-      $async.Future<$0.ChangeHiddifySettingsRequest> $request) async {
-    return changeHiddifySettings($call, await $request);
+      $async.Future<$0.ChangeOutrun VPNSettingsRequest> $request) async {
+    return changeOutrun VPNSettings($call, await $request);
   }
 
-  $async.Future<$0.CoreInfoResponse> changeHiddifySettings(
-      $grpc.ServiceCall call, $0.ChangeHiddifySettingsRequest request);
+  $async.Future<$0.CoreInfoResponse> changeOutrun VPNSettings(
+      $grpc.ServiceCall call, $0.ChangeOutrun VPNSettingsRequest request);
 
   $async.Future<$0.CoreInfoResponse> startService_Pre(
       $grpc.ServiceCall $call, $async.Future<$0.StartRequest> $request) async {

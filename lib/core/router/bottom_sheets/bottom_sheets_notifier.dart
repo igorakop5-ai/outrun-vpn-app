@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:hiddify/core/localization/translations.dart';
-import 'package:hiddify/core/model/constants.dart';
-import 'package:hiddify/core/router/bottom_sheets/widgets/quick_settings_modal.dart';
-import 'package:hiddify/core/router/dialog/dialog_notifier.dart';
-import 'package:hiddify/core/router/go_router/go_router_notifier.dart';
-import 'package:hiddify/features/app_based_routing/model/app_package_info.dart';
-import 'package:hiddify/features/app_based_routing/overview/app_list_share_modal.dart';
-import 'package:hiddify/features/log/overview/logs_modals.dart';
-import 'package:hiddify/features/profile/add/add_profile_modal.dart';
-import 'package:hiddify/features/profile/overview/profiles_modal.dart';
-import 'package:hiddify/utils/link_parsers.dart';
+import 'package:Outrun VPN/core/localization/translations.dart';
+import 'package:Outrun VPN/core/model/constants.dart';
+import 'package:Outrun VPN/core/router/bottom_sheets/widgets/quick_settings_modal.dart';
+import 'package:Outrun VPN/core/router/dialog/dialog_notifier.dart';
+import 'package:Outrun VPN/core/router/go_router/go_router_notifier.dart';
+import 'package:Outrun VPN/features/app_based_routing/model/app_package_info.dart';
+import 'package:Outrun VPN/features/app_based_routing/overview/app_list_share_modal.dart';
+import 'package:Outrun VPN/features/log/overview/logs_modals.dart';
+import 'package:Outrun VPN/features/profile/add/add_profile_modal.dart';
+import 'package:Outrun VPN/features/profile/overview/profiles_modal.dart';
+import 'package:Outrun VPN/utils/link_parsers.dart';
 
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
@@ -46,7 +46,7 @@ class BottomSheetsNotifier extends _$BottomSheetsNotifier {
   }
 
   /// The host the deep link would actually fetch from, for the confirmation
-  /// message. [url] is the deep link itself (`hiddify://import/?url=...`), so
+  /// message. [url] is the deep link itself (`Outrun VPN://import/?url=...`), so
   /// its own host is always `import` — unwrap it to the subscription link first.
   String _deepLinkHost(String url) {
     final target = LinkParser.parse(url)?.url ?? url;

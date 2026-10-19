@@ -1,4 +1,4 @@
-package com.hiddify.hiddify
+package com.Outrun VPN.Outrun VPN
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -12,11 +12,11 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.lifecycleScope
-import com.hiddify.hiddify.bg.ServiceConnection
-import com.hiddify.hiddify.bg.ServiceNotification
-import com.hiddify.hiddify.constant.Alert
-import com.hiddify.hiddify.constant.ServiceMode
-import com.hiddify.hiddify.constant.Status
+import com.Outrun VPN.Outrun VPN.bg.ServiceConnection
+import com.Outrun VPN.Outrun VPN.bg.ServiceNotification
+import com.Outrun VPN.Outrun VPN.constant.Alert
+import com.Outrun VPN.Outrun VPN.constant.ServiceMode
+import com.Outrun VPN.Outrun VPN.constant.Status
 import io.flutter.embedding.android.FlutterFragmentActivity
 import io.flutter.embedding.engine.FlutterEngine
 import kotlinx.coroutines.Dispatchers

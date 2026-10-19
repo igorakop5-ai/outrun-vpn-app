@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:hiddify/utils/validators.dart';
+import 'package:Outrun VPN/utils/validators.dart';
 
 typedef ProfileLink = ({String url, String name});
 
@@ -14,7 +14,7 @@ abstract class LinkParser {
   }
 
   // protocols schemas
-  static const protocols = ['hiddify', 'v2ray', 'v2rayn', 'v2rayng', 'clash', 'clashmeta', 'sing-box'];
+  static const protocols = ['Outrun VPN', 'v2ray', 'v2rayn', 'v2rayng', 'clash', 'clashmeta', 'sing-box'];
 
   static ProfileLink? parse(String link) {
     return simple(link) ?? deep(link);
@@ -31,9 +31,9 @@ abstract class LinkParser {
     if (uri == null || !uri.hasScheme || !uri.hasAuthority) return null;
     final queryParams = uri.queryParameters;
     switch (uri.scheme) {
-      case 'hiddify':
+      case 'Outrun VPN':
         if (queryParams.containsKey('url')) {
-          // Doc form: hiddify://install-config?url=<uri>#<name> — the name lives
+          // Doc form: Outrun VPN://install-config?url=<uri>#<name> — the name lives
           // in the fragment. Prefer an explicit `name=` param, else the fragment.
           final name = (queryParams['name']?.isNotEmpty ?? false) ? queryParams['name']! : uri.fragment;
           return (url: queryParams['url']!, name: name);

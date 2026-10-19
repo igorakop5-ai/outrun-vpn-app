@@ -1,8 +1,8 @@
-package com.hiddify.hiddify.bg
+package com.Outrun VPN.Outrun VPN.bg
 
 import android.app.Service
 import android.content.Intent
-import com.hiddify.core.libbox.Notification
+import com.Outrun VPN.core.libbox.Notification
 
 class ProxyService :
     Service(),

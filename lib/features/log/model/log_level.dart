@@ -21,7 +21,7 @@ enum LogLevel {
 
   /// The core switches itself into debug mode at these levels — see
   /// `static.debug = static.debug || static.logLevel <= LogLevel_DEBUG` in
-  /// hiddify-core's buildconfighelper.go. Reading the same rule here keeps the
+  /// Outrun VPN-core's buildconfighelper.go. Reading the same rule here keeps the
   /// app's own debug decisions in step with the core's, from one setting.
   bool get isVerbose => index <= LogLevel.debug.index;
 

@@ -1,6 +1,6 @@
 {
   "common": {
-    "appTitle": "Hiddify",
+    "appTitle": "Outrun VPN",
     "start": "Начать",
     "version": "Версия",
     "ok": "OK",
@@ -102,7 +102,7 @@
   "intro": {
     "banner": "Все, что вам нужно для интернета без ограничений",
     "termsAndPolicyCaution(rich)": "Продолжая, вы соглашаетесь с ${tap(@:pages.about.termsAndConditions)}",
-    "info(rich)": "Сделано с ❤️ Hiddify. ${tap_source(Открытый исходный код)} и ${tap_license(Лицензия)}"
+    "info(rich)": "Сделано с ❤️ Outrun VPN. ${tap_source(Открытый исходный код)} и ${tap_license(Лицензия)}"
   },
   "pages": {
     "home": {
@@ -709,7 +709,7 @@
       "msg": "Начнем. Добавьте профиль подключения с данными вашего VPN-сервера.\n\nЕще нет сервера? Не проблема. Руководство ниже покажет, как бесплатно его настроить.",
       "helpBtn": {
         "label": "Покажите, как",
-        "url": "https://hiddify.com/manager/"
+        "url": "https://Outrun VPN.com/manager/"
       }
     },
     "unknownDomainsWarning": {

@@ -1,20 +1,20 @@
 import Foundation
-import HiddifyCore
+import Outrun VPNCore
 import NetworkExtension
 import os.log
 
 // Packet tunnel provider, following sing-box-for-apple's Library/Network/ExtensionProvider.swift,
-// adapted to Hiddify's model: the extension only sets up hiddify-core with its gRPC server
+// adapted to Outrun VPN's model: the extension only sets up Outrun VPN-core with its gRPC server
 // (MobileSetup); the app then starts the core through gRPC. The extension never starts the core
 // itself.
 open class ExtensionProvider: NEPacketTunnelProvider {
     public static let errorFile = FilePath.workingDirectory.appendingPathComponent("network_extension_error.log")
-    private let logger = Logger(subsystem: "apple.hiddify.com.HiddifyPacketTunnel", category: "PacketTunnel")
+    private let logger = Logger(subsystem: "apple.Outrun VPN.com.Outrun VPNPacketTunnel", category: "PacketTunnel")
 
     private var platformInterface: ExtensionPlatformInterface!
     public var tunnelOptions: [String: NSObject]?
 
-    // as sing-box-for-apple, with Hiddify's defaults; the app may override them in the start options
+    // as sing-box-for-apple, with Outrun VPN's defaults; the app may override them in the start options
     public struct OverridePreferences {
         public var includeAllNetworks: Bool = false
         public var systemProxyEnabled: Bool = false
@@ -64,7 +64,7 @@ open class ExtensionProvider: NEPacketTunnelProvider {
             platformInterface = ExtensionPlatformInterface(self)
         }
 
-        // hiddify-core with its gRPC server: the app starts the core through it
+        // Outrun VPN-core with its gRPC server: the app starts the core through it
         let setupOptions = MobileSetupOptions()
         setupOptions.basePath = FilePath.sharedDirectory.relativePath
         setupOptions.workingDir = FilePath.workingDirectory.relativePath

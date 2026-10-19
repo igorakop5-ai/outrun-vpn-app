@@ -1,10 +1,10 @@
-package com.hiddify.hiddify.bg
+package com.Outrun VPN.Outrun VPN.bg
 
 import android.os.RemoteCallbackList
 import androidx.lifecycle.MutableLiveData
-import com.hiddify.hiddify.IService
-import com.hiddify.hiddify.IServiceCallback
-import com.hiddify.hiddify.constant.Status
+import com.Outrun VPN.Outrun VPN.IService
+import com.Outrun VPN.Outrun VPN.IServiceCallback
+import com.Outrun VPN.Outrun VPN.constant.Status
 import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope

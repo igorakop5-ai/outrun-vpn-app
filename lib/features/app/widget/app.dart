@@ -5,24 +5,24 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:hiddify/core/localization/locale_extensions.dart';
-import 'package:hiddify/core/localization/locale_preferences.dart';
-import 'package:hiddify/core/localization/translations.dart';
-import 'package:hiddify/core/model/constants.dart';
-import 'package:hiddify/core/notification/in_app_notification_controller.dart';
-import 'package:hiddify/core/router/go_router/go_router_notifier.dart';
-import 'package:hiddify/core/router/go_router/helper/active_breakpoint_notifier.dart';
-import 'package:hiddify/core/theme/app_theme.dart';
-import 'package:hiddify/core/theme/theme_preferences.dart';
-import 'package:hiddify/features/app_based_routing/overview/app_based_routing_notifier.dart';
-import 'package:hiddify/features/app_update/notifier/app_update_notifier.dart';
-import 'package:hiddify/features/connection/widget/connection_wrapper.dart';
-import 'package:hiddify/features/profile/notifier/profiles_update_notifier.dart';
-import 'package:hiddify/features/shortcut/shortcut_wrapper.dart';
-import 'package:hiddify/features/system_tray/notifier/system_tray_notifier.dart';
-import 'package:hiddify/features/window/widget/window_wrapper.dart';
-import 'package:hiddify/hiddifycore/hiddify_core_service_provider.dart';
-import 'package:hiddify/utils/utils.dart';
+import 'package:Outrun VPN/core/localization/locale_extensions.dart';
+import 'package:Outrun VPN/core/localization/locale_preferences.dart';
+import 'package:Outrun VPN/core/localization/translations.dart';
+import 'package:Outrun VPN/core/model/constants.dart';
+import 'package:Outrun VPN/core/notification/in_app_notification_controller.dart';
+import 'package:Outrun VPN/core/router/go_router/go_router_notifier.dart';
+import 'package:Outrun VPN/core/router/go_router/helper/active_breakpoint_notifier.dart';
+import 'package:Outrun VPN/core/theme/app_theme.dart';
+import 'package:Outrun VPN/core/theme/theme_preferences.dart';
+import 'package:Outrun VPN/features/app_based_routing/overview/app_based_routing_notifier.dart';
+import 'package:Outrun VPN/features/app_update/notifier/app_update_notifier.dart';
+import 'package:Outrun VPN/features/connection/widget/connection_wrapper.dart';
+import 'package:Outrun VPN/features/profile/notifier/profiles_update_notifier.dart';
+import 'package:Outrun VPN/features/shortcut/shortcut_wrapper.dart';
+import 'package:Outrun VPN/features/system_tray/notifier/system_tray_notifier.dart';
+import 'package:Outrun VPN/features/window/widget/window_wrapper.dart';
+import 'package:Outrun VPN/Outrun VPNcore/Outrun VPN_core_service_provider.dart';
+import 'package:Outrun VPN/utils/utils.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:upgrader/upgrader.dart';
 
@@ -35,12 +35,12 @@ class App extends HookConsumerWidget with WidgetsBindingObserver, PresLogger {
   void onPause(WidgetRef ref) {
     if (PlatformUtils.isDesktop) return;
     isOnPauseCalled = true;
-    ref.read(hiddifyCoreServiceProvider).closeFront();
+    ref.read(Outrun VPNCoreServiceProvider).closeFront();
   }
 
   void onResume(WidgetRef ref) {
     // if (PlatformUtils.isDesktop) return;
-    ref.read(hiddifyCoreServiceProvider).init();
+    ref.read(Outrun VPNCoreServiceProvider).init();
 
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (isOnPauseCalled && PlatformUtils.isAndroid) ref.invalidate(appBasedRoutingProvider);

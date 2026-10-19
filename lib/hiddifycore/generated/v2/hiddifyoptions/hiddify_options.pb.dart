@@ -1,6 +1,6 @@
 // This is a generated file - do not edit.
 //
-// Generated from v2/hiddifyoptions/hiddify_options.proto.
+// Generated from v2/Outrun VPNoptions/Outrun VPN_options.proto.
 
 // @dart = 3.3
 
@@ -15,16 +15,16 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'hiddify_options.pbenum.dart';
+import 'Outrun VPN_options.pbenum.dart';
 
 export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
 
-export 'hiddify_options.pbenum.dart';
+export 'Outrun VPN_options.pbenum.dart';
 
 /// *
-///  HiddifyOptions defines the configuration options for the Hiddify application.
-class HiddifyOptions extends $pb.GeneratedMessage {
-  factory HiddifyOptions({
+///  Outrun VPNOptions defines the configuration options for the Outrun VPN application.
+class Outrun VPNOptions extends $pb.GeneratedMessage {
+  factory Outrun VPNOptions({
     $core.bool? enableFullConfig,
     $core.String? logLevel,
     $core.String? logFile,
@@ -67,18 +67,18 @@ class HiddifyOptions extends $pb.GeneratedMessage {
     return result;
   }
 
-  HiddifyOptions._();
+  Outrun VPNOptions._();
 
-  factory HiddifyOptions.fromBuffer($core.List<$core.int> data,
+  factory Outrun VPNOptions.fromBuffer($core.List<$core.int> data,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
       create()..mergeFromBuffer(data, registry);
-  factory HiddifyOptions.fromJson($core.String json,
+  factory Outrun VPNOptions.fromJson($core.String json,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
       create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
-      _omitMessageNames ? '' : 'HiddifyOptions',
-      package: const $pb.PackageName(_omitMessageNames ? '' : 'hiddifyoptions'),
+      _omitMessageNames ? '' : 'Outrun VPNOptions',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'Outrun VPNoptions'),
       createEmptyInstance: create)
     ..aOB(1, _omitFieldNames ? '' : 'enableFullConfig')
     ..aOS(2, _omitFieldNames ? '' : 'logLevel')
@@ -110,25 +110,25 @@ class HiddifyOptions extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  HiddifyOptions clone() => deepCopy();
+  Outrun VPNOptions clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  HiddifyOptions copyWith(void Function(HiddifyOptions) updates) =>
-      super.copyWith((message) => updates(message as HiddifyOptions))
-          as HiddifyOptions;
+  Outrun VPNOptions copyWith(void Function(Outrun VPNOptions) updates) =>
+      super.copyWith((message) => updates(message as Outrun VPNOptions))
+          as Outrun VPNOptions;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static HiddifyOptions create() => HiddifyOptions._();
+  static Outrun VPNOptions create() => Outrun VPNOptions._();
   @$core.override
-  HiddifyOptions createEmptyInstance() => create();
-  static $pb.PbList<HiddifyOptions> createRepeated() =>
-      $pb.PbList<HiddifyOptions>();
+  Outrun VPNOptions createEmptyInstance() => create();
+  static $pb.PbList<Outrun VPNOptions> createRepeated() =>
+      $pb.PbList<Outrun VPNOptions>();
   @$core.pragma('dart2js:noInline')
-  static HiddifyOptions getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<HiddifyOptions>(create);
-  static HiddifyOptions? _defaultInstance;
+  static Outrun VPNOptions getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<Outrun VPNOptions>(create);
+  static Outrun VPNOptions? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.bool get enableFullConfig => $_getBF(0);
@@ -328,7 +328,7 @@ class IntRange extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
       _omitMessageNames ? '' : 'IntRange',
-      package: const $pb.PackageName(_omitMessageNames ? '' : 'hiddifyoptions'),
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'Outrun VPNoptions'),
       createEmptyInstance: create)
     ..aI(1, _omitFieldNames ? '' : 'from')
     ..aI(2, _omitFieldNames ? '' : 'to')
@@ -409,7 +409,7 @@ class DNSOptions extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
       _omitMessageNames ? '' : 'DNSOptions',
-      package: const $pb.PackageName(_omitMessageNames ? '' : 'hiddifyoptions'),
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'Outrun VPNoptions'),
       createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'remoteDnsAddress')
     ..aE<DomainStrategy>(2, _omitFieldNames ? '' : 'remoteDnsDomainStrategy',
@@ -545,7 +545,7 @@ class InboundOptions extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
       _omitMessageNames ? '' : 'InboundOptions',
-      package: const $pb.PackageName(_omitMessageNames ? '' : 'hiddifyoptions'),
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'Outrun VPNoptions'),
       createEmptyInstance: create)
     ..aOB(1, _omitFieldNames ? '' : 'enableTun')
     ..aOB(2, _omitFieldNames ? '' : 'enableTunService')
@@ -696,7 +696,7 @@ class URLTestOptions extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
       _omitMessageNames ? '' : 'URLTestOptions',
-      package: const $pb.PackageName(_omitMessageNames ? '' : 'hiddifyoptions'),
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'Outrun VPNoptions'),
       createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'connectionTestUrl')
     ..aInt64(2, _omitFieldNames ? '' : 'urlTestInterval')
@@ -772,7 +772,7 @@ class RouteOptions extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
       _omitMessageNames ? '' : 'RouteOptions',
-      package: const $pb.PackageName(_omitMessageNames ? '' : 'hiddifyoptions'),
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'Outrun VPNoptions'),
       createEmptyInstance: create)
     ..aOB(1, _omitFieldNames ? '' : 'resolveDestination')
     ..aE<DomainStrategy>(2, _omitFieldNames ? '' : 'ipv6Mode',
@@ -871,7 +871,7 @@ class TLSTricks extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
       _omitMessageNames ? '' : 'TLSTricks',
-      package: const $pb.PackageName(_omitMessageNames ? '' : 'hiddifyoptions'),
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'Outrun VPNoptions'),
       createEmptyInstance: create)
     ..aOB(1, _omitFieldNames ? '' : 'enableFragment')
     ..aOM<IntRange>(2, _omitFieldNames ? '' : 'fragmentSize',
@@ -992,7 +992,7 @@ class MuxOptions extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
       _omitMessageNames ? '' : 'MuxOptions',
-      package: const $pb.PackageName(_omitMessageNames ? '' : 'hiddifyoptions'),
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'Outrun VPNoptions'),
       createEmptyInstance: create)
     ..aOB(1, _omitFieldNames ? '' : 'enable')
     ..aOB(2, _omitFieldNames ? '' : 'padding')
@@ -1098,7 +1098,7 @@ class WarpOptions extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
       _omitMessageNames ? '' : 'WarpOptions',
-      package: const $pb.PackageName(_omitMessageNames ? '' : 'hiddifyoptions'),
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'Outrun VPNoptions'),
       createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
     ..aOB(2, _omitFieldNames ? '' : 'enableWarp')
@@ -1269,7 +1269,7 @@ class WarpAccount extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
       _omitMessageNames ? '' : 'WarpAccount',
-      package: const $pb.PackageName(_omitMessageNames ? '' : 'hiddifyoptions'),
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'Outrun VPNoptions'),
       createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'accountId')
     ..aOS(2, _omitFieldNames ? '' : 'accessToken')
@@ -1344,7 +1344,7 @@ class WarpWireguardConfig extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
       _omitMessageNames ? '' : 'WarpWireguardConfig',
-      package: const $pb.PackageName(_omitMessageNames ? '' : 'hiddifyoptions'),
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'Outrun VPNoptions'),
       createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'privateKey')
     ..aOS(2, _omitFieldNames ? '' : 'localAddressIpv4')
@@ -1454,7 +1454,7 @@ class Rule extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
       _omitMessageNames ? '' : 'Rule',
-      package: const $pb.PackageName(_omitMessageNames ? '' : 'hiddifyoptions'),
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'Outrun VPNoptions'),
       createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'ruleSetUrl')
     ..aOS(2, _omitFieldNames ? '' : 'domains')

@@ -1,7 +1,7 @@
 import Foundation
 import Flutter
 import Combine
-import HiddifyCore
+import Outrun VPNCore
 
 public class StatsEventHandler: NSObject, FlutterPlugin, FlutterStreamHandler {
     

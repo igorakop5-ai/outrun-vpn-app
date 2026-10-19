@@ -1,6 +1,6 @@
 import 'package:flutter/services.dart';
-import 'package:hiddify/core/utils/exception_handler.dart';
-import 'package:hiddify/utils/custom_loggers.dart';
+import 'package:Outrun VPN/core/utils/exception_handler.dart';
+import 'package:Outrun VPN/utils/custom_loggers.dart';
 
 abstract interface class BatteryOptimizationRepository {
   Future<bool?> isIgnoringBatteryOptimizations();
@@ -8,7 +8,7 @@ abstract interface class BatteryOptimizationRepository {
 }
 
 class BatteryOptimizationRepositoryImpl with ExceptionHandler, InfraLogger implements BatteryOptimizationRepository {
-  final _methodChannel = const MethodChannel("com.hiddify.app/platform");
+  final _methodChannel = const MethodChannel("com.Outrun VPN.app/platform");
 
   @override
   Future<bool?> isIgnoringBatteryOptimizations() async {

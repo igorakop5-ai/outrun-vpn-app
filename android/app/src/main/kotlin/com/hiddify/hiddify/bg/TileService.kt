@@ -1,4 +1,4 @@
-package com.hiddify.hiddify.bg
+package com.Outrun VPN.Outrun VPN.bg
 
 import android.app.KeyguardManager
 import android.content.Context
@@ -9,11 +9,11 @@ import android.util.Log
 import androidx.annotation.RequiresApi
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
-import com.hiddify.hiddify.Application
-import com.hiddify.hiddify.MainActivity
-import com.hiddify.hiddify.Settings
-import com.hiddify.hiddify.constant.ServiceMode
-import com.hiddify.hiddify.constant.Status
+import com.Outrun VPN.Outrun VPN.Application
+import com.Outrun VPN.Outrun VPN.MainActivity
+import com.Outrun VPN.Outrun VPN.Settings
+import com.Outrun VPN.Outrun VPN.constant.ServiceMode
+import com.Outrun VPN.Outrun VPN.constant.Status
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext

@@ -1,10 +1,10 @@
 import 'dart:async';
 
-import 'package:hiddify/core/logger/logger_setup.dart';
-import 'package:hiddify/core/logger/ring/log_ring.dart';
-import 'package:hiddify/core/preferences/general_preferences.dart';
-import 'package:hiddify/features/log/overview/logs_overview_state.dart';
-import 'package:hiddify/utils/custom_loggers.dart';
+import 'package:Outrun VPN/core/logger/logger_setup.dart';
+import 'package:Outrun VPN/core/logger/ring/log_ring.dart';
+import 'package:Outrun VPN/core/preferences/general_preferences.dart';
+import 'package:Outrun VPN/features/log/overview/logs_overview_state.dart';
+import 'package:Outrun VPN/utils/custom_loggers.dart';
 import 'package:logging/logging.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 

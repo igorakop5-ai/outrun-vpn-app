@@ -1,13 +1,13 @@
-package com.hiddify.hiddify.bg
+package com.Outrun VPN.Outrun VPN.bg
 
 import android.net.DnsResolver
 import android.os.Build
 import android.os.CancellationSignal
 import android.system.ErrnoException
 import androidx.annotation.RequiresApi
-import com.hiddify.hiddify.ktx.tryResumeWithException
-import com.hiddify.core.libbox.ExchangeContext
-import com.hiddify.core.libbox.LocalDNSTransport
+import com.Outrun VPN.Outrun VPN.ktx.tryResumeWithException
+import com.Outrun VPN.core.libbox.ExchangeContext
+import com.Outrun VPN.core.libbox.LocalDNSTransport
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.asExecutor
 import kotlinx.coroutines.runBlocking

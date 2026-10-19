@@ -4,15 +4,15 @@ import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:hiddify/core/directories/directories_provider.dart';
-import 'package:hiddify/core/localization/translations.dart';
-import 'package:hiddify/core/model/directories.dart';
-import 'package:hiddify/core/model/region.dart';
-import 'package:hiddify/core/preferences/preferences_provider.dart';
-import 'package:hiddify/features/route_rules/notifier/rules_notifier.dart';
-import 'package:hiddify/features/settings/data/config_option_repository.dart';
-import 'package:hiddify/features/settings/overview/sections/routing_options_page.dart';
-import 'package:hiddify/hiddifycore/generated/v2/config/route_rule.pb.dart';
+import 'package:Outrun VPN/core/directories/directories_provider.dart';
+import 'package:Outrun VPN/core/localization/translations.dart';
+import 'package:Outrun VPN/core/model/directories.dart';
+import 'package:Outrun VPN/core/model/region.dart';
+import 'package:Outrun VPN/core/preferences/preferences_provider.dart';
+import 'package:Outrun VPN/features/route_rules/notifier/rules_notifier.dart';
+import 'package:Outrun VPN/features/settings/data/config_option_repository.dart';
+import 'package:Outrun VPN/features/settings/overview/sections/routing_options_page.dart';
+import 'package:Outrun VPN/Outrun VPNcore/generated/v2/config/route_rule.pb.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -278,7 +278,7 @@ void main() {
   test('the core gets each built-in rule in the shape it reads', () async {
     final container = await open();
     final json = RouteRule(rules: container.read(rulesNotifierProvider)).toProto3Json()! as Map<String, dynamic>;
-    const geo = 'https://raw.githubusercontent.com/hiddify/hiddify-geo/rule-set';
+    const geo = 'https://raw.githubusercontent.com/Outrun VPN/Outrun VPN-geo/rule-set';
     expect(json, {
       'rules': [
         {
