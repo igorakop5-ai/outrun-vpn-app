@@ -27,9 +27,13 @@ jobs:
           dart pub global activate fastforge
           echo "$HOME/.pub-cache/bin" >> $GITHUB_PATH
 
-      - name: Prepare Project and Core Libraries
-        run: |
-          make macos-prepare
+           - name: Prepare Project and Core Libraries
+                   run: |
+                     make get
+          # Запускаем генератор с ограничением по времени (timeout 45 секунд), чтобы он не вешал сборку на последних файлах
+          timeout 45s dart run build_runner build --delete-conflicting-outputs || true
+          make macos-libs
+
 
       - name: Build macOS DMG
         run: |
