@@ -27,6 +27,11 @@ jobs:
           dart pub global activate fastforge
           echo "$HOME/.pub-cache/bin" >> $GITHUB_PATH
 
+      - name: Fix Damaged Xcode Project
+        run: |
+          rm -rf macos
+          flutter create . --platforms=macos --org com.outrun.vpn
+
       - name: Prepare Project and Core Libraries
         run: |
           make get
