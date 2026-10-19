@@ -27,18 +27,16 @@ jobs:
           dart pub global activate fastforge
           echo "$HOME/.pub-cache/bin" >> $GITHUB_PATH
 
-           - name: Prepare Project and Core Libraries
-                   run: |
-                     make get
-          # Запускаем генератор с ограничением по времени (timeout 45 секунд), чтобы он не вешал сборку на последних файлах
+      - name: Prepare Project and Core Libraries
+        run: |
+          make get
           timeout 45s dart run build_runner build --delete-conflicting-outputs || true
           make macos-libs
-
 
       - name: Build macOS DMG
         run: |
           flutter build macos --release --target lib/main.dart
-          npx --yes appdmg macos/packaging/dmg/config.json OutrunVPN.dmg || fastforge package --platform macos --targets dmg --skip-clean --build-target lib/main.dart
+          fastforge package --platform macos --targets dmg --skip-clean --build-target lib/main.dart
 
       - name: Upload DMG Artifact
         uses: actions/upload-artifact@v4
