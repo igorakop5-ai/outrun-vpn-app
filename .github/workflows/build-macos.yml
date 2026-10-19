@@ -1,0 +1,46 @@
+name: Build macOS DMG
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-macos:
+    runs-on: macos-14
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+          cache: true
+
+      - name: Install Packaging Tools
+        run: |
+          brew install create-dmg
+          dart pub global activate fastforge
+          echo "$HOME/.pub-cache/bin" >> $GITHUB_PATH
+
+      - name: Prepare Project and Core Libraries
+        run: |
+          make macos-prepare
+
+      - name: Build macOS DMG
+        run: |
+          flutter build macos --release --target lib/main.dart
+          npx --yes appdmg macos/packaging/dmg/config.json OutrunVPN.dmg || fastforge package --platform macos --targets dmg --skip-clean --build-target lib/main.dart
+
+      - name: Upload DMG Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Outrun-VPN-macOS-DMG
+          path: |
+            *.dmg
+            dist/**/*.dmg
+            build/macos/Build/Products/Release/*.app
