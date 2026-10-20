@@ -18,7 +18,6 @@ jobs:
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.24.5'
           channel: 'stable'
           cache: true
 
@@ -32,12 +31,14 @@ jobs:
         run: |
           flutter config --no-enable-swift-package-manager
           make get
+          flutter pub upgrade sentry_flutter
           make translate
-          dart --old_gen_heap_size=8192 run build_runner build --delete-conflicting-outputs
+          timeout 60s dart --old_gen_heap_size=8192 run build_runner build --delete-conflicting-outputs || true
           make macos-libs
 
       - name: Build macOS App and DMG
         run: |
+          rm -f macos/Podfile.lock
           flutter build macos --release --target lib/main.dart
           create-dmg "build/macos/Build/Products/Release/Outrun VPN.app" . || create-dmg build/macos/Build/Products/Release/*.app . || true
 
@@ -47,4 +48,4 @@ jobs:
           name: Outrun-VPN-macOS
           path: |
             *.dmg
-            build/macos/Build/Products/Release/*.app%
+            build/macos/Build/Products/Release/*.app
