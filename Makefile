@@ -46,13 +46,13 @@ DESKTOP_OUT=hiddify-core$(SEP)bin
 GEO_ASSETS_DIR=assets$(SEP)core
 
 CORE_PRODUCT_NAME=hiddify-core
-CORE_NAME=Outrun VPN-lib
+CORE_NAME=hiddify-lib
 LIB_NAME=hiddify-core
 
 ifeq ($(CHANNEL),prod)
-	CORE_URL=https://github.com/Outrun VPN/hiddify-core/releases/download/v$(core.version)
+	CORE_URL=https://github.com/hiddify/hiddify-core/releases/download/v$(core.version)
 else
-	CORE_URL=https://github.com/Outrun VPN/hiddify-core/releases/download/draft
+	CORE_URL=https://github.com/hiddify/hiddify-core/releases/download/draft
 endif
 
 ifeq ($(CHANNEL),prod)
