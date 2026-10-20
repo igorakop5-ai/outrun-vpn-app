@@ -29,19 +29,19 @@ jobs:
 
       - name: Prepare Project and Core Libraries
         run: |
+          git config --global http.postBuffer 524288000
+          git config --global http.version HTTP/1.1
           flutter config --no-enable-swift-package-manager
-          make get
+          flutter pub get || flutter pub get || flutter pub get
           flutter pub upgrade sentry_flutter
           make translate
-          timeout 60s dart --old_gen_heap_size=8192 run build_runner build --delete-conflicting-outputs || true
+          dart run build_runner build --delete-conflicting-outputs --build-filter="lib/**"
           make macos-libs
-          echo "  _ => null," >> lib/features/profile/add/add_profile_modal.dart || true
-          echo "  _ => null," >> lib/features/common/general_pref_tiles.dart || true
 
       - name: Build macOS App and DMG
         run: |
           rm -f macos/Podfile.lock
-          flutter build macos --release --target lib/main.dart --no-pub || flutter build macos --release --target lib/main.dart
+          flutter build macos --release --target lib/main.dart
           create-dmg "build/macos/Build/Products/Release/Outrun VPN.app" . || create-dmg build/macos/Build/Products/Release/*.app . || true
 
       - name: Upload DMG and App Artifact
