@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:Outrun VPN/singbox/model/singbox_proxy_type.dart';
+import 'package:outrun_vpn/singbox/model/singbox_proxy_type.dart';
 
 part 'singbox_outbound.freezed.dart';
 part 'singbox_outbound.g.dart';

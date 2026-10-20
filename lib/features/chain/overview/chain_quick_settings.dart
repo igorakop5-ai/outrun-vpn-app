@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
-import 'package:Outrun VPN/core/localization/translations.dart';
-import 'package:Outrun VPN/core/model/constants.dart';
-import 'package:Outrun VPN/features/chain/overview/chain_mode_button.dart';
-import 'package:Outrun VPN/features/common/custom_text_scroll.dart';
-import 'package:Outrun VPN/features/profile/notifier/active_profile_notifier.dart';
-import 'package:Outrun VPN/features/settings/data/config_option_repository.dart';
+import 'package:outrun_vpn/core/localization/translations.dart';
+import 'package:outrun_vpn/core/model/constants.dart';
+import 'package:outrun_vpn/features/chain/overview/chain_mode_button.dart';
+import 'package:outrun_vpn/features/common/custom_text_scroll.dart';
+import 'package:outrun_vpn/features/profile/notifier/active_profile_notifier.dart';
+import 'package:outrun_vpn/features/settings/data/config_option_repository.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class ChainQuickSettings extends HookConsumerWidget {

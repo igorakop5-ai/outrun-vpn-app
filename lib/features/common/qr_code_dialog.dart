@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:gap/gap.dart';
-import 'package:Outrun VPN/core/localization/translations.dart';
-import 'package:Outrun VPN/gen/assets.gen.dart';
+import 'package:outrun_vpn/core/localization/translations.dart';
+import 'package:outrun_vpn/gen/assets.gen.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 

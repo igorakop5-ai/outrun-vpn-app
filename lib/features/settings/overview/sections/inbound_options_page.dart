@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:Outrun VPN/core/localization/translations.dart';
-import 'package:Outrun VPN/features/settings/data/config_option_repository.dart';
-import 'package:Outrun VPN/features/settings/widget/lan_sharing_tile.dart';
-import 'package:Outrun VPN/features/settings/widget/preference_tile.dart';
-import 'package:Outrun VPN/singbox/model/singbox_config_enum.dart';
-import 'package:Outrun VPN/utils/utils.dart';
+import 'package:outrun_vpn/core/localization/translations.dart';
+import 'package:outrun_vpn/features/settings/data/config_option_repository.dart';
+import 'package:outrun_vpn/features/settings/widget/lan_sharing_tile.dart';
+import 'package:outrun_vpn/features/settings/widget/preference_tile.dart';
+import 'package:outrun_vpn/singbox/model/singbox_config_enum.dart';
+import 'package:outrun_vpn/utils/utils.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class InboundOptionsPage extends HookConsumerWidget with AppLogger {

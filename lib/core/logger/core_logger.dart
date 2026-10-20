@@ -1,5 +1,5 @@
-import 'package:Outrun VPN/Outrun VPNcore/generated/v2/hcore/hcore.pb.dart' as pb;
-import 'package:Outrun VPN/utils/custom_loggers.dart';
+import 'package:outrun_vpn/Outrun VPNcore/generated/v2/hcore/hcore.pb.dart' as pb;
+import 'package:outrun_vpn/utils/custom_loggers.dart';
 import 'package:logging/logging.dart';
 
 /// Engine logs, split by the `type` field every LogMessage already carries.

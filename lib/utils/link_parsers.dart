@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:Outrun VPN/utils/validators.dart';
+import 'package:outrun_vpn/utils/validators.dart';
 
 typedef ProfileLink = ({String url, String name});
 

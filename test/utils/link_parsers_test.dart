@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:Outrun VPN/utils/link_parsers.dart';
+import 'package:outrun_vpn/utils/link_parsers.dart';
 
 void main() {
   group("LinkParser.deep - Outrun VPN scheme", () {

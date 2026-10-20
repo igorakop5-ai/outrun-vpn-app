@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:Outrun VPN/core/localization/translations.dart';
-import 'package:Outrun VPN/features/chain/model/chain_enum.dart';
-import 'package:Outrun VPN/features/chain/overview/chain_timeline_arrow.dart';
-import 'package:Outrun VPN/features/chain/overview/chain_timeline_header.dart';
+import 'package:outrun_vpn/core/localization/translations.dart';
+import 'package:outrun_vpn/features/chain/model/chain_enum.dart';
+import 'package:outrun_vpn/features/chain/overview/chain_timeline_arrow.dart';
+import 'package:outrun_vpn/features/chain/overview/chain_timeline_header.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class ChainTimeline extends HookConsumerWidget {

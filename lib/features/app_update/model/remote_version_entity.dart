@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:Outrun VPN/core/model/environment.dart';
+import 'package:outrun_vpn/core/model/environment.dart';
 
 part 'remote_version_entity.freezed.dart';
 

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:Outrun VPN/core/model/constants.dart';
-import 'package:Outrun VPN/core/router/dialog/dialog_notifier.dart';
-import 'package:Outrun VPN/features/proxy/active/ip_widget.dart';
-import 'package:Outrun VPN/gen/fonts.gen.dart';
-import 'package:Outrun VPN/Outrun VPNcore/generated/v2/hcore/hcore.pb.dart';
-import 'package:Outrun VPN/utils/custom_loggers.dart';
-import 'package:Outrun VPN/utils/platform_utils.dart';
+import 'package:outrun_vpn/core/model/constants.dart';
+import 'package:outrun_vpn/core/router/dialog/dialog_notifier.dart';
+import 'package:outrun_vpn/features/proxy/active/ip_widget.dart';
+import 'package:outrun_vpn/gen/fonts.gen.dart';
+import 'package:outrun_vpn/Outrun VPNcore/generated/v2/hcore/hcore.pb.dart';
+import 'package:outrun_vpn/utils/custom_loggers.dart';
+import 'package:outrun_vpn/utils/platform_utils.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class ProxyTile extends HookConsumerWidget with PresLogger {

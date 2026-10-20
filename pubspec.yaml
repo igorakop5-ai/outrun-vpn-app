@@ -1,4 +1,4 @@
-name: Outrun VPN
+name: outrun_vpn
 description: Cross Platform Multi Protocol Proxy Frontend.
 publish_to: "none"
 version: 5.0.0+50000
@@ -187,12 +187,12 @@ flutter_native_splash:
     image: assets/images/source/ic_launcher_foreground.png
 
 ffigen:
-  name: "Outrun VPNCoreNativeLibrary"
+  name: "HiddifyCoreNativeLibrary"
   description: "Bindings to Outrun VPN Core Library"
   output: "lib/gen/Outrun VPN_core_generated_bindings.dart"
   headers:
     entry-points:
-      - "Outrun VPN-core/bin/desktop.h"
+      - "hiddify-core/bin/desktop.h"
 
 sentry:
   upload_debug_symbols: true

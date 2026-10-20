@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:Outrun VPN/core/localization/translations.dart';
-import 'package:Outrun VPN/core/model/constants.dart';
-import 'package:Outrun VPN/core/router/bottom_sheets/widgets/quick_settings_modal.dart';
-import 'package:Outrun VPN/core/router/dialog/dialog_notifier.dart';
-import 'package:Outrun VPN/core/router/go_router/go_router_notifier.dart';
-import 'package:Outrun VPN/features/app_based_routing/model/app_package_info.dart';
-import 'package:Outrun VPN/features/app_based_routing/overview/app_list_share_modal.dart';
-import 'package:Outrun VPN/features/log/overview/logs_modals.dart';
-import 'package:Outrun VPN/features/profile/add/add_profile_modal.dart';
-import 'package:Outrun VPN/features/profile/overview/profiles_modal.dart';
-import 'package:Outrun VPN/utils/link_parsers.dart';
+import 'package:outrun_vpn/core/localization/translations.dart';
+import 'package:outrun_vpn/core/model/constants.dart';
+import 'package:outrun_vpn/core/router/bottom_sheets/widgets/quick_settings_modal.dart';
+import 'package:outrun_vpn/core/router/dialog/dialog_notifier.dart';
+import 'package:outrun_vpn/core/router/go_router/go_router_notifier.dart';
+import 'package:outrun_vpn/features/app_based_routing/model/app_package_info.dart';
+import 'package:outrun_vpn/features/app_based_routing/overview/app_list_share_modal.dart';
+import 'package:outrun_vpn/features/log/overview/logs_modals.dart';
+import 'package:outrun_vpn/features/profile/add/add_profile_modal.dart';
+import 'package:outrun_vpn/features/profile/overview/profiles_modal.dart';
+import 'package:outrun_vpn/utils/link_parsers.dart';
 
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 

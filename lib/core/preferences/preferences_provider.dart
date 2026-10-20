@@ -1,8 +1,8 @@
 import 'dart:io';
 
-import 'package:Outrun VPN/core/model/environment.dart';
-import 'package:Outrun VPN/utils/custom_loggers.dart';
-import 'package:Outrun VPN/utils/platform_utils.dart';
+import 'package:outrun_vpn/core/model/environment.dart';
+import 'package:outrun_vpn/utils/custom_loggers.dart';
+import 'package:outrun_vpn/utils/platform_utils.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:path/path.dart' as p;
 import 'package:path_provider/path_provider.dart';

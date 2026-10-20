@@ -1,6 +1,6 @@
 import 'package:flutter/services.dart';
-import 'package:Outrun VPN/core/utils/exception_handler.dart';
-import 'package:Outrun VPN/utils/custom_loggers.dart';
+import 'package:outrun_vpn/core/utils/exception_handler.dart';
+import 'package:outrun_vpn/utils/custom_loggers.dart';
 
 abstract interface class BatteryOptimizationRepository {
   Future<bool?> isIgnoringBatteryOptimizations();

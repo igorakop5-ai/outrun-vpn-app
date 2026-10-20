@@ -1,10 +1,10 @@
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
-import 'package:Outrun VPN/core/localization/translations.dart';
-import 'package:Outrun VPN/core/widget/shimmer_skeleton.dart';
-import 'package:Outrun VPN/features/proxy/active/active_proxy_notifier.dart';
-import 'package:Outrun VPN/features/proxy/active/ip_widget.dart';
-import 'package:Outrun VPN/features/stats/widget/stats_card.dart';
+import 'package:outrun_vpn/core/localization/translations.dart';
+import 'package:outrun_vpn/core/widget/shimmer_skeleton.dart';
+import 'package:outrun_vpn/features/proxy/active/active_proxy_notifier.dart';
+import 'package:outrun_vpn/features/proxy/active/ip_widget.dart';
+import 'package:outrun_vpn/features/stats/widget/stats_card.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class ConnectionStatsCard extends HookConsumerWidget {

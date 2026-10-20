@@ -2,10 +2,10 @@ import 'dart:io';
 
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/services.dart';
-import 'package:Outrun VPN/core/model/directories.dart';
-import 'package:Outrun VPN/core/model/environment.dart';
-import 'package:Outrun VPN/utils/custom_loggers.dart';
-import 'package:Outrun VPN/utils/platform_utils.dart';
+import 'package:outrun_vpn/core/model/directories.dart';
+import 'package:outrun_vpn/core/model/environment.dart';
+import 'package:outrun_vpn/utils/custom_loggers.dart';
+import 'package:outrun_vpn/utils/platform_utils.dart';
 import 'package:path/path.dart' as p;
 import 'package:path_provider/path_provider.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';

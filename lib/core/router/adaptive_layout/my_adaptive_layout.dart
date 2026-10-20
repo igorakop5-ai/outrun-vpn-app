@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
-import 'package:Outrun VPN/core/localization/translations.dart';
-import 'package:Outrun VPN/core/model/constants.dart';
-import 'package:Outrun VPN/core/router/adaptive_layout/shell_route_action.dart';
-import 'package:Outrun VPN/core/router/go_router/helper/active_breakpoint_notifier.dart';
-import 'package:Outrun VPN/core/router/go_router/routing_config_notifier.dart';
-import 'package:Outrun VPN/features/stats/widget/side_bar_stats_overview.dart';
+import 'package:outrun_vpn/core/localization/translations.dart';
+import 'package:outrun_vpn/core/model/constants.dart';
+import 'package:outrun_vpn/core/router/adaptive_layout/shell_route_action.dart';
+import 'package:outrun_vpn/core/router/go_router/helper/active_breakpoint_notifier.dart';
+import 'package:outrun_vpn/core/router/go_router/routing_config_notifier.dart';
+import 'package:outrun_vpn/features/stats/widget/side_bar_stats_overview.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class MyAdaptiveLayout extends HookConsumerWidget {

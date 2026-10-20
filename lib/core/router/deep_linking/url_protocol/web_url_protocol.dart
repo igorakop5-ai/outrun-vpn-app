@@ -1,4 +1,4 @@
-import 'package:Outrun VPN/core/router/deep_linking/url_protocol/protocol.dart';
+import 'package:outrun_vpn/core/router/deep_linking/url_protocol/protocol.dart';
 
 class WindowsProtocolHandler extends ProtocolHandler {
   @override

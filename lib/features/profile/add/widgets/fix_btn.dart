@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:Outrun VPN/core/router/go_router/helper/active_breakpoint_notifier.dart';
+import 'package:outrun_vpn/core/router/go_router/helper/active_breakpoint_notifier.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class FixBtn extends ConsumerWidget {

@@ -1,14 +1,14 @@
 import 'dart:async';
 
-import 'package:Outrun VPN/core/model/region.dart';
-import 'package:Outrun VPN/core/preferences/general_preferences.dart';
-import 'package:Outrun VPN/features/app_based_routing/data/auto_selection_repository.dart';
-import 'package:Outrun VPN/features/app_based_routing/data/auto_selection_repository_provider.dart';
-import 'package:Outrun VPN/features/app_based_routing/data/selected_data_provider.dart';
-import 'package:Outrun VPN/features/app_based_routing/model/per_app_proxy_mode.dart';
-import 'package:Outrun VPN/features/app_based_routing/overview/auto_selection_notifier.dart';
-import 'package:Outrun VPN/features/settings/data/config_option_repository.dart';
-import 'package:Outrun VPN/utils/utils.dart';
+import 'package:outrun_vpn/core/model/region.dart';
+import 'package:outrun_vpn/core/preferences/general_preferences.dart';
+import 'package:outrun_vpn/features/app_based_routing/data/auto_selection_repository.dart';
+import 'package:outrun_vpn/features/app_based_routing/data/auto_selection_repository_provider.dart';
+import 'package:outrun_vpn/features/app_based_routing/data/selected_data_provider.dart';
+import 'package:outrun_vpn/features/app_based_routing/model/per_app_proxy_mode.dart';
+import 'package:outrun_vpn/features/app_based_routing/overview/auto_selection_notifier.dart';
+import 'package:outrun_vpn/features/settings/data/config_option_repository.dart';
+import 'package:outrun_vpn/utils/utils.dart';
 import 'package:installed_apps/index.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 

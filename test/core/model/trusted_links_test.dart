@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:Outrun VPN/core/model/trusted_links.dart';
+import 'package:outrun_vpn/core/model/trusted_links.dart';
 
 void main() {
   // Seed under test: Outrun VPN.com, github.com/Outrun VPN, t.me/Outrun VPN

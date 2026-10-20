@@ -1,5 +1,5 @@
-import 'package:Outrun VPN/core/preferences/preferences_provider.dart';
-import 'package:Outrun VPN/core/theme/app_theme_mode.dart';
+import 'package:outrun_vpn/core/preferences/preferences_provider.dart';
+import 'package:outrun_vpn/core/theme/app_theme_mode.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'theme_preferences.g.dart';

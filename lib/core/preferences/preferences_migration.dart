@@ -1,4 +1,4 @@
-import 'package:Outrun VPN/utils/utils.dart';
+import 'package:outrun_vpn/utils/utils.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class PreferencesMigration with InfraLogger {

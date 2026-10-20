@@ -1,15 +1,15 @@
 import 'package:dartx/dartx.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:Outrun VPN/core/app_info/app_info_provider.dart';
-import 'package:Outrun VPN/core/localization/translations.dart';
-import 'package:Outrun VPN/core/router/bottom_sheets/bottom_sheets_notifier.dart';
-import 'package:Outrun VPN/features/home/widget/connection_button.dart';
-import 'package:Outrun VPN/features/profile/notifier/active_profile_notifier.dart';
-import 'package:Outrun VPN/features/profile/widget/profile_tile.dart';
-import 'package:Outrun VPN/features/proxy/active/active_proxy_card.dart';
-import 'package:Outrun VPN/features/proxy/active/active_proxy_delay_indicator.dart';
-import 'package:Outrun VPN/gen/assets.gen.dart';
+import 'package:outrun_vpn/core/app_info/app_info_provider.dart';
+import 'package:outrun_vpn/core/localization/translations.dart';
+import 'package:outrun_vpn/core/router/bottom_sheets/bottom_sheets_notifier.dart';
+import 'package:outrun_vpn/features/home/widget/connection_button.dart';
+import 'package:outrun_vpn/features/profile/notifier/active_profile_notifier.dart';
+import 'package:outrun_vpn/features/profile/widget/profile_tile.dart';
+import 'package:outrun_vpn/features/proxy/active/active_proxy_card.dart';
+import 'package:outrun_vpn/features/proxy/active/active_proxy_delay_indicator.dart';
+import 'package:outrun_vpn/gen/assets.gen.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:sliver_tools/sliver_tools.dart';
 

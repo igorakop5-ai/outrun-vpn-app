@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:Outrun VPN/core/model/constants.dart';
-import 'package:Outrun VPN/gen/translations.g.dart';
-import 'package:Outrun VPN/singbox/model/singbox_config_enum.dart';
+import 'package:outrun_vpn/core/model/constants.dart';
+import 'package:outrun_vpn/gen/translations.g.dart';
+import 'package:outrun_vpn/singbox/model/singbox_config_enum.dart';
 
 // UI helper
 enum ChainType {

@@ -1,14 +1,14 @@
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:Outrun VPN/core/localization/translations.dart';
-import 'package:Outrun VPN/core/model/constants.dart';
-import 'package:Outrun VPN/core/utils/preferences_utils.dart';
-import 'package:Outrun VPN/core/widget/animated_text.dart';
-import 'package:Outrun VPN/features/stats/notifier/stats_notifier.dart';
-import 'package:Outrun VPN/features/stats/widget/stats_card.dart';
-import 'package:Outrun VPN/Outrun VPNcore/generated/v2/hcore/hcore.pb.dart';
-import 'package:Outrun VPN/utils/number_formatters.dart';
+import 'package:outrun_vpn/core/localization/translations.dart';
+import 'package:outrun_vpn/core/model/constants.dart';
+import 'package:outrun_vpn/core/utils/preferences_utils.dart';
+import 'package:outrun_vpn/core/widget/animated_text.dart';
+import 'package:outrun_vpn/features/stats/notifier/stats_notifier.dart';
+import 'package:outrun_vpn/features/stats/widget/stats_card.dart';
+import 'package:outrun_vpn/Outrun VPNcore/generated/v2/hcore/hcore.pb.dart';
+import 'package:outrun_vpn/utils/number_formatters.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 final showAllSidebarStatsProvider = PreferencesNotifier.createAutoDispose("show_all_sidebar_stats", false);

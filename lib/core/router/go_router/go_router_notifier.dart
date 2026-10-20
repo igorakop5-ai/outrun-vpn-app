@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:Outrun VPN/core/router/go_router/refresh_listenable.dart';
-import 'package:Outrun VPN/core/router/go_router/routing_config_notifier.dart';
+import 'package:outrun_vpn/core/router/go_router/refresh_listenable.dart';
+import 'package:outrun_vpn/core/router/go_router/routing_config_notifier.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'go_router_notifier.g.dart';

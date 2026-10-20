@@ -1,9 +1,9 @@
-import 'package:Outrun VPN/core/localization/locale_preferences.dart';
-import 'package:Outrun VPN/gen/translations.g.dart';
+import 'package:outrun_vpn/core/localization/locale_preferences.dart';
+import 'package:outrun_vpn/gen/translations.g.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-export 'package:Outrun VPN/gen/translations.g.dart';
+export 'package:outrun_vpn/gen/translations.g.dart';
 
 part 'translations.g.dart';
 

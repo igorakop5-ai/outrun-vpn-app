@@ -1,9 +1,9 @@
-import 'package:Outrun VPN/features/connection/notifier/connection_notifier.dart';
-import 'package:Outrun VPN/features/stats/data/stats_data_providers.dart';
-import 'package:Outrun VPN/Outrun VPNcore/generated/v2/hcore/hcore.pb.dart';
-import 'package:Outrun VPN/Outrun VPNcore/init_signal.dart';
-import 'package:Outrun VPN/utils/custom_loggers.dart';
-import 'package:Outrun VPN/utils/riverpod_utils.dart';
+import 'package:outrun_vpn/features/connection/notifier/connection_notifier.dart';
+import 'package:outrun_vpn/features/stats/data/stats_data_providers.dart';
+import 'package:outrun_vpn/Outrun VPNcore/generated/v2/hcore/hcore.pb.dart';
+import 'package:outrun_vpn/Outrun VPNcore/init_signal.dart';
+import 'package:outrun_vpn/utils/custom_loggers.dart';
+import 'package:outrun_vpn/utils/riverpod_utils.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'stats_notifier.g.dart';

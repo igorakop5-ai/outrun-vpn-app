@@ -1,5 +1,5 @@
-import 'package:Outrun VPN/core/preferences/preferences_provider.dart';
-import 'package:Outrun VPN/features/settings/data/config_option_repository.dart';
+import 'package:outrun_vpn/core/preferences/preferences_provider.dart';
+import 'package:outrun_vpn/features/settings/data/config_option_repository.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import 'package:riverpod_annotation/riverpod_annotation.dart';

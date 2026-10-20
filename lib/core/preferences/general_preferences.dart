@@ -1,13 +1,13 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:Outrun VPN/core/logger/ring/log_ring.dart';
-import 'package:Outrun VPN/core/model/region.dart';
-import 'package:Outrun VPN/core/preferences/actions_at_closing.dart';
-import 'package:Outrun VPN/core/utils/preferences_utils.dart';
-import 'package:Outrun VPN/features/app_based_routing/model/per_app_proxy_mode.dart';
-import 'package:Outrun VPN/features/profile/model/profile_sort_enum.dart';
-import 'package:Outrun VPN/features/window/notifier/window_notifier.dart';
-import 'package:Outrun VPN/utils/platform_utils.dart';
+import 'package:outrun_vpn/core/logger/ring/log_ring.dart';
+import 'package:outrun_vpn/core/model/region.dart';
+import 'package:outrun_vpn/core/preferences/actions_at_closing.dart';
+import 'package:outrun_vpn/core/utils/preferences_utils.dart';
+import 'package:outrun_vpn/features/app_based_routing/model/per_app_proxy_mode.dart';
+import 'package:outrun_vpn/features/profile/model/profile_sort_enum.dart';
+import 'package:outrun_vpn/features/window/notifier/window_notifier.dart';
+import 'package:outrun_vpn/utils/platform_utils.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:logging/logging.dart';
 

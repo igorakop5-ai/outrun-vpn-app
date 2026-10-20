@@ -1,17 +1,17 @@
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:Outrun VPN/core/localization/translations.dart';
-import 'package:Outrun VPN/core/logger/logger_setup.dart';
-import 'package:Outrun VPN/core/logger/ring/log_ring.dart';
-import 'package:Outrun VPN/core/notification/in_app_notification_controller.dart';
-import 'package:Outrun VPN/core/preferences/general_preferences.dart';
-import 'package:Outrun VPN/core/router/bottom_sheets/bottom_sheets_notifier.dart';
-import 'package:Outrun VPN/features/connection/notifier/connection_notifier.dart';
-import 'package:Outrun VPN/features/log/model/log_level.dart' as engine;
-import 'package:Outrun VPN/features/log/overview/logs_overview_notifier.dart';
-import 'package:Outrun VPN/features/settings/data/config_option_repository.dart';
-import 'package:Outrun VPN/utils/custom_loggers.dart';
+import 'package:outrun_vpn/core/localization/translations.dart';
+import 'package:outrun_vpn/core/logger/logger_setup.dart';
+import 'package:outrun_vpn/core/logger/ring/log_ring.dart';
+import 'package:outrun_vpn/core/notification/in_app_notification_controller.dart';
+import 'package:outrun_vpn/core/preferences/general_preferences.dart';
+import 'package:outrun_vpn/core/router/bottom_sheets/bottom_sheets_notifier.dart';
+import 'package:outrun_vpn/features/connection/notifier/connection_notifier.dart';
+import 'package:outrun_vpn/features/log/model/log_level.dart' as engine;
+import 'package:outrun_vpn/features/log/overview/logs_overview_notifier.dart';
+import 'package:outrun_vpn/features/settings/data/config_option_repository.dart';
+import 'package:outrun_vpn/utils/custom_loggers.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:logging/logging.dart';
 

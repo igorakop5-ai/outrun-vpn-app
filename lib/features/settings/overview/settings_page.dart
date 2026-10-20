@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
-import 'package:Outrun VPN/core/localization/translations.dart';
-import 'package:Outrun VPN/core/router/dialog/dialog_notifier.dart';
-import 'package:Outrun VPN/core/router/go_router/helper/active_breakpoint_notifier.dart';
-import 'package:Outrun VPN/features/profile/notifier/active_profile_notifier.dart';
-import 'package:Outrun VPN/features/settings/notifier/config_option/config_option_notifier.dart';
-import 'package:Outrun VPN/features/settings/notifier/reset_tunnel/reset_tunnel_notifier.dart';
-import 'package:Outrun VPN/utils/utils.dart';
+import 'package:outrun_vpn/core/localization/translations.dart';
+import 'package:outrun_vpn/core/router/dialog/dialog_notifier.dart';
+import 'package:outrun_vpn/core/router/go_router/helper/active_breakpoint_notifier.dart';
+import 'package:outrun_vpn/features/profile/notifier/active_profile_notifier.dart';
+import 'package:outrun_vpn/features/settings/notifier/config_option/config_option_notifier.dart';
+import 'package:outrun_vpn/features/settings/notifier/reset_tunnel/reset_tunnel_notifier.dart';
+import 'package:outrun_vpn/utils/utils.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 enum ConfigOptionSection {

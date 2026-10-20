@@ -1,20 +1,20 @@
 import 'dart:async';
 
 import 'package:dio/dio.dart';
-import 'package:Outrun VPN/core/haptic/haptic_service.dart';
-import 'package:Outrun VPN/core/model/constants.dart';
-import 'package:Outrun VPN/core/preferences/general_preferences.dart';
-import 'package:Outrun VPN/core/utils/throttler.dart';
-import 'package:Outrun VPN/features/connection/notifier/connection_notifier.dart';
-import 'package:Outrun VPN/features/proxy/data/proxy_data_providers.dart';
-import 'package:Outrun VPN/features/proxy/data/proxy_repository.dart';
-import 'package:Outrun VPN/features/proxy/model/ip_info_entity.dart' as oldipinfo;
-import 'package:Outrun VPN/features/proxy/model/proxy_failure.dart';
-import 'package:Outrun VPN/Outrun VPNcore/generated/v2/hcore/hcore.pb.dart';
-import 'package:Outrun VPN/Outrun VPNcore/init_signal.dart';
+import 'package:outrun_vpn/core/haptic/haptic_service.dart';
+import 'package:outrun_vpn/core/model/constants.dart';
+import 'package:outrun_vpn/core/preferences/general_preferences.dart';
+import 'package:outrun_vpn/core/utils/throttler.dart';
+import 'package:outrun_vpn/features/connection/notifier/connection_notifier.dart';
+import 'package:outrun_vpn/features/proxy/data/proxy_data_providers.dart';
+import 'package:outrun_vpn/features/proxy/data/proxy_repository.dart';
+import 'package:outrun_vpn/features/proxy/model/ip_info_entity.dart' as oldipinfo;
+import 'package:outrun_vpn/features/proxy/model/proxy_failure.dart';
+import 'package:outrun_vpn/Outrun VPNcore/generated/v2/hcore/hcore.pb.dart';
+import 'package:outrun_vpn/Outrun VPNcore/init_signal.dart';
 
-import 'package:Outrun VPN/utils/riverpod_utils.dart';
-import 'package:Outrun VPN/utils/utils.dart';
+import 'package:outrun_vpn/utils/riverpod_utils.dart';
+import 'package:outrun_vpn/utils/utils.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:rxdart/rxdart.dart';
 

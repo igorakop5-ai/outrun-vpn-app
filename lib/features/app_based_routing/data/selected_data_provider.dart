@@ -1,5 +1,5 @@
-import 'package:Outrun VPN/core/db/provider/db_providers.dart';
-import 'package:Outrun VPN/features/app_based_routing/data/app_proxy_data_source.dart';
+import 'package:outrun_vpn/core/db/provider/db_providers.dart';
+import 'package:outrun_vpn/features/app_based_routing/data/app_proxy_data_source.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 

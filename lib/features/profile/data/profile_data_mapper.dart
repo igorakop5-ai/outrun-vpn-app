@@ -1,8 +1,8 @@
 import 'dart:convert';
 
 import 'package:drift/drift.dart';
-import 'package:Outrun VPN/core/db/db.dart';
-import 'package:Outrun VPN/features/profile/model/profile_entity.dart';
+import 'package:outrun_vpn/core/db/db.dart';
+import 'package:outrun_vpn/features/profile/model/profile_entity.dart';
 
 extension ProfileEntityMapper on ProfileEntity {
   ProfileEntriesCompanion toInsertEntry() => map(

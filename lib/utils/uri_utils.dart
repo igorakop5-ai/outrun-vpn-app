@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:Outrun VPN/utils/custom_loggers.dart';
+import 'package:outrun_vpn/utils/custom_loggers.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
 

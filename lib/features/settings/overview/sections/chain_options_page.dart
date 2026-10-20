@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:Outrun VPN/core/localization/translations.dart';
-import 'package:Outrun VPN/core/model/optional_range.dart';
-import 'package:Outrun VPN/features/chain/model/chain_enum.dart';
-import 'package:Outrun VPN/features/chain/notifier/chain_profile_notifier.dart';
-import 'package:Outrun VPN/features/chain/overview/chain_timeline.dart';
-import 'package:Outrun VPN/features/profile/model/profile_entity.dart';
-import 'package:Outrun VPN/features/profile/notifier/active_profile_notifier.dart';
-import 'package:Outrun VPN/features/profile/overview/profiles_notifier.dart';
-import 'package:Outrun VPN/features/settings/data/config_option_repository.dart';
-import 'package:Outrun VPN/features/settings/widget/preference_tile.dart';
-import 'package:Outrun VPN/singbox/model/singbox_config_enum.dart';
-import 'package:Outrun VPN/utils/utils.dart';
+import 'package:outrun_vpn/core/localization/translations.dart';
+import 'package:outrun_vpn/core/model/optional_range.dart';
+import 'package:outrun_vpn/features/chain/model/chain_enum.dart';
+import 'package:outrun_vpn/features/chain/notifier/chain_profile_notifier.dart';
+import 'package:outrun_vpn/features/chain/overview/chain_timeline.dart';
+import 'package:outrun_vpn/features/profile/model/profile_entity.dart';
+import 'package:outrun_vpn/features/profile/notifier/active_profile_notifier.dart';
+import 'package:outrun_vpn/features/profile/overview/profiles_notifier.dart';
+import 'package:outrun_vpn/features/settings/data/config_option_repository.dart';
+import 'package:outrun_vpn/features/settings/widget/preference_tile.dart';
+import 'package:outrun_vpn/singbox/model/singbox_config_enum.dart';
+import 'package:outrun_vpn/utils/utils.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class ChainOptionsPage extends HookConsumerWidget {

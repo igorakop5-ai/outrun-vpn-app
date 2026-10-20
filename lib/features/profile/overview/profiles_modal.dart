@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
-import 'package:Outrun VPN/core/localization/translations.dart';
-import 'package:Outrun VPN/core/model/failures.dart';
-import 'package:Outrun VPN/core/router/dialog/dialog_notifier.dart';
-import 'package:Outrun VPN/features/profile/notifier/profiles_update_notifier.dart';
-import 'package:Outrun VPN/features/profile/overview/profiles_notifier.dart';
-import 'package:Outrun VPN/features/profile/widget/profile_tile.dart';
-import 'package:Outrun VPN/utils/utils.dart';
+import 'package:outrun_vpn/core/localization/translations.dart';
+import 'package:outrun_vpn/core/model/failures.dart';
+import 'package:outrun_vpn/core/router/dialog/dialog_notifier.dart';
+import 'package:outrun_vpn/features/profile/notifier/profiles_update_notifier.dart';
+import 'package:outrun_vpn/features/profile/overview/profiles_notifier.dart';
+import 'package:outrun_vpn/features/profile/widget/profile_tile.dart';
+import 'package:outrun_vpn/utils/utils.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class ProfilesModal extends HookConsumerWidget {

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:Outrun VPN/core/localization/translations.dart';
-import 'package:Outrun VPN/core/router/dialog/dialog_notifier.dart';
-import 'package:Outrun VPN/core/utils/preferences_utils.dart';
-import 'package:Outrun VPN/features/proxy/active/ip_widget.dart';
-import 'package:Outrun VPN/features/settings/notifier/battery_optimization/battery_optimizations_notifier.dart';
+import 'package:outrun_vpn/core/localization/translations.dart';
+import 'package:outrun_vpn/core/router/dialog/dialog_notifier.dart';
+import 'package:outrun_vpn/core/utils/preferences_utils.dart';
+import 'package:outrun_vpn/features/proxy/active/ip_widget.dart';
+import 'package:outrun_vpn/features/settings/notifier/battery_optimization/battery_optimizations_notifier.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class ValuePreferenceWidget<T> extends HookConsumerWidget {

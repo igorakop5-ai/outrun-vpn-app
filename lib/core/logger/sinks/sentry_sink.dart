@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:Outrun VPN/utils/sentry_utils.dart';
+import 'package:outrun_vpn/utils/sentry_utils.dart';
 import 'package:logging/logging.dart';
 import 'package:sentry_flutter/sentry_flutter.dart';
 

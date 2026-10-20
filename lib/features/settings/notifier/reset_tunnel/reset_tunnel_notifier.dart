@@ -1,5 +1,5 @@
-import 'package:Outrun VPN/Outrun VPNcore/Outrun VPN_core_service_provider.dart';
-import 'package:Outrun VPN/utils/custom_loggers.dart';
+import 'package:outrun_vpn/Outrun VPNcore/Outrun VPN_core_service_provider.dart';
+import 'package:outrun_vpn/utils/custom_loggers.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'reset_tunnel_notifier.g.dart';

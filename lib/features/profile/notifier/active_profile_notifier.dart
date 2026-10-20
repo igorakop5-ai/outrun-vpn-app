@@ -1,7 +1,7 @@
-import 'package:Outrun VPN/features/profile/data/profile_data_mapper.dart';
-import 'package:Outrun VPN/features/profile/data/profile_data_providers.dart';
-import 'package:Outrun VPN/features/profile/model/profile_entity.dart';
-import 'package:Outrun VPN/utils/utils.dart';
+import 'package:outrun_vpn/features/profile/data/profile_data_mapper.dart';
+import 'package:outrun_vpn/features/profile/data/profile_data_providers.dart';
+import 'package:outrun_vpn/features/profile/model/profile_entity.dart';
+import 'package:outrun_vpn/utils/utils.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 

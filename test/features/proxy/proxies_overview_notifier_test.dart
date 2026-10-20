@@ -2,16 +2,16 @@ import 'dart:async';
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:fpdart/fpdart.dart';
-import 'package:Outrun VPN/core/localization/translations.dart';
-import 'package:Outrun VPN/core/notification/in_app_notification_controller.dart';
-import 'package:Outrun VPN/core/preferences/preferences_provider.dart';
-import 'package:Outrun VPN/features/connection/notifier/connection_notifier.dart';
-import 'package:Outrun VPN/features/proxy/data/proxy_data_providers.dart';
-import 'package:Outrun VPN/features/proxy/data/proxy_repository.dart';
-import 'package:Outrun VPN/features/proxy/model/proxy_failure.dart';
-import 'package:Outrun VPN/features/proxy/overview/proxies_overview_notifier.dart';
-import 'package:Outrun VPN/Outrun VPNcore/generated/google/protobuf/timestamp.pb.dart';
-import 'package:Outrun VPN/Outrun VPNcore/generated/v2/hcore/hcore.pb.dart';
+import 'package:outrun_vpn/core/localization/translations.dart';
+import 'package:outrun_vpn/core/notification/in_app_notification_controller.dart';
+import 'package:outrun_vpn/core/preferences/preferences_provider.dart';
+import 'package:outrun_vpn/features/connection/notifier/connection_notifier.dart';
+import 'package:outrun_vpn/features/proxy/data/proxy_data_providers.dart';
+import 'package:outrun_vpn/features/proxy/data/proxy_repository.dart';
+import 'package:outrun_vpn/features/proxy/model/proxy_failure.dart';
+import 'package:outrun_vpn/features/proxy/overview/proxies_overview_notifier.dart';
+import 'package:outrun_vpn/Outrun VPNcore/generated/google/protobuf/timestamp.pb.dart';
+import 'package:outrun_vpn/Outrun VPNcore/generated/v2/hcore/hcore.pb.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 

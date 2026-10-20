@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:Outrun VPN/utils/utils.dart';
+import 'package:outrun_vpn/utils/utils.dart';
 
 abstract class Constants {
   static const appName = "Outrun VPN";

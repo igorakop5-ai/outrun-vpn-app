@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:Outrun VPN/Outrun VPNcore/generated/v2/hcore/hcore.pb.dart';
-import 'package:Outrun VPN/singbox/model/core_status.dart';
+import 'package:outrun_vpn/Outrun VPNcore/generated/v2/hcore/hcore.pb.dart';
+import 'package:outrun_vpn/singbox/model/core_status.dart';
 
 void main() {
   group('CoreStatus.fromCoreInfo', () {

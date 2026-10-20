@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:Outrun VPN/core/theme/app_theme_mode.dart';
-import 'package:Outrun VPN/core/theme/theme_extensions.dart';
+import 'package:outrun_vpn/core/theme/app_theme_mode.dart';
+import 'package:outrun_vpn/core/theme/theme_extensions.dart';
 
 class AppTheme {
   AppTheme(this.mode, this.fontFamily);

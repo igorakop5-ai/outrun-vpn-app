@@ -1,6 +1,6 @@
 import 'package:app_links/app_links.dart';
-import 'package:Outrun VPN/core/router/deep_linking/url_protocol/api.dart';
-import 'package:Outrun VPN/utils/utils.dart';
+import 'package:outrun_vpn/core/router/deep_linking/url_protocol/api.dart';
+import 'package:outrun_vpn/utils/utils.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 

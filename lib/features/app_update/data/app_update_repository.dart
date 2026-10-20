@@ -1,12 +1,12 @@
 import 'package:fpdart/fpdart.dart';
-import 'package:Outrun VPN/core/http_client/dio_http_client.dart';
-import 'package:Outrun VPN/core/model/constants.dart';
-import 'package:Outrun VPN/core/model/environment.dart';
-import 'package:Outrun VPN/core/utils/exception_handler.dart';
-import 'package:Outrun VPN/features/app_update/data/github_release_parser.dart';
-import 'package:Outrun VPN/features/app_update/model/app_update_failure.dart';
-import 'package:Outrun VPN/features/app_update/model/remote_version_entity.dart';
-import 'package:Outrun VPN/utils/utils.dart';
+import 'package:outrun_vpn/core/http_client/dio_http_client.dart';
+import 'package:outrun_vpn/core/model/constants.dart';
+import 'package:outrun_vpn/core/model/environment.dart';
+import 'package:outrun_vpn/core/utils/exception_handler.dart';
+import 'package:outrun_vpn/features/app_update/data/github_release_parser.dart';
+import 'package:outrun_vpn/features/app_update/model/app_update_failure.dart';
+import 'package:outrun_vpn/features/app_update/model/remote_version_entity.dart';
+import 'package:outrun_vpn/utils/utils.dart';
 
 abstract interface class AppUpdateRepository {
   TaskEither<AppUpdateFailure, RemoteVersionEntity> getLatestVersion({

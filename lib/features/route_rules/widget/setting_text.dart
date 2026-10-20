@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:Outrun VPN/core/localization/translations.dart';
-import 'package:Outrun VPN/core/router/dialog/dialog_notifier.dart';
+import 'package:outrun_vpn/core/localization/translations.dart';
+import 'package:outrun_vpn/core/router/dialog/dialog_notifier.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class SettingText extends ConsumerWidget {

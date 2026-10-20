@@ -3,12 +3,12 @@ import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:gap/gap.dart';
-import 'package:Outrun VPN/core/localization/translations.dart';
-import 'package:Outrun VPN/core/preferences/general_preferences.dart';
-import 'package:Outrun VPN/features/app_based_routing/model/app_package_info.dart';
-import 'package:Outrun VPN/features/app_based_routing/model/per_app_proxy_mode.dart';
-import 'package:Outrun VPN/features/route_rules/notifier/rule_notifier.dart';
-import 'package:Outrun VPN/utils/utils.dart';
+import 'package:outrun_vpn/core/localization/translations.dart';
+import 'package:outrun_vpn/core/preferences/general_preferences.dart';
+import 'package:outrun_vpn/features/app_based_routing/model/app_package_info.dart';
+import 'package:outrun_vpn/features/app_based_routing/model/per_app_proxy_mode.dart';
+import 'package:outrun_vpn/features/route_rules/notifier/rule_notifier.dart';
+import 'package:outrun_vpn/utils/utils.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:installed_apps/index.dart';
 

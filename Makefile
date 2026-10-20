@@ -39,20 +39,20 @@ else
 endif
 
 
-BINDIR=Outrun VPN-core$(SEP)bin
+BINDIR=hiddify-core$(SEP)bin
 ANDROID_OUT=android$(SEP)app$(SEP)libs
 IOS_OUT=ios$(SEP)Frameworks
-DESKTOP_OUT=Outrun VPN-core$(SEP)bin
+DESKTOP_OUT=hiddify-core$(SEP)bin
 GEO_ASSETS_DIR=assets$(SEP)core
 
-CORE_PRODUCT_NAME=Outrun VPN-core
+CORE_PRODUCT_NAME=hiddify-core
 CORE_NAME=Outrun VPN-lib
-LIB_NAME=Outrun VPN-core
+LIB_NAME=hiddify-core
 
 ifeq ($(CHANNEL),prod)
-	CORE_URL=https://github.com/Outrun VPN/Outrun VPN-core/releases/download/v$(core.version)
+	CORE_URL=https://github.com/Outrun VPN/hiddify-core/releases/download/v$(core.version)
 else
-	CORE_URL=https://github.com/Outrun VPN/Outrun VPN-core/releases/download/draft
+	CORE_URL=https://github.com/Outrun VPN/hiddify-core/releases/download/draft
 endif
 
 ifeq ($(CHANNEL),prod)
@@ -113,15 +113,15 @@ android-aab-prepare:android-prepare
 generate_kotlin_protos: 
 	# Run protoc to generate Kotlin files
 	# protoc \
-	# 	--proto_path=Outrun VPN-core/ \
+	# 	--proto_path=hiddify-core/ \
 	# 	--java_out=./android/app/src/main/java/ \
 	# 	--grpc-java_out=./android/app/src/main/java/ \
-	# 	$(shell find Outrun VPN-core/v2 Outrun VPN-core/extension -name "*.proto")
+	# 	$(shell find hiddify-core/v2 hiddify-core/extension -name "*.proto")
 	rsync -av --delete \
 		--include='*/' \
 		--include='*.proto' \
 		--exclude='*' \
-		Outrun VPN-core/v2 Outrun VPN-core/extension ./android/app/src/main/protos/
+		hiddify-core/v2 hiddify-core/extension ./android/app/src/main/protos/
 	# # Find .proto files and update package declarations
 	# find "./android/app/src/main/java/com/Outrun VPN/Outrun VPN/protos" -type f -name "*.java" | while read -r proto_file; do \
 	#     if grep -q "^package " "$$proto_file"; then \
@@ -130,11 +130,11 @@ generate_kotlin_protos:
 	# done
 
 generate_go_protoc:
-	make -C Outrun VPN-core -f Makefile protos
+	make -C hiddify-core -f Makefile protos
 	echo "SED: $(SED)"
 generate_dart_protoc:
 	mkdir -p lib/Outrun VPNcore/generated
-	protoc --dart_out=grpc:lib/Outrun VPNcore/generated --proto_path=Outrun VPN-core/  $(shell find Outrun VPN-core/v2 Outrun VPN-core/extension -name "*.proto") 	google/protobuf/timestamp.proto ; \
+	protoc --dart_out=grpc:lib/Outrun VPNcore/generated --proto_path=hiddify-core/  $(shell find hiddify-core/v2 hiddify-core/extension -name "*.proto") 	google/protobuf/timestamp.proto ; \
 
 .PHONY: protos
 protos: generate_go_protoc generate_kotlin_protos generate_dart_protoc
@@ -505,7 +505,7 @@ macos-libs:
 
 ios-libs: #not tested
 	mkdir -p $(IOS_OUT)
-	rm -rf $(IOS_OUT)/Outrun VPNCore.xcframework
+	rm -rf $(IOS_OUT)/HiddifyCore.xcframework
 	curl -L $(CORE_URL)/$(CORE_NAME)-ios.tar.gz | tar xz -C "$(IOS_OUT)"
 
 get-geo-assets:
@@ -514,25 +514,25 @@ get-geo-assets:
 	# curl -L https://github.com/SagerNet/sing-geosite/releases/latest/download/geosite.db -o $(GEO_ASSETS_DIR)/geosite.db
 
 build-headers:
-	make -C Outrun VPN-core -f Makefile headers && mv $(BINDIR)/$(CORE_NAME)-headers.h $(BINDIR)/Outrun VPN-core.h
+	make -C hiddify-core -f Makefile headers && mv $(BINDIR)/$(CORE_NAME)-headers.h $(BINDIR)/hiddify-core.h
 
 build-android-libs:
-	make -C Outrun VPN-core -f Makefile android 
+	make -C hiddify-core -f Makefile android 
 	mv $(BINDIR)/$(LIB_NAME).aar $(ANDROID_OUT)/
 
 build-windows-libs:
-	make -C Outrun VPN-core -f Makefile windows-amd64
+	make -C hiddify-core -f Makefile windows-amd64
 
 build-linux-libs:
-	make -C Outrun VPN-core -f Makefile linux-amd64 
+	make -C hiddify-core -f Makefile linux-amd64 
 
 build-macos-libs:
-	make -C Outrun VPN-core -f Makefile macos
+	make -C hiddify-core -f Makefile macos
 
 build-ios-libs: 
-	rm -rf $(IOS_OUT)/Outrun VPNCore.xcframework 
-	make -C Outrun VPN-core -f Makefile ios  
-	mv $(BINDIR)/Outrun VPNCore.xcframework $(IOS_OUT)/Outrun VPNCore.xcframework
+	rm -rf $(IOS_OUT)/HiddifyCore.xcframework 
+	make -C hiddify-core -f Makefile ios  
+	mv $(BINDIR)/HiddifyCore.xcframework $(IOS_OUT)/HiddifyCore.xcframework
 
 release: # Create a new tag for release.
 	@CORE_VERSION=$(core.version) bash -c ".github/change_version.sh "

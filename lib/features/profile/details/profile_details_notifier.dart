@@ -1,15 +1,15 @@
 import 'dart:convert';
 
-import 'package:Outrun VPN/core/localization/translations.dart';
-import 'package:Outrun VPN/core/model/failures.dart';
-import 'package:Outrun VPN/core/notification/in_app_notification_controller.dart';
-import 'package:Outrun VPN/core/router/dialog/dialog_notifier.dart';
-import 'package:Outrun VPN/features/profile/data/profile_data_providers.dart';
-import 'package:Outrun VPN/features/profile/data/profile_repository.dart';
-import 'package:Outrun VPN/features/profile/details/profile_details_state.dart';
-import 'package:Outrun VPN/features/profile/model/profile_entity.dart';
-import 'package:Outrun VPN/features/profile/model/profile_failure.dart';
-import 'package:Outrun VPN/utils/utils.dart';
+import 'package:outrun_vpn/core/localization/translations.dart';
+import 'package:outrun_vpn/core/model/failures.dart';
+import 'package:outrun_vpn/core/notification/in_app_notification_controller.dart';
+import 'package:outrun_vpn/core/router/dialog/dialog_notifier.dart';
+import 'package:outrun_vpn/features/profile/data/profile_data_providers.dart';
+import 'package:outrun_vpn/features/profile/data/profile_repository.dart';
+import 'package:outrun_vpn/features/profile/details/profile_details_state.dart';
+import 'package:outrun_vpn/features/profile/model/profile_entity.dart';
+import 'package:outrun_vpn/features/profile/model/profile_failure.dart';
+import 'package:outrun_vpn/utils/utils.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'profile_details_notifier.g.dart';

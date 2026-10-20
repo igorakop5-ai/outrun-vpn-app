@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:Outrun VPN/core/localization/translations.dart';
-import 'package:Outrun VPN/features/chain/overview/chain_quick_settings.dart';
-import 'package:Outrun VPN/features/settings/data/config_option_repository.dart';
-import 'package:Outrun VPN/features/settings/widget/lan_sharing_tile.dart';
-import 'package:Outrun VPN/singbox/model/singbox_config_enum.dart';
+import 'package:outrun_vpn/core/localization/translations.dart';
+import 'package:outrun_vpn/features/chain/overview/chain_quick_settings.dart';
+import 'package:outrun_vpn/features/settings/data/config_option_repository.dart';
+import 'package:outrun_vpn/features/settings/widget/lan_sharing_tile.dart';
+import 'package:outrun_vpn/singbox/model/singbox_config_enum.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class QuickSettingsModal extends HookConsumerWidget {

@@ -1,10 +1,10 @@
 import 'package:flutter/foundation.dart';
-import 'package:Outrun VPN/core/analytics/analytics_filter.dart';
-import 'package:Outrun VPN/core/logger/sinks/sentry_sink.dart';
+import 'package:outrun_vpn/core/analytics/analytics_filter.dart';
+import 'package:outrun_vpn/core/logger/sinks/sentry_sink.dart';
 
-import 'package:Outrun VPN/core/model/environment.dart';
-import 'package:Outrun VPN/core/preferences/preferences_provider.dart';
-import 'package:Outrun VPN/utils/custom_loggers.dart';
+import 'package:outrun_vpn/core/model/environment.dart';
+import 'package:outrun_vpn/core/preferences/preferences_provider.dart';
+import 'package:outrun_vpn/utils/custom_loggers.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:sentry_flutter/sentry_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';

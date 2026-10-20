@@ -2,19 +2,19 @@ import 'package:dio/dio.dart';
 import 'package:drift/drift.dart';
 import 'package:flutter/foundation.dart';
 import 'package:fpdart/fpdart.dart';
-import 'package:Outrun VPN/core/db/db.dart';
+import 'package:outrun_vpn/core/db/db.dart';
 
-import 'package:Outrun VPN/core/utils/exception_handler.dart';
-import 'package:Outrun VPN/features/profile/data/profile_data_mapper.dart';
-import 'package:Outrun VPN/features/profile/data/profile_data_source.dart';
-import 'package:Outrun VPN/features/profile/data/profile_parser.dart';
-import 'package:Outrun VPN/features/profile/data/profile_path_resolver.dart';
-import 'package:Outrun VPN/features/profile/model/profile_entity.dart';
-import 'package:Outrun VPN/features/profile/model/profile_failure.dart';
-import 'package:Outrun VPN/features/profile/model/profile_sort_enum.dart';
-import 'package:Outrun VPN/features/settings/data/config_option_repository.dart';
-import 'package:Outrun VPN/Outrun VPNcore/Outrun VPN_core_service.dart';
-import 'package:Outrun VPN/utils/custom_loggers.dart';
+import 'package:outrun_vpn/core/utils/exception_handler.dart';
+import 'package:outrun_vpn/features/profile/data/profile_data_mapper.dart';
+import 'package:outrun_vpn/features/profile/data/profile_data_source.dart';
+import 'package:outrun_vpn/features/profile/data/profile_parser.dart';
+import 'package:outrun_vpn/features/profile/data/profile_path_resolver.dart';
+import 'package:outrun_vpn/features/profile/model/profile_entity.dart';
+import 'package:outrun_vpn/features/profile/model/profile_failure.dart';
+import 'package:outrun_vpn/features/profile/model/profile_sort_enum.dart';
+import 'package:outrun_vpn/features/settings/data/config_option_repository.dart';
+import 'package:outrun_vpn/Outrun VPNcore/Outrun VPN_core_service.dart';
+import 'package:outrun_vpn/utils/custom_loggers.dart';
 import 'package:uuid/uuid.dart';
 
 abstract interface class ProfileRepository {

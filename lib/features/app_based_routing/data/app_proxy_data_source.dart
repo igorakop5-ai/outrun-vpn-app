@@ -1,9 +1,9 @@
 import 'package:drift/drift.dart';
-import 'package:Outrun VPN/core/db/db.dart';
-import 'package:Outrun VPN/features/app_based_routing/model/per_app_proxy_backup.dart';
-import 'package:Outrun VPN/features/app_based_routing/model/per_app_proxy_mode.dart';
-import 'package:Outrun VPN/features/app_based_routing/model/pkg_flag.dart';
-import 'package:Outrun VPN/utils/custom_loggers.dart';
+import 'package:outrun_vpn/core/db/db.dart';
+import 'package:outrun_vpn/features/app_based_routing/model/per_app_proxy_backup.dart';
+import 'package:outrun_vpn/features/app_based_routing/model/per_app_proxy_mode.dart';
+import 'package:outrun_vpn/features/app_based_routing/model/pkg_flag.dart';
+import 'package:outrun_vpn/utils/custom_loggers.dart';
 
 part 'app_proxy_data_source.g.dart';
 

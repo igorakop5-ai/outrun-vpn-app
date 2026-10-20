@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:Outrun VPN/core/localization/translations.dart';
+import 'package:outrun_vpn/core/localization/translations.dart';
 
 enum AppThemeMode {
   system,

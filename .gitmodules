@@ -1,4 +1,3 @@
-[submodule "Outrun VPN-core"]
-	path = Outrun VPN-core
-	url = ssh://git@github.com/Outrun VPN/Outrun VPN-core
-	branch = v3
+[submodule "hiddify-core"]
+	path = hiddify-core
+	url = https://github.com/hiddify/hiddify-core.git

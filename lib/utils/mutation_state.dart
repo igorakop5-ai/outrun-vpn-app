@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:Outrun VPN/core/model/failures.dart';
+import 'package:outrun_vpn/core/model/failures.dart';
 
 part 'mutation_state.freezed.dart';
 

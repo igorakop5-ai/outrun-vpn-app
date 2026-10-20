@@ -1,4 +1,4 @@
-import 'package:Outrun VPN/core/localization/translations.dart';
+import 'package:outrun_vpn/core/localization/translations.dart';
 
 enum Region {
   ir,

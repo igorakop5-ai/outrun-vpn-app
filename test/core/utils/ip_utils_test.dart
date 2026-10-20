@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:Outrun VPN/core/utils/ip_utils.dart';
+import 'package:outrun_vpn/core/utils/ip_utils.dart';
 
 void main() {
   group("obscureIp", () {

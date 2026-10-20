@@ -1,8 +1,8 @@
 import 'package:drift/drift.dart';
 import 'package:fpdart/fpdart.dart';
-import 'package:Outrun VPN/core/db/db.dart';
-import 'package:Outrun VPN/features/profile/model/profile_sort_enum.dart';
-import 'package:Outrun VPN/utils/utils.dart';
+import 'package:outrun_vpn/core/db/db.dart';
+import 'package:outrun_vpn/features/profile/model/profile_sort_enum.dart';
+import 'package:outrun_vpn/utils/utils.dart';
 
 part 'profile_data_source.g.dart';
 

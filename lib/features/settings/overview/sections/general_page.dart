@@ -1,14 +1,14 @@
 import 'package:dartx/dartx.dart';
 import 'package:flutter/material.dart';
-import 'package:Outrun VPN/core/haptic/haptic_service.dart';
-import 'package:Outrun VPN/core/localization/translations.dart';
-import 'package:Outrun VPN/core/preferences/general_preferences.dart';
-import 'package:Outrun VPN/core/router/dialog/dialog_notifier.dart';
-import 'package:Outrun VPN/features/auto_start/notifier/auto_start_notifier.dart';
-import 'package:Outrun VPN/features/common/general_pref_tiles.dart';
-import 'package:Outrun VPN/features/settings/data/config_option_repository.dart';
-import 'package:Outrun VPN/features/settings/widget/preference_tile.dart';
-import 'package:Outrun VPN/utils/utils.dart';
+import 'package:outrun_vpn/core/haptic/haptic_service.dart';
+import 'package:outrun_vpn/core/localization/translations.dart';
+import 'package:outrun_vpn/core/preferences/general_preferences.dart';
+import 'package:outrun_vpn/core/router/dialog/dialog_notifier.dart';
+import 'package:outrun_vpn/features/auto_start/notifier/auto_start_notifier.dart';
+import 'package:outrun_vpn/features/common/general_pref_tiles.dart';
+import 'package:outrun_vpn/features/settings/data/config_option_repository.dart';
+import 'package:outrun_vpn/features/settings/widget/preference_tile.dart';
+import 'package:outrun_vpn/utils/utils.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:humanizer/humanizer.dart';
 

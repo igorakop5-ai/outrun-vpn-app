@@ -1,10 +1,10 @@
 import 'dart:convert';
 
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:Outrun VPN/core/model/optional_range.dart';
-import 'package:Outrun VPN/core/utils/json_converters.dart';
-import 'package:Outrun VPN/features/log/model/log_level.dart';
-import 'package:Outrun VPN/singbox/model/singbox_config_enum.dart';
+import 'package:outrun_vpn/core/model/optional_range.dart';
+import 'package:outrun_vpn/core/utils/json_converters.dart';
+import 'package:outrun_vpn/features/log/model/log_level.dart';
+import 'package:outrun_vpn/singbox/model/singbox_config_enum.dart';
 
 part 'singbox_config_option.freezed.dart';
 part 'singbox_config_option.g.dart';

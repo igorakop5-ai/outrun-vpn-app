@@ -1,13 +1,13 @@
 import 'package:dio/dio.dart';
 import 'package:fpdart/fpdart.dart';
-import 'package:Outrun VPN/core/http_client/dio_http_client.dart';
-import 'package:Outrun VPN/core/utils/exception_handler.dart';
-import 'package:Outrun VPN/features/proxy/model/ip_info_entity.dart' as oldipinfo;
+import 'package:outrun_vpn/core/http_client/dio_http_client.dart';
+import 'package:outrun_vpn/core/utils/exception_handler.dart';
+import 'package:outrun_vpn/features/proxy/model/ip_info_entity.dart' as oldipinfo;
 
-import 'package:Outrun VPN/features/proxy/model/proxy_failure.dart';
-import 'package:Outrun VPN/Outrun VPNcore/generated/v2/hcore/hcore.pb.dart';
-import 'package:Outrun VPN/Outrun VPNcore/Outrun VPN_core_service.dart';
-import 'package:Outrun VPN/utils/custom_loggers.dart';
+import 'package:outrun_vpn/features/proxy/model/proxy_failure.dart';
+import 'package:outrun_vpn/Outrun VPNcore/generated/v2/hcore/hcore.pb.dart';
+import 'package:outrun_vpn/Outrun VPNcore/Outrun VPN_core_service.dart';
+import 'package:outrun_vpn/utils/custom_loggers.dart';
 
 abstract interface class ProxyRepository {
   // Stream<Either<ProxyFailure, List<OutboundGroup>>> watchProxies();

@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:Outrun VPN/core/localization/translations.dart';
-import 'package:Outrun VPN/core/model/region.dart';
-import 'package:Outrun VPN/features/settings/widget/preference_tile.dart';
+import 'package:outrun_vpn/core/localization/translations.dart';
+import 'package:outrun_vpn/core/model/region.dart';
+import 'package:outrun_vpn/features/settings/widget/preference_tile.dart';
 
 void main() {
   group('Region labels across locales', () {

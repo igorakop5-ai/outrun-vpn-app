@@ -1,6 +1,6 @@
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
-import 'package:Outrun VPN/core/localization/translations.dart';
+import 'package:outrun_vpn/core/localization/translations.dart';
 
 enum ProfilesSort {
   lastUpdate,

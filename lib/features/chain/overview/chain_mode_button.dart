@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:Outrun VPN/core/localization/translations.dart';
-import 'package:Outrun VPN/features/chain/model/chain_enum.dart';
-import 'package:Outrun VPN/features/chain/overview/chain_mode_icon.dart';
-import 'package:Outrun VPN/features/chain/overview/chain_mode_menu.dart';
-import 'package:Outrun VPN/features/common/custom_text_scroll.dart';
-import 'package:Outrun VPN/features/settings/data/config_option_repository.dart';
+import 'package:outrun_vpn/core/localization/translations.dart';
+import 'package:outrun_vpn/features/chain/model/chain_enum.dart';
+import 'package:outrun_vpn/features/chain/overview/chain_mode_icon.dart';
+import 'package:outrun_vpn/features/chain/overview/chain_mode_menu.dart';
+import 'package:outrun_vpn/features/common/custom_text_scroll.dart';
+import 'package:outrun_vpn/features/settings/data/config_option_repository.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class ChainModeButton extends HookConsumerWidget {

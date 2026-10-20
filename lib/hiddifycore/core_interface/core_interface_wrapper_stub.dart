@@ -1,4 +1,4 @@
-import 'package:Outrun VPN/Outrun VPNcore/core_interface/core_interface.dart';
+import 'package:outrun_vpn/Outrun VPNcore/core_interface/core_interface.dart';
 
 CoreInterface getCoreInterface() {
   return CoreInterface();

@@ -1,4 +1,4 @@
-import 'package:Outrun VPN/gen/translations.g.dart';
+import 'package:outrun_vpn/gen/translations.g.dart';
 
 enum ActionsAtClosing {
   ask,

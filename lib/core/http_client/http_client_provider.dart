@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
-import 'package:Outrun VPN/core/app_info/app_info_provider.dart';
-import 'package:Outrun VPN/core/http_client/dio_http_client.dart';
-import 'package:Outrun VPN/features/settings/data/config_option_repository.dart';
+import 'package:outrun_vpn/core/app_info/app_info_provider.dart';
+import 'package:outrun_vpn/core/http_client/dio_http_client.dart';
+import 'package:outrun_vpn/features/settings/data/config_option_repository.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 

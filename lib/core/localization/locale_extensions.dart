@@ -1,8 +1,8 @@
 import 'dart:io';
 
 import 'package:flutter/foundation.dart';
-import 'package:Outrun VPN/gen/fonts.gen.dart';
-import 'package:Outrun VPN/gen/translations.g.dart';
+import 'package:outrun_vpn/gen/fonts.gen.dart';
+import 'package:outrun_vpn/gen/translations.g.dart';
 
 extension AppLocaleX on AppLocale {
   String get preferredFontFamily =>

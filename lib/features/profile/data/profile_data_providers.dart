@@ -1,12 +1,12 @@
-import 'package:Outrun VPN/core/db/provider/db_providers.dart';
-import 'package:Outrun VPN/core/directories/directories_provider.dart';
-import 'package:Outrun VPN/core/http_client/http_client_provider.dart';
-import 'package:Outrun VPN/features/profile/data/profile_data_source.dart';
-import 'package:Outrun VPN/features/profile/data/profile_parser.dart';
-import 'package:Outrun VPN/features/profile/data/profile_path_resolver.dart';
-import 'package:Outrun VPN/features/profile/data/profile_repository.dart';
-import 'package:Outrun VPN/features/settings/data/config_option_data_providers.dart';
-import 'package:Outrun VPN/Outrun VPNcore/Outrun VPN_core_service_provider.dart';
+import 'package:outrun_vpn/core/db/provider/db_providers.dart';
+import 'package:outrun_vpn/core/directories/directories_provider.dart';
+import 'package:outrun_vpn/core/http_client/http_client_provider.dart';
+import 'package:outrun_vpn/features/profile/data/profile_data_source.dart';
+import 'package:outrun_vpn/features/profile/data/profile_parser.dart';
+import 'package:outrun_vpn/features/profile/data/profile_path_resolver.dart';
+import 'package:outrun_vpn/features/profile/data/profile_repository.dart';
+import 'package:outrun_vpn/features/settings/data/config_option_data_providers.dart';
+import 'package:outrun_vpn/Outrun VPNcore/Outrun VPN_core_service_provider.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 

@@ -3,11 +3,11 @@ import 'dart:math';
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:Outrun VPN/core/localization/translations.dart';
-import 'package:Outrun VPN/core/model/failures.dart';
-import 'package:Outrun VPN/features/proxy/overview/proxies_overview_notifier.dart';
-import 'package:Outrun VPN/features/proxy/widget/proxy_tile.dart';
-import 'package:Outrun VPN/utils/utils.dart';
+import 'package:outrun_vpn/core/localization/translations.dart';
+import 'package:outrun_vpn/core/model/failures.dart';
+import 'package:outrun_vpn/features/proxy/overview/proxies_overview_notifier.dart';
+import 'package:outrun_vpn/features/proxy/widget/proxy_tile.dart';
+import 'package:outrun_vpn/utils/utils.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class ProxiesOverviewPage extends HookConsumerWidget with PresLogger {
