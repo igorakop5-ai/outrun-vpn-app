@@ -11,7 +11,7 @@ import 'package:outrun_vpn/core/utils/preferences_utils.dart';
 import 'package:outrun_vpn/features/connection/notifier/connection_notifier.dart';
 import 'package:outrun_vpn/features/proxy/data/proxy_data_providers.dart';
 import 'package:outrun_vpn/features/proxy/model/proxy_failure.dart';
-import 'package:outrun_vpn/Outrun VPNcore/generated/v2/hcore/hcore.pb.dart';
+import 'package:outrun_vpn/hiddifycore/generated/v2/hcore/hcore.pb.dart';
 
 import 'package:outrun_vpn/utils/riverpod_utils.dart';
 import 'package:outrun_vpn/utils/utils.dart';

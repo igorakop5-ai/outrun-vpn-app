@@ -9,7 +9,7 @@ import 'package:outrun_vpn/features/proxy/active/active_proxy_notifier.dart';
 import 'package:outrun_vpn/features/settings/data/config_option_repository.dart';
 import 'package:outrun_vpn/features/window/notifier/window_notifier.dart';
 import 'package:outrun_vpn/gen/assets.gen.dart';
-import 'package:outrun_vpn/Outrun VPNcore/generated/v2/hcore/hcore.pb.dart';
+import 'package:outrun_vpn/hiddifycore/generated/v2/hcore/hcore.pb.dart';
 import 'package:outrun_vpn/singbox/model/singbox_config_enum.dart';
 import 'package:outrun_vpn/utils/utils.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';

@@ -9,7 +9,7 @@ import 'package:outrun_vpn/features/log/model/log_level.dart';
 import 'package:outrun_vpn/features/profile/data/profile_parser.dart';
 import 'package:outrun_vpn/features/route_rules/notifier/rules_notifier.dart';
 import 'package:outrun_vpn/features/settings/model/config_option_failure.dart';
-import 'package:outrun_vpn/Outrun VPNcore/generated/v2/config/route_rule.pb.dart';
+import 'package:outrun_vpn/hiddifycore/generated/v2/config/route_rule.pb.dart';
 import 'package:outrun_vpn/singbox/model/singbox_config_enum.dart';
 import 'package:outrun_vpn/singbox/model/singbox_config_option.dart';
 import 'package:outrun_vpn/utils/utils.dart';

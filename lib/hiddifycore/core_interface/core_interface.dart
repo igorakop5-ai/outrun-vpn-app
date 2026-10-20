@@ -1,5 +1,5 @@
 import 'package:outrun_vpn/core/model/directories.dart';
-import 'package:outrun_vpn/Outrun VPNcore/generated/v2/hcore/hcore_service.pbgrpc.dart';
+import 'package:outrun_vpn/hiddifycore/generated/v2/hcore/hcore_service.pbgrpc.dart';
 import 'package:outrun_vpn/singbox/model/core_status.dart';
 
 class CoreInterface {

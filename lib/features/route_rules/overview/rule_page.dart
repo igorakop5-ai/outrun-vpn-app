@@ -8,7 +8,7 @@ import 'package:outrun_vpn/features/route_rules/widget/setting_divider.dart';
 import 'package:outrun_vpn/features/route_rules/widget/setting_generic_list.dart';
 import 'package:outrun_vpn/features/route_rules/widget/setting_radio.dart';
 import 'package:outrun_vpn/features/route_rules/widget/setting_text.dart';
-import 'package:outrun_vpn/Outrun VPNcore/generated/v2/config/route_rule.pb.dart';
+import 'package:outrun_vpn/hiddifycore/generated/v2/config/route_rule.pb.dart';
 import 'package:outrun_vpn/utils/utils.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:protobuf/protobuf.dart';

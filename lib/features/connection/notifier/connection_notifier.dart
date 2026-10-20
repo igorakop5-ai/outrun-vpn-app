@@ -11,7 +11,7 @@ import 'package:outrun_vpn/features/connection/model/connection_status.dart';
 import 'package:outrun_vpn/features/connection/model/startup_connection.dart';
 import 'package:outrun_vpn/features/profile/model/profile_entity.dart';
 import 'package:outrun_vpn/features/profile/notifier/active_profile_notifier.dart';
-import 'package:outrun_vpn/Outrun VPNcore/init_signal.dart';
+import 'package:outrun_vpn/hiddifycore/init_signal.dart';
 import 'package:outrun_vpn/utils/utils.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:in_app_review/in_app_review.dart';

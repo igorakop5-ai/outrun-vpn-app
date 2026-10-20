@@ -4,7 +4,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:outrun_vpn/core/localization/translations.dart';
 import 'package:outrun_vpn/features/route_rules/notifier/rules_notifier.dart';
-import 'package:outrun_vpn/Outrun VPNcore/generated/v2/config/route_rule.pb.dart';
+import 'package:outrun_vpn/hiddifycore/generated/v2/config/route_rule.pb.dart';
 import 'package:outrun_vpn/utils/utils.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:protobuf/protobuf.dart';

@@ -8,7 +8,7 @@ import 'package:outrun_vpn/features/connection/model/connection_status.dart';
 import 'package:outrun_vpn/features/profile/data/profile_path_resolver.dart';
 import 'package:outrun_vpn/features/profile/model/profile_entity.dart';
 import 'package:outrun_vpn/features/settings/data/config_option_repository.dart';
-import 'package:outrun_vpn/Outrun VPNcore/Outrun VPN_core_service.dart';
+import 'package:outrun_vpn/hiddifycore/hiddify_core_service.dart';
 import 'package:outrun_vpn/singbox/model/core_status.dart';
 import 'package:outrun_vpn/singbox/model/singbox_config_option.dart';
 import 'package:outrun_vpn/utils/utils.dart';

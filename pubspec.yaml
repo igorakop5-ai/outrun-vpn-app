@@ -189,7 +189,7 @@ flutter_native_splash:
 ffigen:
   name: "HiddifyCoreNativeLibrary"
   description: "Bindings to Outrun VPN Core Library"
-  output: "lib/gen/Outrun VPN_core_generated_bindings.dart"
+  output: "lib/gen/hiddify_core_generated_bindings.dart"
   headers:
     entry-points:
       - "hiddify-core/bin/desktop.h"

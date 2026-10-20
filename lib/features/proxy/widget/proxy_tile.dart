@@ -3,7 +3,7 @@ import 'package:outrun_vpn/core/model/constants.dart';
 import 'package:outrun_vpn/core/router/dialog/dialog_notifier.dart';
 import 'package:outrun_vpn/features/proxy/active/ip_widget.dart';
 import 'package:outrun_vpn/gen/fonts.gen.dart';
-import 'package:outrun_vpn/Outrun VPNcore/generated/v2/hcore/hcore.pb.dart';
+import 'package:outrun_vpn/hiddifycore/generated/v2/hcore/hcore.pb.dart';
 import 'package:outrun_vpn/utils/custom_loggers.dart';
 import 'package:outrun_vpn/utils/platform_utils.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';

@@ -1,8 +1,8 @@
 import 'package:fpdart/fpdart.dart';
 import 'package:outrun_vpn/core/utils/exception_handler.dart';
 import 'package:outrun_vpn/features/stats/model/stats_failure.dart';
-import 'package:outrun_vpn/Outrun VPNcore/generated/v2/hcore/hcore.pb.dart';
-import 'package:outrun_vpn/Outrun VPNcore/Outrun VPN_core_service.dart';
+import 'package:outrun_vpn/hiddifycore/generated/v2/hcore/hcore.pb.dart';
+import 'package:outrun_vpn/hiddifycore/hiddify_core_service.dart';
 import 'package:outrun_vpn/utils/custom_loggers.dart';
 
 abstract interface class StatsRepository {

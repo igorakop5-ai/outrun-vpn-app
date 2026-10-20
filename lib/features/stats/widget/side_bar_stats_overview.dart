@@ -7,7 +7,7 @@ import 'package:outrun_vpn/core/utils/preferences_utils.dart';
 import 'package:outrun_vpn/core/widget/animated_text.dart';
 import 'package:outrun_vpn/features/stats/notifier/stats_notifier.dart';
 import 'package:outrun_vpn/features/stats/widget/stats_card.dart';
-import 'package:outrun_vpn/Outrun VPNcore/generated/v2/hcore/hcore.pb.dart';
+import 'package:outrun_vpn/hiddifycore/generated/v2/hcore/hcore.pb.dart';
 import 'package:outrun_vpn/utils/number_formatters.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 

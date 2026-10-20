@@ -25,7 +25,7 @@ import 'package:outrun_vpn/features/app_update/model/remote_version_entity.dart'
 import 'package:outrun_vpn/features/common/qr_code_dialog.dart';
 import 'package:outrun_vpn/features/common/qr_code_scanner_screen.dart';
 import 'package:outrun_vpn/features/settings/data/config_option_repository.dart';
-import 'package:outrun_vpn/Outrun VPNcore/generated/v2/hcore/hcore.pb.dart';
+import 'package:outrun_vpn/hiddifycore/generated/v2/hcore/hcore.pb.dart';
 import 'package:outrun_vpn/singbox/model/singbox_config_enum.dart';
 import 'package:protobuf/protobuf.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';

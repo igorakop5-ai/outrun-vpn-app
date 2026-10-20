@@ -6,12 +6,12 @@ import 'dart:math';
 import 'package:ffi/ffi.dart';
 import 'package:grpc/grpc.dart';
 import 'package:outrun_vpn/core/model/directories.dart';
-import 'package:outrun_vpn/gen/Outrun VPN_core_generated_bindings.dart';
-import 'package:outrun_vpn/Outrun VPNcore/core_interface/core_interface.dart';
-import 'package:outrun_vpn/Outrun VPNcore/generated/v2/hcore/hcore.pb.dart';
-import 'package:outrun_vpn/Outrun VPNcore/generated/v2/hcore/hcore_service.pbgrpc.dart';
-import 'package:outrun_vpn/Outrun VPNcore/generated/v2/hello/hello.pb.dart';
-import 'package:outrun_vpn/Outrun VPNcore/generated/v2/hello/hello_service.pbgrpc.dart';
+import 'package:outrun_vpn/gen/hiddify_core_generated_bindings.dart';
+import 'package:outrun_vpn/hiddifycore/core_interface/core_interface.dart';
+import 'package:outrun_vpn/hiddifycore/generated/v2/hcore/hcore.pb.dart';
+import 'package:outrun_vpn/hiddifycore/generated/v2/hcore/hcore_service.pbgrpc.dart';
+import 'package:outrun_vpn/hiddifycore/generated/v2/hello/hello.pb.dart';
+import 'package:outrun_vpn/hiddifycore/generated/v2/hello/hello_service.pbgrpc.dart';
 import 'package:outrun_vpn/utils/custom_loggers.dart';
 
 import 'package:path/path.dart' as p;

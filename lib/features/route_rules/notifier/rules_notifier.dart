@@ -10,7 +10,7 @@ import 'package:outrun_vpn/core/model/region.dart';
 import 'package:outrun_vpn/core/notification/in_app_notification_controller.dart';
 import 'package:outrun_vpn/core/router/dialog/dialog_notifier.dart';
 import 'package:outrun_vpn/features/settings/data/config_option_repository.dart';
-import 'package:outrun_vpn/Outrun VPNcore/generated/v2/config/route_rule.pb.dart';
+import 'package:outrun_vpn/hiddifycore/generated/v2/config/route_rule.pb.dart';
 import 'package:outrun_vpn/utils/utils.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 

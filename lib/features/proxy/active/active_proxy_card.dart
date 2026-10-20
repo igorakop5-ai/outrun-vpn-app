@@ -6,7 +6,7 @@ import 'package:outrun_vpn/features/connection/model/connection_status.dart';
 import 'package:outrun_vpn/features/connection/notifier/connection_notifier.dart';
 import 'package:outrun_vpn/features/proxy/active/active_proxy_notifier.dart';
 import 'package:outrun_vpn/features/proxy/active/ip_widget.dart';
-import 'package:outrun_vpn/Outrun VPNcore/generated/v2/hcore/hcore.pb.dart';
+import 'package:outrun_vpn/hiddifycore/generated/v2/hcore/hcore.pb.dart';
 import 'package:outrun_vpn/utils/custom_loggers.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 

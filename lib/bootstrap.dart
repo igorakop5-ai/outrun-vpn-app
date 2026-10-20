@@ -27,7 +27,7 @@ import 'package:outrun_vpn/features/proxy/active/active_proxy_notifier.dart';
 import 'package:outrun_vpn/features/settings/data/config_option_repository.dart';
 import 'package:outrun_vpn/features/system_tray/notifier/system_tray_notifier.dart';
 import 'package:outrun_vpn/features/window/notifier/window_notifier.dart';
-import 'package:outrun_vpn/Outrun VPNcore/Outrun VPN_core_service_provider.dart';
+import 'package:outrun_vpn/hiddifycore/hiddify_core_service_provider.dart';
 import 'package:outrun_vpn/riverpod_observer.dart';
 import 'package:outrun_vpn/utils/utils.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';

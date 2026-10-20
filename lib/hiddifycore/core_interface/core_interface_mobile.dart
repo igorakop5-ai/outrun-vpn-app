@@ -6,11 +6,11 @@ import 'package:flutter/services.dart';
 import 'package:grpc/grpc.dart';
 import 'package:outrun_vpn/core/model/directories.dart';
 import 'package:outrun_vpn/core/utils/laststeam.dart';
-import 'package:outrun_vpn/Outrun VPNcore/core_interface/core_interface.dart';
-import 'package:outrun_vpn/Outrun VPNcore/core_interface/mtls_channel_cred.dart';
-import 'package:outrun_vpn/Outrun VPNcore/generated/v2/hcore/hcore_service.pbgrpc.dart';
-import 'package:outrun_vpn/Outrun VPNcore/generated/v2/hello/hello.pb.dart';
-import 'package:outrun_vpn/Outrun VPNcore/generated/v2/hello/hello_service.pbgrpc.dart';
+import 'package:outrun_vpn/hiddifycore/core_interface/core_interface.dart';
+import 'package:outrun_vpn/hiddifycore/core_interface/mtls_channel_cred.dart';
+import 'package:outrun_vpn/hiddifycore/generated/v2/hcore/hcore_service.pbgrpc.dart';
+import 'package:outrun_vpn/hiddifycore/generated/v2/hello/hello.pb.dart';
+import 'package:outrun_vpn/hiddifycore/generated/v2/hello/hello_service.pbgrpc.dart';
 import 'package:outrun_vpn/singbox/model/core_status.dart';
 
 import 'package:outrun_vpn/utils/utils.dart';

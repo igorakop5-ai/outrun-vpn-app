@@ -1,4 +1,4 @@
-import 'package:outrun_vpn/Outrun VPNcore/generated/v2/hcore/hcore.pb.dart' as pb;
+import 'package:outrun_vpn/hiddifycore/generated/v2/hcore/hcore.pb.dart' as pb;
 import 'package:outrun_vpn/utils/custom_loggers.dart';
 import 'package:logging/logging.dart';
 

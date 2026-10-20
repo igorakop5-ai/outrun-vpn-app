@@ -10,8 +10,8 @@ import 'package:outrun_vpn/features/proxy/data/proxy_data_providers.dart';
 import 'package:outrun_vpn/features/proxy/data/proxy_repository.dart';
 import 'package:outrun_vpn/features/proxy/model/proxy_failure.dart';
 import 'package:outrun_vpn/features/proxy/overview/proxies_overview_notifier.dart';
-import 'package:outrun_vpn/Outrun VPNcore/generated/google/protobuf/timestamp.pb.dart';
-import 'package:outrun_vpn/Outrun VPNcore/generated/v2/hcore/hcore.pb.dart';
+import 'package:outrun_vpn/hiddifycore/generated/google/protobuf/timestamp.pb.dart';
+import 'package:outrun_vpn/hiddifycore/generated/v2/hcore/hcore.pb.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 

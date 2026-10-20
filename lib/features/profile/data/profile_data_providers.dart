@@ -6,7 +6,7 @@ import 'package:outrun_vpn/features/profile/data/profile_parser.dart';
 import 'package:outrun_vpn/features/profile/data/profile_path_resolver.dart';
 import 'package:outrun_vpn/features/profile/data/profile_repository.dart';
 import 'package:outrun_vpn/features/settings/data/config_option_data_providers.dart';
-import 'package:outrun_vpn/Outrun VPNcore/Outrun VPN_core_service_provider.dart';
+import 'package:outrun_vpn/hiddifycore/hiddify_core_service_provider.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 

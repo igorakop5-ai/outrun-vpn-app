@@ -10,12 +10,12 @@ import 'package:outrun_vpn/core/notification/in_app_notification_controller.dart
 import 'package:outrun_vpn/features/connection/model/connection_failure.dart';
 import 'package:outrun_vpn/features/log/model/log_level.dart' as config_log_level;
 import 'package:outrun_vpn/features/settings/data/config_option_repository.dart';
-import 'package:outrun_vpn/Outrun VPNcore/core_interface/core_interface_wrapper_stub.dart'
-    if (dart.library.io) 'package:outrun_vpn/Outrun VPNcore/core_interface/core_interface_wrapper.dart';
-import 'package:outrun_vpn/Outrun VPNcore/generated/v2/hcommon/common.pb.dart';
-import 'package:outrun_vpn/Outrun VPNcore/generated/v2/hcore/hcore.pb.dart';
-import 'package:outrun_vpn/Outrun VPNcore/generated/v2/hcore/hcore_service.pbgrpc.dart';
-import 'package:outrun_vpn/Outrun VPNcore/init_signal.dart';
+import 'package:outrun_vpn/hiddifycore/core_interface/core_interface_wrapper_stub.dart'
+    if (dart.library.io) 'package:outrun_vpn/hiddifycore/core_interface/core_interface_wrapper.dart';
+import 'package:outrun_vpn/hiddifycore/generated/v2/hcommon/common.pb.dart';
+import 'package:outrun_vpn/hiddifycore/generated/v2/hcore/hcore.pb.dart';
+import 'package:outrun_vpn/hiddifycore/generated/v2/hcore/hcore_service.pbgrpc.dart';
+import 'package:outrun_vpn/hiddifycore/init_signal.dart';
 import 'package:outrun_vpn/singbox/model/core_status.dart';
 import 'package:outrun_vpn/singbox/model/singbox_config_option.dart';
 import 'package:outrun_vpn/utils/custom_loggers.dart';
