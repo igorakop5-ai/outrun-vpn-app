@@ -4,10 +4,10 @@ import 'package:outrun_vpn/utils/utils.dart';
 
 abstract class Constants {
   static const appName = "Outrun VPN";
-  static const githubUrl = "https://github.com/Outrun VPN/Outrun VPN-next";
-  static const licenseUrl = "https://github.com/Outrun VPN/Outrun VPN-next?tab=License-1-ov-file#readme";
+  static const githubUrl = "https://github.com/hiddify/Outrun VPN-next";
+  static const licenseUrl = "https://github.com/hiddify/Outrun VPN-next?tab=License-1-ov-file#readme";
   static const githubReleasesApiUrl = "https://api.github.com/repos/Outrun VPN/Outrun VPN-next/releases";
-  static const githubLatestReleaseUrl = "https://github.com/Outrun VPN/Outrun VPN-app/releases/latest";
+  static const githubLatestReleaseUrl = "https://github.com/hiddify/Outrun VPN-app/releases/latest";
   static const appCastUrl = "https://raw.githubusercontent.com/Outrun VPN/Outrun VPN-next/main/appcast.xml";
   static const telegramChannelUrl = "https://t.me/Outrun VPN";
   static const privacyPolicyUrl = "https://Outrun VPN.com/privacy-policy/";

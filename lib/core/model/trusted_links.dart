@@ -23,7 +23,7 @@ abstract class TrustedLinks {
   /// TODO(pm): test seed — Outrun VPN only. Complete later (e.g. MahsaNET, IRCF, …).
   static const List<String> entries = [
     'Outrun VPN.com',
-    'github.com/Outrun VPN',
+    'github.com/hiddify',
     't.me/Outrun VPN',
   ];
 
