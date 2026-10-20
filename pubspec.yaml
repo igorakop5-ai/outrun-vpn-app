@@ -4,7 +4,7 @@ publish_to: "none"
 version: 5.0.0+50000
 
 environment:
-  sdk: ^3.10.4
+  sdk: '>=3.3.0 <4.0.0'
   # ! IMPORTANT !
   # This SDK version is strictly required and must not be removed.
   # It is parsed/grep-ed by Makefile and Dockerfile to configure the build environment.
@@ -13,13 +13,13 @@ environment:
   
 dependencies:
   flutter:
-    sdk: flutter
+    sdk: '>=3.3.0 <4.0.0'
   # Debug-only, like accessibility_tools: the two lib/main*.dart entrypoints
   # gate it behind kDebugMode, so release builds tree-shake it away.
   flutter_driver:
-    sdk: flutter
+    sdk: '>=3.3.0 <4.0.0'
   flutter_localizations:
-    sdk: flutter
+    sdk: '>=3.3.0 <4.0.0'
   intl: ^0.20.2
 
   # lucy_editor: ^1.0.5
@@ -128,7 +128,7 @@ dependencies:
 
 dev_dependencies:
   flutter_test:
-    sdk: flutter
+    sdk: '>=3.3.0 <4.0.0'
   lint: ^2.3.0
   build_web_compilers: ^4.0.11
   build_runner: ^2.4.13
