@@ -18,6 +18,7 @@ jobs:
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
+          flutter-version: '3.24.5'
           channel: 'stable'
           cache: true
 
@@ -27,27 +28,23 @@ jobs:
           dart pub global activate fastforge
           echo "$HOME/.pub-cache/bin" >> $GITHUB_PATH
 
-      - name: Fix Damaged Xcode Project
-        run: |
-          rm -rf macos
-          flutter create . --platforms=macos --org com.outrun.vpn
-
       - name: Prepare Project and Core Libraries
         run: |
+          flutter config --no-enable-swift-package-manager
           make get
-          timeout 45s dart run build_runner build --delete-conflicting-outputs || true
+          make translate
+          dart --old_gen_heap_size=8192 run build_runner build --delete-conflicting-outputs
           make macos-libs
 
-      - name: Build macOS DMG
+      - name: Build macOS App and DMG
         run: |
           flutter build macos --release --target lib/main.dart
-          fastforge package --platform macos --targets dmg --skip-clean --build-target lib/main.dart
+          create-dmg "build/macos/Build/Products/Release/Outrun VPN.app" . || create-dmg build/macos/Build/Products/Release/*.app . || true
 
-      - name: Upload DMG Artifact
+      - name: Upload DMG and App Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: Outrun-VPN-macOS-DMG
+          name: Outrun-VPN-macOS
           path: |
             *.dmg
-            dist/**/*.dmg
-            build/macos/Build/Products/Release/*.app
+            build/macos/Build/Products/Release/*.app%
