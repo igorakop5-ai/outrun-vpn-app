@@ -1,0 +1,61 @@
+display_name: Outrun VPN
+package_name: Outrun VPN
+maintainer:
+  name: Outrun VPN
+  email: linux@Outrun VPN.com
+
+priority: optional
+section: x11
+installed_size: 6604
+essential: false
+icon: assets/images/source/ic_launcher_border.png
+
+# Post-installation tasks:
+# 1. Inject StartupWMClass into the system .desktop file for correct icon association
+# 2. Remove conflicting Outrun VPN.desktop files from users' .local directories (cleanup AppImage artifacts)
+# 3. Update the desktop database to apply changes immediately
+postinstall_scripts:
+  - echo "Setting up Outrun VPN..."
+  - sudo sed -i '/^\[Desktop Entry\]/a StartupWMClass=app.Outrun VPN.com' "/usr/share/applications/Outrun VPN.desktop"
+  - echo "Search and remove Outrun VPN.desktop from .local"
+  - for user_dir in /home/*; do if [ -f "$user_dir/.local/share/applications/Outrun VPN.desktop" ]; then rm -f "$user_dir/.local/share/applications/Outrun VPN.desktop"; echo "Found and removed Outrun VPN.desktop from $user_dir .local"; fi; done
+  - update-desktop-database /usr/share/applications
+  - echo "Outrun VPN is ready to use :)"
+
+# Post-uninstallation tasks:
+# 1. Iterate through all user directories to remove Outrun VPN configuration and data
+# 2. Clean up root user data to ensure a clean removal
+postuninstall_scripts:
+  - echo "Removing Outrun VPN user data..."
+  - for user_dir in /home/*; do if [ -d "$user_dir/.local/share/Outrun VPN" ]; then rm -rf "$user_dir/.local/share/Outrun VPN"; echo "Removed data from $user_dir"; fi; done
+  - rm -rf /root/.local/share/Outrun VPN
+  - echo "Outrun VPN data cleanup complete."
+
+keywords:
+  - Outrun VPN
+  - Proxy
+  - VPN
+  - V2ray
+  - Nekoray
+  - Xray
+  - Psiphon
+  - OpenVPN
+
+generic_name: Outrun VPN
+
+categories:
+  - Network
+
+startup_notify: true
+# app_links setup for Linux
+# https://github.com/llfbandit/app_links/blob/master/doc/README_linux.md
+supported_mime_type:
+  - x-scheme-handler/Outrun VPN
+  - x-scheme-handler/v2ray
+  - x-scheme-handler/v2rayn
+  - x-scheme-handler/v2rayng
+  - x-scheme-handler/clash
+  - x-scheme-handler/clashmeta
+  - x-scheme-handler/sing-box
+
+metainfo: linux/packaging/app.Outrun VPN.com.appdata.xml

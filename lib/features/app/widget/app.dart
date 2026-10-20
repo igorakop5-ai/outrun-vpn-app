@@ -1,0 +1,197 @@
+import 'package:accessibility_tools/accessibility_tools.dart';
+import 'package:dynamic_color/dynamic_color.dart';
+import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:outrun_vpn/core/localization/locale_extensions.dart';
+import 'package:outrun_vpn/core/localization/locale_preferences.dart';
+import 'package:outrun_vpn/core/localization/translations.dart';
+import 'package:outrun_vpn/core/model/constants.dart';
+import 'package:outrun_vpn/core/notification/in_app_notification_controller.dart';
+import 'package:outrun_vpn/core/router/go_router/go_router_notifier.dart';
+import 'package:outrun_vpn/core/router/go_router/helper/active_breakpoint_notifier.dart';
+import 'package:outrun_vpn/core/theme/app_theme.dart';
+import 'package:outrun_vpn/core/theme/theme_preferences.dart';
+import 'package:outrun_vpn/features/app_based_routing/overview/app_based_routing_notifier.dart';
+import 'package:outrun_vpn/features/app_update/notifier/app_update_notifier.dart';
+import 'package:outrun_vpn/features/connection/widget/connection_wrapper.dart';
+import 'package:outrun_vpn/features/profile/notifier/profiles_update_notifier.dart';
+import 'package:outrun_vpn/features/shortcut/shortcut_wrapper.dart';
+import 'package:outrun_vpn/features/system_tray/notifier/system_tray_notifier.dart';
+import 'package:outrun_vpn/features/window/widget/window_wrapper.dart';
+import 'package:outrun_vpn/hiddifycore/hiddify_core_service_provider.dart';
+import 'package:outrun_vpn/utils/utils.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:upgrader/upgrader.dart';
+
+bool _debugAccessibility = false;
+bool isOnPauseCalled = false;
+
+class App extends HookConsumerWidget with WidgetsBindingObserver, PresLogger {
+  const App({super.key});
+
+  void onPause(WidgetRef ref) {
+    if (PlatformUtils.isDesktop) return;
+    isOnPauseCalled = true;
+    ref.read(Outrun VPNCoreServiceProvider).closeFront();
+  }
+
+  void onResume(WidgetRef ref) {
+    // if (PlatformUtils.isDesktop) return;
+    ref.read(Outrun VPNCoreServiceProvider).init();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (isOnPauseCalled && PlatformUtils.isAndroid) ref.invalidate(appBasedRoutingProvider);
+      isOnPauseCalled = false;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    setupStateListener(ref);
+    final router = ref.watch(goRouterNotiferProvider);
+    final locale = ref.watch(localePreferencesProvider);
+    final themeMode = ref.watch(themePreferencesProvider);
+    final theme = AppTheme(themeMode, locale.preferredFontFamily);
+    final upgrader = ref.watch(upgraderProvider);
+    final activeBreakpoint = Breakpoint(context).activeBreakpoint;
+
+    ref.listen(foregroundProfilesUpdateNotifierProvider, (_, _) {});
+    if (PlatformUtils.isAndroid) ref.listen(appBasedRoutingProvider, (_, _) {});
+    if (PlatformUtils.isDesktop) ref.listen(systemTrayNotifierProvider, (_, _) {});
+
+    // updating ActiveBreakpointNotifier value
+    useEffect(() {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        ref.read(activeBreakpointNotifierProvider.notifier).update(activeBreakpoint);
+      });
+      return null;
+    }, [activeBreakpoint]);
+    return WindowWrapper(
+      ShortcutWrapper(
+        ConnectionWrapper(
+          DynamicColorBuilder(
+            builder: (ColorScheme? lightColorScheme, ColorScheme? darkColorScheme) {
+              return MaterialApp.router(
+                routerConfig: router,
+                scaffoldMessengerKey: appScaffoldMessengerKey,
+                locale: locale.flutterLocale,
+                supportedLocales: AppLocaleUtils.supportedLocales,
+                localizationsDelegates: GlobalMaterialLocalizations.delegates,
+                debugShowCheckedModeBanner: false,
+                themeMode: themeMode.flutterThemeMode,
+                theme: theme.lightTheme(lightColorScheme),
+                darkTheme: theme.darkTheme(darkColorScheme),
+                title: Constants.appName,
+                builder: (context, child) {
+                  final theme = Theme.of(context);
+                  child = SnackBarHost(
+                    child: UpgradeAlert(
+                      upgrader: upgrader,
+                      navigatorKey: router.routerDelegate.navigatorKey,
+                      child: child ?? const SizedBox(),
+                    ),
+                  );
+                  if (kDebugMode && _debugAccessibility) {
+                    return AccessibilityTools(checkFontOverflows: true, child: child);
+                  }
+                  return AnnotatedRegion<SystemUiOverlayStyle>(
+                    value: SystemUiOverlayStyle(
+                      statusBarColor: theme.scaffoldBackgroundColor,
+                      systemNavigationBarColor: theme.scaffoldBackgroundColor,
+                      systemNavigationBarIconBrightness: theme.brightness == Brightness.dark
+                          ? Brightness.light
+                          : Brightness.dark,
+                    ),
+                    child: child,
+                  );
+                },
+              );
+            },
+          ),
+        ),
+      ),
+    );
+  }
+
+  // @override
+  // Widget build1(BuildContext context, WidgetRef ref) {
+  //   setupStateListener(ref);
+  //   // setupQuickSettings(ref);
+  //   final router = ref.watch(routerProvider);
+  //   final locale = ref.watch(localePreferencesProvider);
+  //   final themeMode = ref.watch(themePreferencesProvider);
+  //   final theme = AppTheme(themeMode, locale.preferredFontFamily);
+  //   final upgrader = ref.watch(upgraderProvider);
+
+  //   ref.listen(foregroundProfilesUpdateNotifierProvider, (_, __) {});
+
+  //   return WindowWrapper(
+  //     TrayWrapper(
+  //       ShortcutWrapper(
+  //         ConnectionWrapper(
+  //           PlatformProvider(
+  //               settings: PlatformSettingsData(
+  //                 iosUsesMaterialWidgets: true,
+  //               ),
+  //               builder: (context) => DynamicColorBuilder(
+  //                     builder: (ColorScheme? lightColorScheme, ColorScheme? darkColorScheme) {
+  //                       return PlatformApp.router(
+  //                         routerConfig: router,
+  //                         locale: locale.flutterLocale,
+  //                         supportedLocales: AppLocaleUtils.supportedLocales,
+  //                         localizationsDelegates: GlobalMaterialLocalizations.delegates,
+  //                         debugShowCheckedModeBanner: false,
+  //                         material: (context, platform) => MaterialAppRouterData(
+  //                           theme: theme.lightTheme(lightColorScheme),
+  //                           darkTheme: theme.darkTheme(darkColorScheme),
+  //                           themeMode: themeMode.flutterThemeMode,
+  //                         ),
+  //                         cupertino: (context, platform) {
+  //                           final sysDark = MediaQuery.of(context).platformBrightness == Brightness.dark;
+
+  //                           return CupertinoAppRouterData(theme: theme.cupertinoThemeData(sysDark, lightColorScheme, darkColorScheme));
+  //                         },
+  //                         title: Constants.appName,
+  //                         builder: (context, child) {
+  //                           child = UpgradeAlert(
+  //                             upgrader: upgrader,
+  //                             navigatorKey: router.routerDelegate.navigatorKey,
+  //                             child: child ?? const SizedBox(),
+  //                           );
+  //                           if (kDebugMode && _debugAccessibility) {
+  //                             return AccessibilityTools(
+  //                               checkFontOverflows: true,
+  //                               child: child,
+  //                             );
+  //                           }
+  //                           return child;
+  //                         },
+  //                       );
+  //                     },
+  //                   )),
+  //         ),
+  //       ),
+  //     ),
+  //   );
+  // }
+
+  void setupStateListener(WidgetRef ref) {
+    useEffect(() {
+      // The engine calls the listener directly, so a pause is seen even when no frame is drawn in the
+      // background. Inactive (a dialog, the notification shade) is not a pause and closes nothing.
+      void handle(AppLifecycleState state) {
+        loggy.info("app state: $state");
+        if (state == AppLifecycleState.paused) onPause(ref);
+        if (state == AppLifecycleState.resumed) onResume(ref);
+      }
+
+      final initial = WidgetsBinding.instance.lifecycleState;
+      if (initial != null) handle(initial);
+      final listener = AppLifecycleListener(onStateChange: handle);
+      return listener.dispose;
+    }, const []);
+  }
+}

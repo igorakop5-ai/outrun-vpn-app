@@ -1,0 +1,255 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:gap/gap.dart';
+import 'package:outrun_vpn/core/localization/translations.dart';
+import 'package:outrun_vpn/core/model/constants.dart';
+import 'package:outrun_vpn/core/router/bottom_sheets/bottom_sheets_notifier.dart';
+import 'package:outrun_vpn/core/router/dialog/dialog_notifier.dart';
+import 'package:outrun_vpn/core/theme/theme_extensions.dart';
+import 'package:outrun_vpn/core/widget/animated_text.dart';
+import 'package:outrun_vpn/features/connection/model/connection_status.dart';
+import 'package:outrun_vpn/features/connection/notifier/connection_notifier.dart';
+import 'package:outrun_vpn/features/profile/notifier/active_profile_notifier.dart';
+import 'package:outrun_vpn/features/proxy/active/active_proxy_notifier.dart';
+import 'package:outrun_vpn/gen/assets.gen.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+
+/// What the button shows, one value per look.
+enum _Look { loading, disconnected, connecting, connected, noPing, hotReloading, disconnecting, failed }
+
+/// The core reports the tunnel as up before the first ping answers, so a tunnel
+/// with no ping yet still looks like connecting: the user waits once, not twice.
+/// A delay of 0 is a ping not measured yet; any other invalid delay timed out.
+///
+/// The status reloads after every core start; until the new stream answers,
+/// the last status holds. A failed start comes back as disconnected with the
+/// failure attached.
+///
+/// A hot reload keeps the tunnel up, and the status stays connected through it.
+/// It comes before the ping checks, so a reload never looks like a ping problem.
+_Look _lookOf(AsyncValue<ConnectionStatus> status, int delay, bool hotReloading) => switch (status) {
+  AsyncError() => _Look.failed,
+  AsyncValue(valueOrNull: Disconnected(connectionFailure: _?)) => _Look.failed,
+  AsyncValue(valueOrNull: Disconnected()) => _Look.disconnected,
+  AsyncValue(valueOrNull: Connecting()) => _Look.connecting,
+  AsyncValue(valueOrNull: Connected()) when hotReloading => _Look.hotReloading,
+  AsyncValue(valueOrNull: Connected()) when delay == 0 => _Look.connecting,
+  AsyncValue(valueOrNull: Connected()) when !ConnectionConst.isValidDelay(delay) => _Look.noPing,
+  AsyncValue(valueOrNull: Connected()) => _Look.connected,
+  AsyncValue(valueOrNull: Disconnecting()) => _Look.disconnecting,
+  _ => _Look.loading,
+};
+
+class ConnectionButton extends HookConsumerWidget {
+  const ConnectionButton({super.key});
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final t = ref.watch(translationsProvider).requireValue;
+    final status = ref.watch(connectionNotifierProvider);
+    // After a disconnect Riverpod keeps the last ping as the previous value,
+    // which would show the next connection as up before its own ping answers.
+    final delay = ref.watch(activeProxyNotifierProvider).unwrapPrevious().valueOrNull?.urlTestDelay ?? 0;
+    final hotReloading = ref.watch(hotReloadingProvider).valueOrNull ?? false;
+    final look = _lookOf(status, delay, hotReloading);
+
+    // What a tap does follows the core alone: a tunnel that is up can be
+    // turned off even while it still looks like connecting. The core is busy
+    // while it hot reloads, so the tap is off until that ends.
+    final onTap = switch (status) {
+      AsyncData(value: Connected()) when hotReloading => null,
+      AsyncData(value: Disconnected()) || AsyncError() => () => _connect(ref),
+      AsyncData(value: Connected()) => () => ref.read(connectionNotifierProvider.notifier).toggleConnection(),
+      _ => null,
+    };
+
+    const buttonTheme = ConnectionButtonTheme.light;
+    final today = DateTime.now();
+    return _ConnectionButton(
+      look: look,
+      onTap: onTap,
+      label: switch (look) {
+        _Look.loading => "",
+        _Look.disconnected => t.connection.tapToConnect,
+        _Look.connecting => t.connection.connecting,
+        _Look.connected || _Look.noPing => t.connection.connected,
+        _Look.hotReloading => t.connection.hotReloading,
+        _Look.disconnecting => t.connection.disconnecting,
+        _Look.failed => t.connection.failed,
+      },
+      hint: look == _Look.failed ? t.connection.tapToRetry : null,
+      buttonColor: switch (look) {
+        _Look.connected => buttonTheme.connectedColor!,
+        _Look.noPing || _Look.hotReloading => const Color.fromARGB(255, 185, 176, 103),
+        _Look.failed => Colors.red,
+        _ => buttonTheme.idleColor!,
+      },
+      image: switch (look) {
+        _Look.connected || _Look.noPing || _Look.hotReloading => Assets.images.connectNorouz,
+        _ => Assets.images.disconnectNorouz,
+      },
+      useImage: today.day >= 19 && today.day <= 23 && today.month == 3,
+    );
+  }
+
+  /// Connects, or sends the user to add a profile when there is none.
+  Future<void> _connect(WidgetRef ref) async {
+    final dialogs = ref.read(dialogNotifierProvider.notifier);
+    if (ref.read(activeProfileProvider).valueOrNull == null) {
+      await dialogs.showNoActiveProfile();
+      ref.read(bottomSheetsNotifierProvider.notifier).showAddProfile();
+      return;
+    }
+    if (await dialogs.showExperimentalFeatureNotice()) {
+      await ref.read(connectionNotifierProvider.notifier).toggleConnection();
+    }
+  }
+}
+
+class _ConnectionButton extends HookWidget {
+  const _ConnectionButton({
+    required this.look,
+    required this.onTap,
+    required this.label,
+    required this.hint,
+    required this.buttonColor,
+    required this.image,
+    required this.useImage,
+  });
+
+  final _Look look;
+  final VoidCallback? onTap;
+  final String label;
+  final String? hint;
+  final Color buttonColor;
+  final AssetGenImage image;
+  final bool useImage;
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final busy = look == _Look.connecting || look == _Look.disconnecting;
+
+    // One ripple when a wait the user watched ends connected, not when the
+    // app opens on a tunnel that is already up or a timed-out ping recovers.
+    final ripple = useAnimationController(duration: const Duration(milliseconds: 900));
+    final previousLook = usePrevious(look);
+    useEffect(() {
+      if (look == _Look.connected && previousLook == _Look.connecting) ripple.forward(from: 0);
+      return null;
+    }, [look]);
+
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Semantics(
+          button: true,
+          enabled: onTap != null,
+          label: label,
+          hint: hint,
+          child: SizedBox.square(
+            dimension: 148,
+            child: Stack(
+              fit: StackFit.expand,
+              clipBehavior: Clip.none,
+              children: [
+                AnimatedBuilder(
+                  animation: ripple,
+                  builder: (context, _) => ripple.isAnimating
+                      ? Transform.scale(
+                          scale: 1 + .4 * ripple.value,
+                          child: DecoratedBox(
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              border: Border.all(
+                                color: buttonColor.withValues(alpha: .7 * (1 - ripple.value)),
+                                width: 3,
+                              ),
+                            ),
+                          ),
+                        )
+                      : const SizedBox.shrink(),
+                ),
+                Positioned.fill(
+                  left: -10,
+                  top: -10,
+                  right: -10,
+                  bottom: -10,
+                  // A single faded child: an AnimatedSwitcher here hit duplicate keys
+                  // when the state flipped twice within its duration.
+                  child: AnimatedOpacity(
+                    opacity: busy ? 1 : 0,
+                    duration: const Duration(milliseconds: 300),
+                    // Stops the spinner's ticker while hidden.
+                    child: TickerMode(
+                      enabled: busy,
+                      child: Transform.flip(
+                        // Disconnecting spins the other way.
+                        flipX: look == _Look.disconnecting,
+                        child: CircularProgressIndicator(
+                          strokeWidth: 4,
+                          strokeCap: StrokeCap.round,
+                          color: buttonColor,
+                          backgroundColor: buttonColor.withValues(alpha: .2),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                Material(
+                  key: const ValueKey("home_connection_button"),
+                  shape: const CircleBorder(),
+                  color: Colors.white,
+                  elevation: 3,
+                  shadowColor: Colors.black,
+                  surfaceTintColor: Colors.transparent,
+                  clipBehavior: Clip.antiAlias,
+                  child: InkWell(
+                    focusColor: Colors.grey,
+                    onTap: onTap,
+                    child: Padding(
+                      padding: const EdgeInsets.all(36),
+                      child: AnimatedOpacity(
+                        opacity: look == _Look.loading ? .38 : 1,
+                        duration: const Duration(milliseconds: 300),
+                        child: TweenAnimationBuilder(
+                          tween: ColorTween(end: buttonColor),
+                          duration: const Duration(milliseconds: 250),
+                          builder: (context, value, child) {
+                            if (useImage) {
+                              return image.image();
+                            } else {
+                              return Assets.images.logo.svg(colorFilter: ColorFilter.mode(value!, BlendMode.srcIn));
+                            }
+                          },
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+        const Gap(24),
+        ExcludeSemantics(
+          child: Column(
+            children: [
+              AnimatedText(label, style: theme.textTheme.titleMedium),
+              AnimatedSwitcher(
+                duration: const Duration(milliseconds: 250),
+                child: hint == null
+                    ? const SizedBox.shrink()
+                    : Text(
+                        hint!,
+                        key: ValueKey(hint),
+                        style: theme.textTheme.bodyMedium?.copyWith(color: theme.colorScheme.onSurfaceVariant),
+                      ),
+              ),
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+}

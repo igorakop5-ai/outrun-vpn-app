@@ -1,0 +1,53 @@
+name: Build macOS DMG
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-macos:
+    runs-on: macos-14
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+          cache: true
+
+      - name: Install Packaging Tools
+        run: |
+          brew install create-dmg
+          dart pub global activate fastforge
+          echo "$HOME/.pub-cache/bin" >> $GITHUB_PATH
+
+      - name: Prepare Project and Core Libraries
+        run: |
+          git config --global http.postBuffer 524288000
+          git config --global http.version HTTP/1.1
+          flutter config --no-enable-swift-package-manager
+          flutter pub get || flutter pub get || flutter pub get
+          flutter pub upgrade sentry_flutter
+          make translate
+          dart run build_runner build --delete-conflicting-outputs --build-filter="lib/**"
+          make macos-libs
+
+      - name: Build macOS App and DMG
+        run: |
+          rm -f macos/Podfile.lock
+          flutter build macos --release --target lib/main.dart
+          create-dmg "build/macos/Build/Products/Release/Outrun VPN.app" . || create-dmg build/macos/Build/Products/Release/*.app . || true
+
+      - name: Upload DMG and App Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Outrun-VPN-macOS
+          path: |
+            *.dmg
+            build/macos/Build/Products/Release/*.app
