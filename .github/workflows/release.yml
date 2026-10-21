@@ -1,0 +1,91 @@
+name: Build & Release OutrunVPN
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-android:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: 'zulu'
+          java-version: '17'
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.47.7'
+          channel: 'stable'
+          cache: true
+      - run: flutter pub get
+      - run: flutter build apk --release
+      - name: Upload Android APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: OutrunVPN-Android
+          path: build/app/outputs/flutter-apk/app-release.apk
+
+  build-macos:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.47.7'
+          channel: 'stable'
+          cache: true
+      - run: flutter pub get
+      - run: flutter build macos --release
+      - name: Compress macOS App
+        run: |
+          cd build/macos/Build/Products/Release
+          zip -r OutrunVPN-macOS.zip outrun_vpn.app
+      - name: Upload macOS App
+        uses: actions/upload-artifact@v4
+        with:
+          name: OutrunVPN-macOS
+          path: build/macos/Build/Products/Release/OutrunVPN-macOS.zip
+
+  build-windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.47.7'
+          channel: 'stable'
+          cache: true
+      - run: flutter pub get
+      - run: flutter build windows --release
+      - name: Compress Windows Build
+        shell: pwsh
+        run: |
+          Compress-Archive -Path build/windows/x64/runner/Release/* -DestinationPath OutrunVPN-Windows.zip
+      - name: Upload Windows App
+        uses: actions/upload-artifact@v4
+        with:
+          name: OutrunVPN-Windows
+          path: OutrunVPN-Windows.zip
+
+  release:
+    needs: [build-android, build-macos, build-windows]
+    if: startsWith(github.ref, 'refs/tags/v')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            OutrunVPN-Android/app-release.apk
+            OutrunVPN-macOS/OutrunVPN-macOS.zip
+            OutrunVPN-Windows/OutrunVPN-Windows.zip
+          draft: false
+          prerelease: false
