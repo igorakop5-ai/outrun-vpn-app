@@ -16,19 +16,13 @@ class SingboxConfigGenerator {
         'servers': [
           {
             'tag': 'dns-remote',
-            'address': 'tcp://1.1.1.1',
+            'type': 'tcp',
+            'server': '1.1.1.1',
             'detour': 'proxy',
           },
           {
             'tag': 'dns-direct',
-            'address': 'local',
-            'detour': 'direct',
-          }
-        ],
-        'rules': [
-          {
-            'outbound': 'any',
-            'server': 'dns-direct',
+            'type': 'local',
           }
         ],
       },
@@ -38,7 +32,6 @@ class SingboxConfigGenerator {
           'tag': 'mixed-in',
           'listen': '127.0.0.1',
           'listen_port': localPort,
-          'sniff': true,
         }
       ],
       'outbounds': [
@@ -46,17 +39,13 @@ class SingboxConfigGenerator {
         {
           'type': 'direct',
           'tag': 'direct',
-        },
-        {
-          'type': 'dns',
-          'tag': 'dns-out',
         }
       ],
       'route': {
+        'default_domain_resolver': 'dns-direct',
         'rules': [
           {
-            'protocol': 'dns',
-            'outbound': 'dns-out',
+            'action': 'sniff',
           },
           {
             'inbound': 'mixed-in',
