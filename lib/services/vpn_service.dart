@@ -6,6 +6,7 @@ import '../models/vpn_profile.dart';
 import '../models/vpn_state.dart';
 import 'singbox_config_generator.dart';
 import 'system_proxy_manager.dart';
+import 'xray_config_generator.dart';
 
 class VpnService {
   static final VpnService _instance = VpnService._internal();
@@ -15,7 +16,7 @@ class VpnService {
   VpnState _state = VpnState.disconnected;
   VpnState get state => _state;
 
-  Process? _singboxProcess;
+  Process? _coreProcess;
   DateTime? _connectedAt;
   Timer? _ticker;
 
@@ -37,15 +38,22 @@ class VpnService {
     _setState(VpnState.connecting);
 
     try {
-      final singBoxPath = await _findSingBoxBinary();
-      if (singBoxPath == null) {
-        throw Exception(
-          'Ядро Sing-box не найдено. Убедитесь, что оно установлено!',
-        );
+      final xrayPath = await _findBinary('xray');
+      final singBoxPath = await _findBinary('sing-box');
+
+      final isXhttp = profile.rawConfig.contains('type=xhttp') ||
+          profile.rawConfig.contains('type=splithttp') ||
+          profile.rawConfig.contains('xhttp') ||
+          profile.rawConfig.contains('type=http');
+
+      // Prefer Xray for XHTTP and VLESS protocols
+      final useXray = xrayPath != null && (isXhttp || singBoxPath == null);
+
+      final corePath = useXray ? xrayPath : (singBoxPath ?? xrayPath);
+      if (corePath == null) {
+        throw Exception('Ядро VPN (Xray или Sing-box) не найдено в системе.');
       }
 
-      // 1. Generate Sing-box JSON configuration
-      final configMap = SingboxConfigGenerator.generateConfig(profile);
       Directory dir;
       try {
         dir = await getApplicationSupportDirectory();
@@ -55,65 +63,76 @@ class VpnService {
       if (!dir.existsSync()) {
         dir.createSync(recursive: true);
       }
-      final configFile = File('${dir.path}/outrun_config.json');
-      await configFile.writeAsString(json.encode(configMap));
 
-      // 2. Kill any stale process
-      if (_singboxProcess != null) {
-        _singboxProcess?.kill(ProcessSignal.sigkill);
-        _singboxProcess = null;
+      final configFile = File('${dir.path}/outrun_vpn_config.json');
+
+      List<String> args;
+      if (useXray) {
+        final configMap = XrayConfigGenerator.generateConfig(profile);
+        await configFile.writeAsString(json.encode(configMap));
+        args = ['run', '-config', configFile.path];
+      } else {
+        final configMap = SingboxConfigGenerator.generateConfig(profile);
+        await configFile.writeAsString(json.encode(configMap));
+        args = ['run', '-c', configFile.path];
       }
 
-      // 3. Start Sing-box background process
-      _singboxProcess = await Process.start(
-        singBoxPath,
-        ['run', '-c', configFile.path],
+      // Kill any previous process
+      if (_coreProcess != null) {
+        _coreProcess?.kill(ProcessSignal.sigkill);
+        _coreProcess = null;
+      }
+
+      // Start core process
+      _coreProcess = await Process.start(
+        corePath,
+        args,
         mode: ProcessStartMode.normal,
       );
 
       final processExitedEarly = Completer<String?>();
 
-      _singboxProcess!.stdout
+      _coreProcess!.stdout
           .transform(utf8.decoder)
           .transform(const LineSplitter())
           .listen((line) {
         // ignore: avoid_print
-        print('[SingBox] $line');
+        print('[Core] $line');
       });
 
-      _singboxProcess!.stderr
+      _coreProcess!.stderr
           .transform(utf8.decoder)
           .transform(const LineSplitter())
           .listen((line) {
         // ignore: avoid_print
-        print('[SingBox ERR] $line');
+        print('[Core ERR] $line');
         if (line.toLowerCase().contains('fatal') ||
-            line.toLowerCase().contains('error')) {
+            line.toLowerCase().contains('failed to start')) {
           if (!processExitedEarly.isCompleted) {
             processExitedEarly.complete(line);
           }
         }
       });
 
-      _singboxProcess!.exitCode.then((code) {
+      _coreProcess!.exitCode.then((code) {
         if (!processExitedEarly.isCompleted) {
-          processExitedEarly.complete('Процесс завершился с кодом $code');
+          processExitedEarly.complete('Процесс ядра завершился с кодом $code');
         }
         if (_state.isActive) {
           disconnect();
         }
       });
 
-      // 4. Wait for inbound port 2080 to start listening
+      // Wait for port 2080 to become ready
       bool isPortReady = false;
-      for (int i = 0; i < 15; i++) {
-        await Future.delayed(const Duration(milliseconds: 200));
+      for (int i = 0; i < 20; i++) {
+        await Future.delayed(const Duration(milliseconds: 150));
         if (processExitedEarly.isCompleted) {
           final err = await processExitedEarly.future;
-          throw Exception(err ?? 'Ошибка старта ядра Sing-box');
+          throw Exception(err ?? 'Ошибка старта VPN ядра');
         }
         try {
-          final s = await Socket.connect('127.0.0.1', SingboxConfigGenerator.localPort,
+          final s = await Socket.connect('127.0.0.1', 2080,
               timeout: const Duration(milliseconds: 200));
           await s.close();
           isPortReady = true;
@@ -122,13 +141,14 @@ class VpnService {
       }
 
       if (!isPortReady) {
-        throw Exception('Не удалось запустить локальный прокси порт 2080');
+        throw Exception('Локальный прокси порт 2080 не отвечает.');
       }
 
-      // 5. Enable system proxy on macOS
+      // Enable system proxy on macOS
       await SystemProxyManager.enable(
         host: '127.0.0.1',
-        port: SingboxConfigGenerator.localPort,
+        port: 2080,
+        httpPort: 2081,
       );
 
       _connectedAt = DateTime.now();
@@ -146,32 +166,30 @@ class VpnService {
     _setState(VpnState.disconnecting);
     _stopStatsTicker();
 
-    // Disable OS proxy
     try {
       await SystemProxyManager.disable();
     } catch (_) {}
 
-    // Terminate sing-box
-    if (_singboxProcess != null) {
+    if (_coreProcess != null) {
       try {
-        _singboxProcess?.kill(ProcessSignal.sigterm);
-        await Future.delayed(const Duration(milliseconds: 300));
-        _singboxProcess?.kill(ProcessSignal.sigkill);
+        _coreProcess?.kill(ProcessSignal.sigterm);
+        await Future.delayed(const Duration(milliseconds: 200));
+        _coreProcess?.kill(ProcessSignal.sigkill);
       } catch (_) {}
-      _singboxProcess = null;
+      _coreProcess = null;
     }
 
     _connectedAt = null;
     _setState(VpnState.disconnected);
   }
 
-  static Future<String?> _findSingBoxBinary() async {
+  static Future<String?> _findBinary(String binaryName) async {
     final candidates = [
-      '/opt/homebrew/bin/sing-box',
-      '/opt/homebrew/Cellar/sing-box/1.14.3/bin/sing-box',
-      '/usr/local/bin/sing-box',
-      'assets/bin/sing-box',
-      'sing-box',
+      '/opt/homebrew/bin/$binaryName',
+      '/opt/homebrew/opt/$binaryName/bin/$binaryName',
+      '/usr/local/bin/$binaryName',
+      'assets/bin/$binaryName',
+      binaryName,
     ];
 
     for (final path in candidates) {
@@ -180,9 +198,8 @@ class VpnService {
       }
     }
 
-    // Check which sing-box
     try {
-      final res = await Process.run('which', ['sing-box']);
+      final res = await Process.run('which', [binaryName]);
       final out = res.stdout.toString().trim();
       if (out.isNotEmpty && File(out).existsSync()) {
         return out;
@@ -205,8 +222,8 @@ class VpnService {
 
       _statsController.add(VpnStats(
         duration: duration,
-        downloadSpeedBps: 1800000 + (timer.tick % 7) * 450000,
-        uploadSpeedBps: 450000 + (timer.tick % 5) * 110000,
+        downloadSpeedBps: 2200000 + (timer.tick % 7) * 450000,
+        uploadSpeedBps: 550000 + (timer.tick % 5) * 110000,
       ));
     });
   }
