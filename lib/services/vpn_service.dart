@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
+import 'package:path_provider/path_provider.dart';
 import '../models/vpn_profile.dart';
 import '../models/vpn_state.dart';
 import 'singbox_config_generator.dart';
@@ -45,7 +46,16 @@ class VpnService {
 
       // 1. Generate Sing-box JSON configuration
       final configMap = SingboxConfigGenerator.generateConfig(profile);
-      final configFile = File('/tmp/outrun_config.json');
+      Directory dir;
+      try {
+        dir = await getApplicationSupportDirectory();
+      } catch (_) {
+        dir = await getTemporaryDirectory();
+      }
+      if (!dir.existsSync()) {
+        dir.createSync(recursive: true);
+      }
+      final configFile = File('${dir.path}/outrun_config.json');
       await configFile.writeAsString(json.encode(configMap));
 
       // 2. Kill any stale process
