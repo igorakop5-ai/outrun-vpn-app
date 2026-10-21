@@ -162,7 +162,11 @@ class _HomeScreenState extends State<HomeScreen>
     if (_vpnState == VpnState.connected) {
       await _vpnService.disconnect();
     } else if (_vpnState == VpnState.disconnected || _vpnState == VpnState.error) {
-      await _vpnService.connect(_activeProfile!);
+      try {
+        await _vpnService.connect(_activeProfile!);
+      } catch (e) {
+        _showToast('Ошибка подключения: $e', isError: true);
+      }
     }
   }
 
